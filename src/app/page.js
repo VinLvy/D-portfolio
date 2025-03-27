@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen w-full text-center bg-gray-900 text-white">
+    <div className="flex flex-col items-center justify-center min-h-screen px-6 py-12 text-center">
       {/* Foto Profil */}
       <Image
         className="rounded-full shadow-lg mb-6"

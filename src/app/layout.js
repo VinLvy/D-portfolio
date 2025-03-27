@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from " @@/components/navbar";
+import CursorBlur from "../components/CursorBlur";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <CursorBlur />
         <Navbar /> {/* Navbar akan muncul di semua halaman */}
         <main className="w-full">{children}</main>
       </body>
