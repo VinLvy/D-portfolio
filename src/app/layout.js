@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar /> {/* Navbar akan muncul di semua halaman */}
-        <main className="container mx-auto p-4">{children}</main>
+        <main className="w-full">{children}</main>
       </body>
     </html>
   );
