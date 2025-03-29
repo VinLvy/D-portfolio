@@ -39,8 +39,8 @@ export default function Home() {
       {/* Skills Section */}
       <div className="mt-12 ">
         <h2 className="text-2xl font-semibold mb-4">Tech Stack</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-gray-300">
-          {[
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-gray-300 justify-center">
+          {[  
             { name: "HTML", icon: "/icons/html.svg", stars: 5 },
             { name: "CSS", icon: "/icons/css.svg", stars: 5 },
             { name: "Tailwind CSS", icon: "/icons/tailwind.svg", stars: 4 },
@@ -52,12 +52,10 @@ export default function Home() {
             { name: "Laravel", icon: "/icons/laravel.svg", stars: 4 },
             { name: "Next.js", icon: "/icons/next.png", stars: 4 }
           ].map((tech, index) => (
-            <div key={index} className="flex items-center space-x-3 bg-gray-900/50 backdrop-blur-lg bg-opacity-50 p-3 rounded-lg">
-              <Image src={tech.icon} alt={tech.name} width={24} height={24} />
-              <div>
-                <p className="text-lg font-medium">{tech.name}</p>
-                <p className="text-yellow-400">{"★".repeat(tech.stars) + "☆".repeat(5 - tech.stars)}</p>
-              </div>
+            <div key={index} className="flex flex-col items-center bg-gray-900/50 backdrop-blur-lg bg-opacity-50 p-6 rounded-lg w-40 h-40">
+              <Image src={tech.icon} alt={tech.name} width={50} height={50} className="mb-3" />
+              <p className="text-lg font-medium text-center">{tech.name}</p>
+              <p className="text-yellow-400">{"★".repeat(tech.stars) + "☆".repeat(5 - tech.stars)}</p>
             </div>
           ))}
         </div>
