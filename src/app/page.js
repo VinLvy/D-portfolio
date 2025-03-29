@@ -3,22 +3,22 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-6 py-12 text-center">
-      {/* Hero Section */}
-      <div className="mt-24"> {/* Menambahkan margin top agar tidak terlalu dekat dengan navbar */}
-        <Image
-          className="rounded-full shadow-lg mb-6"
-          src="/profile.jpg" // Ganti dengan foto profil asli
-          alt="Profile Picture"
-          width={150}
-          height={150}
-          priority
-        />
-        <h1 className="text-4xl font-bold mb-4">Davin P F</h1>
-        <p className="text-lg text-gray-300 max-w-lg">
-          Full-Stack Developer | Passionate about building modern web applications with Next.js, React, and more.
-        </p>
-      </div>
+    <div className="flex flex-col items-center justify-center min-h-screen px-6 py-12 text-center mt-32 ">
+      {/* Foto Profil */}
+      <Image
+        className="rounded-full shadow-lg mb-6"
+        src="/profile.jpg" // Ganti dengan foto profil asli
+        alt="Profile Picture"
+        width={150}
+        height={150}
+        priority
+      />
+
+      {/* Nama dan Deskripsi */}
+      <h1 className="text-4xl font-bold mb-4">Davin P F</h1>
+      <p className="text-lg text-gray-300 max-w-lg">
+        Full-Stack Developer | Passionate about building modern web applications with Next.js, React, and more.
+      </p>
 
       {/* CTA Buttons */}
       <div className="mt-6 flex space-x-4">
