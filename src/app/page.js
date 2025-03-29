@@ -7,7 +7,7 @@ export default function Home() {
       {/* Foto Profil */}
       <Image
         className="rounded-full shadow-lg mb-6"
-        src="/profile.jpg" // Ganti dengan foto profil asli
+        src="/profile.jpg"
         alt="Profile Picture"
         width={150}
         height={150}
@@ -37,15 +37,29 @@ export default function Home() {
       </div>
 
       {/* Skills Section */}
-      <div className="mt-12 max-w-2xl">
+      <div className="mt-12 ">
         <h2 className="text-2xl font-semibold mb-4">Tech Stack</h2>
-        <div className="grid grid-cols-3 gap-4 text-gray-300">
-          <span>Next.js</span>
-          <span>React.js</span>
-          <span>Node.js</span>
-          <span>Tailwind CSS</span>
-          <span>MongoDB</span>
-          <span>Express.js</span>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-gray-300">
+          {[
+            { name: "HTML", icon: "/icons/html.svg", stars: 5 },
+            { name: "CSS", icon: "/icons/css.svg", stars: 5 },
+            { name: "Tailwind CSS", icon: "/icons/tailwind.svg", stars: 4 },
+            { name: "Golang", icon: "/icons/golang.svg", stars: 3 },
+            { name: "JavaScript", icon: "/icons/javascript.png", stars: 5 },
+            { name: "PHP", icon: "/icons/php.svg", stars: 5 },
+            { name: "MySQL", icon: "/icons/mysql.svg", stars: 4 },
+            { name: "CodeIgniter 4", icon: "/icons/codeigniter.svg", stars: 4 },
+            { name: "Laravel", icon: "/icons/laravel.svg", stars: 4 },
+            { name: "Next.js", icon: "/icons/next.png", stars: 4 }
+          ].map((tech, index) => (
+            <div key={index} className="flex items-center space-x-3 bg-gray-900/50 backdrop-blur-lg bg-opacity-50 p-3 rounded-lg">
+              <Image src={tech.icon} alt={tech.name} width={24} height={24} />
+              <div>
+                <p className="text-lg font-medium">{tech.name}</p>
+                <p className="text-yellow-400">{"★".repeat(tech.stars) + "☆".repeat(5 - tech.stars)}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
