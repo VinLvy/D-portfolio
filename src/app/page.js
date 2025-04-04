@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 export default function Home() {
   return (
@@ -95,18 +96,27 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Recent Projects */}
-      <div className="mt-12 max-w-2xl">
-        <h2 className="text-2xl font-semibold mb-6">Recent Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Link href="/projects/project-1" className="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition">
-            <h3 className="text-lg font-semibold">Project 1</h3>
-            <p className="text-sm text-gray-400">A full-stack web application built with Next.js.</p>
-          </Link>
-          <Link href="/projects/project-2" className="bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition">
-            <h3 className="text-lg font-semibold">Project 2</h3>
-            <p className="text-sm text-gray-400">An open-source UI component library.</p>
-          </Link>
+      {/* How to Contact Me */}
+      <div className="mt-24 max-w-2xl text-center">
+        <h2 className="text-4xl font-semibold mb-8">How to Contact Me</h2>
+        <div className="flex justify-center gap-6 text-white">
+          {[
+            { name: "Instagram", icon: "bi bi-instagram", link: "https://instagram.com/yourusername" },
+            { name: "Facebook", icon: "bi bi-facebook", link: "https://facebook.com/yourusername" },
+            { name: "GitHub", icon: "bi bi-github", link: "https://github.com/yourusername" },
+            { name: "LinkedIn", icon: "bi bi-linkedin", link: "https://linkedin.com/in/yourusername" },
+            { name: "Gmail", icon: "bi bi-envelope-fill", link: "mailto:your.email@gmail.com" },
+          ].map((contact, index) => (
+            <Link
+              key={index}
+              href={contact.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-4xl hover:text-purple-400 transition"
+            >
+              <i className={contact.icon}></i>
+            </Link>
+          ))}
         </div>
       </div>
     </div>
