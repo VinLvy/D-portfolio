@@ -101,11 +101,11 @@ export default function Home() {
         <h2 className="text-4xl font-semibold mb-8">How to Contact Me</h2>
         <div className="flex justify-center gap-6 text-white">
           {[
-            { name: "Instagram", icon: "bi bi-instagram", link: "https://instagram.com/yourusername" },
-            { name: "Facebook", icon: "bi bi-facebook", link: "https://facebook.com/yourusername" },
-            { name: "GitHub", icon: "bi bi-github", link: "https://github.com/yourusername" },
-            { name: "LinkedIn", icon: "bi bi-linkedin", link: "https://linkedin.com/in/yourusername" },
-            { name: "Gmail", icon: "bi bi-envelope-fill", link: "mailto:your.email@gmail.com" },
+            { name: "Instagram", icon: "bi bi-instagram", link: "https://instagram.com/davin.fbrn" },
+            { name: "Facebook", icon: "bi bi-facebook", link: "https://facebook.com/davin.fbrn" },
+            { name: "GitHub", icon: "bi bi-github", link: "https://github.com/VinLvy" },
+            { name: "LinkedIn", icon: "bi bi-linkedin", link: "https://www.linkedin.com/in/davin-p-f-0b00a12b7/" },
+            { name: "Gmail", icon: "bi bi-envelope-fill", link: "mailto:davinfibrian@gmail.com" },
           ].map((contact, index) => (
             <Link
               key={index}
