@@ -6,17 +6,19 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen px-6 py-12 text-center mt-32 ">
       {/* Foto Profil */}
-      <Image
-        className="rounded-full shadow-lg mb-6"
-        src="/profile.jpg"
-        alt="Profile Picture"
-        width={150}
-        height={150}
-        priority
-      />
+      <div className="flex justify-center">
+        <Image
+          className="rounded-full shadow-2xl border-4 border-purple-500 p-1 transition-transform duration-300 hover:scale-105"
+          src="/profile.jpg"
+          alt="Profile Picture"
+          width={200}
+          height={200}
+          priority
+        />
+      </div>
 
       {/* Nama dan Deskripsi */}
-      <h1 className="text-4xl font-bold mb-4">Davin P F</h1>
+      <h1 className="text-4xl font-bold mb-4 mt-2">Davin P F</h1>
       <p className="text-lg text-gray-300 max-w-lg">
         <span className="text-purple-400 font-semibold">Full-Stack Developer</span> | Passionate about building modern web applications. Experienced with PHP programming language and currently diving deeper into JavaScript.
       </p>
@@ -27,7 +29,7 @@ export default function Home() {
           href="https://github.com/VinLvy"
           target="_blank"
           rel="noopener noreferrer"
-          className="px-6 py-3 flex items-center gap-2 rounded-full bg-purple-800 text-white font-medium hover:bg-purple-900 transition"
+          className="px-6 py-3 flex items-center gap-2 rounded-full bg-purple-800 text-white font-medium transition duration-300 transform hover:bg-purple-900 hover:scale-105 hover:shadow-lg"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
