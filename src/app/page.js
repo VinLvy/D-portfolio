@@ -5,16 +5,18 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen px-6 py-12 text-center mt-32 ">
-      {/* Foto Profil */}
+      {/* Foto Profil dengan Link ke About */}
       <div className="flex justify-center">
-        <Image
-          className="rounded-full shadow-2xl border-4 border-purple-500 p-1 transition-transform duration-300 hover:scale-105"
-          src="/profile.jpg"
-          alt="Profile Picture"
-          width={200}
-          height={200}
-          priority
-        />
+        <Link href="/about">
+          <Image
+            className="cursor-pointer rounded-full shadow-2xl border-4 border-purple-500 p-1 transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+            src="/profile.jpg"
+            alt="Profile Picture"
+            width={200}
+            height={200}
+            priority
+          />
+        </Link>
       </div>
 
       {/* Nama dan Deskripsi */}
@@ -114,7 +116,7 @@ export default function Home() {
               href={contact.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-4xl hover:text-purple-400 transition"
+              className="text-4xl transition-transform duration-300 hover:text-purple-400 hover:scale-110 hover:shadow-lg"
             >
               <i className={contact.icon}></i>
             </Link>
