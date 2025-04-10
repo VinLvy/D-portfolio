@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <CursorBlur />
-        <Navbar /> {/* Navbar akan muncul di semua halaman */}
+        <Navbar />
         <main className="w-full">{children}</main>
       </body>
     </html>
