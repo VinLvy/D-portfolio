@@ -4,7 +4,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-6 py-12 text-center mt-32 ">
+    <div className="flex flex-col items-center justify-center min-h-screen px-6 py-12 text-center mt-24">
       {/* Foto Profil dengan Link ke About */}
       <div className="flex justify-center">
         <Link href="/about">
@@ -101,7 +101,7 @@ export default function Home() {
       </div>
 
       {/* How to Contact Me */}
-      <div className="mt-24 max-w-2xl text-center">
+      <div className="mt-24 max-w-2xl text-center mb-10">
         <h2 className="text-4xl font-semibold mb-8">How to Contact Me</h2>
         <div className="flex justify-center gap-6 text-white">
           {[
