@@ -2,22 +2,36 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-6 py-12 text-center text-white">
-      {/* Foto Profil */}
-      <Image
-        className="rounded-lg shadow-lg mb-6"
-        src="/profile.jpg" // Ganti dengan foto asli
-        alt="Profile Picture"
-        width={200}
-        height={200}
-        priority
-      />
+    <div className="flex flex-col items-center justify-center min-h-screen px-6 py-12 text-white mt-24">
+      {/* Bagian atas: Foto dan Info Pribadi */}
+      <div className="flex flex-col md:flex-row items-center gap-8 text-left w-full max-w-4xl">
+        {/* Foto Profil */}
+        <div className="flex-shrink-0">
+          <Image
+            className="rounded-full shadow-lg"
+            src="/profile.jpg" // Ganti dengan foto asli
+            alt="Profile Picture"
+            width={160}
+            height={160}
+            priority
+          />
+        </div>
 
-      {/* Profil */}
-      <section className="mb-10 max-w-2xl">
-        <h1 className="text-4xl font-bold mb-4">Davin P F</h1>
-        <p className="text-lg text-gray-300">
-          <span className="text-purple-400 font-semibold">Full-Stack Developer</span> | Passionate about building modern web applications. Experienced with PHP programming language and currently diving deeper into JavaScript.
+        {/* Info Pribadi */}
+        <div className="space-y-2">
+          <h1 className="text-4xl font-extrabold text-purple-400 font-sans">Davin Putra Fibrian</h1>
+          <p className="text-lg font-medium text-gray-200 font-mono">Age: <span className="text-white">18</span></p>
+          <p className="text-lg font-medium text-gray-200 font-mono">Date of Birth: <span className="text-white">31 May 2006</span></p>
+        </div>
+      </div>
+
+      <div className="border-t border-white opacity-30 w-full max-w-4xl my-10"></div>
+
+      {/* About Saya */}
+      <section className=" mb-10 max-w-4xl  px-4">
+        <h2 className="text-3xl font-semibold mb-4 text-purple-300">About Me</h2>
+        <p className="text-lg text-gray-300 leading-relaxed">
+          I&apos;m a <span className="text-purple-400 font-semibold">Full-Stack Developer</span> who is passionate about creating modern, user-friendly web applications. I have solid experience in PHP and am currently deepening my understanding of JavaScript and frameworks like React and Next.js. I&apos;m always eager to learn and explore new technologies to improve my craft.
         </p>
       </section>
 
