@@ -27,24 +27,28 @@ export default function About() {
 
       <div className="border-t border-white opacity-30 w-full max-w-4xl my-10"></div>
 
-      {/* About Saya */}
-      <section className=" mb-10 max-w-4xl  px-4">
-        <h2 className="text-3xl font-semibold mb-4 text-purple-300">About Me</h2>
-        <p className="text-lg text-gray-300 leading-relaxed">
-          I&apos;m a <span className="text-purple-400 font-semibold">Full-Stack Developer</span> who is passionate about creating modern, user-friendly web applications. I have solid experience in PHP and am currently deepening my understanding of JavaScript and frameworks like React and Next.js. I&apos;m always eager to learn and explore new technologies to improve my craft.
-        </p>
-      </section>
+      {/* Wrapper Utama */}
+      <div className="w-full max-w-4xl mx-auto">
+        {/* About Saya */}
+        <section className="mb-10">
+          <h2 className="text-3xl font-semibold mb-4 text-purple-300">About Me</h2>
+          <p className="text-lg text-gray-300 leading-relaxed">
+            I&apos;m a <span className="text-purple-400 font-semibold">Full-Stack Developer</span> who is passionate about creating modern, user-friendly web applications. I have solid experience in PHP and am currently deepening my understanding of JavaScript and frameworks like React and Next.js. I&apos;m always eager to learn and explore new technologies to improve my craft.
+          </p>
+        </section>
 
-      {/* Skills */}
-      <section className="mb-10 max-w-2xl text-left">
-        <h2 className="text-2xl font-semibold mb-3 text-purple-300">Skills</h2>
-        <ul className="list-disc list-inside text-gray-300">
-          <li>Frontend: React.js, Next.js, Tailwind CSS</li>
-          <li>Backend: PHP, Node.js, Express</li>
-          <li>Database: MySQL, MongoDB</li>
-          <li>Tools: Git, VS Code, Postman</li>
-        </ul>
-      </section>
+        {/* Skills */}
+        <section className="mb-10">
+          <h2 className="text-3xl font-semibold mb-4 text-purple-300">Skills</h2>
+          <ul className="list-disc list-inside text-lg text-gray-300 leading-relaxed">
+            <li>Frontend: React.js, Next.js, Tailwind CSS</li>
+            <li>Backend: PHP, Node.js, Express</li>
+            <li>Database: MySQL, MongoDB</li>
+            <li>Tools: Git, VS Code, Postman</li>
+          </ul>
+        </section>
+      </div>
+
 
       {/* Experience */}
       <section className="mb-10 max-w-2xl text-left">
