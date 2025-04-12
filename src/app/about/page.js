@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen px-6 py-12 text-white mt-24">
       {/* Bagian atas: Foto dan Info Pribadi */}
-      <div className="flex flex-col md:flex-row items-center gap-8 text-left w-full max-w-4xl">
+      <div className="flex flex-col md:flex-row items-center gap-8 text-left w-full max-w-3xl">
         {/* Foto Profil */}
         <div className="flex-shrink-0">
           <Image
@@ -25,10 +25,10 @@ export default function About() {
         </div>
       </div>
 
-      <div className="border-t border-white opacity-30 w-full max-w-4xl my-10"></div>
+      <div className="border-t border-white opacity-30 w-full max-w-3xl my-10"></div>
 
       {/* Wrapper Utama */}
-      <div className="w-full max-w-4xl mx-auto">
+      <div className="w-full max-w-3xl mx-auto">
         {/* About Saya */}
         <section className="mb-10">
           <h2 className="text-3xl font-semibold mb-4 text-purple-300">About Me</h2>
@@ -47,38 +47,37 @@ export default function About() {
             <li>Tools: Git, VS Code, Postman</li>
           </ul>
         </section>
-      </div>
 
+        {/* Experience */}
+        <section className="mb-10 max-w-2xl text-left">
+          <h2 className="text-2xl font-semibold mb-3 text-purple-300">Experience</h2>
+          <div className="mb-4">
+            <h3 className="text-lg font-bold">Web Developer - Freelance</h3>
+            <p className="text-sm text-gray-400">2023 - Present</p>
+            <p className="text-gray-300">
+              Developed and maintained responsive websites for various clients using PHP and modern JavaScript frameworks.
+            </p>
+          </div>
+          {/* Tambahkan pengalaman lain di sini */}
+        </section>
 
-      {/* Experience */}
-      <section className="mb-10 max-w-2xl text-left">
-        <h2 className="text-2xl font-semibold mb-3 text-purple-300">Experience</h2>
-        <div className="mb-4">
-          <h3 className="text-lg font-bold">Web Developer - Freelance</h3>
-          <p className="text-sm text-gray-400">2023 - Present</p>
+        {/* Education */}
+        <section className="mb-10 max-w-2xl text-left">
+          <h2 className="text-2xl font-semibold mb-3 text-purple-300">Education</h2>
+          <div>
+            <h3 className="text-lg font-bold">Bachelor of Computer Science</h3>
+            <p className="text-sm text-gray-400">Universitas XYZ - 2019–2023</p>
+          </div>
+        </section>
+
+        {/* Interests */}
+        <section className="mb-10 max-w-2xl text-left">
+          <h2 className="text-2xl font-semibold mb-3 text-purple-300">Interests</h2>
           <p className="text-gray-300">
-            Developed and maintained responsive websites for various clients using PHP and modern JavaScript frameworks.
+            UI/UX Design, Open Source Contribution, Learning New Technologies, Traveling
           </p>
-        </div>
-        {/* Tambahkan pengalaman lain di sini */}
-      </section>
-
-      {/* Education */}
-      <section className="mb-10 max-w-2xl text-left">
-        <h2 className="text-2xl font-semibold mb-3 text-purple-300">Education</h2>
-        <div>
-          <h3 className="text-lg font-bold">Bachelor of Computer Science</h3>
-          <p className="text-sm text-gray-400">Universitas XYZ - 2019–2023</p>
-        </div>
-      </section>
-
-      {/* Interests */}
-      <section className="mb-10 max-w-2xl text-left">
-        <h2 className="text-2xl font-semibold mb-3 text-purple-300">Interests</h2>
-        <p className="text-gray-300">
-          UI/UX Design, Open Source Contribution, Learning New Technologies, Traveling
-        </p>
-      </section>
+        </section>
+      </div>
     </div>
   );
 }
