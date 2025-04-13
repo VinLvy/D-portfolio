@@ -3,13 +3,12 @@ import Image from "next/image";
 export default function About() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen px-6 py-12 text-white mt-24">
-      {/* Bagian atas: Foto dan Info Pribadi */}
       <div className="flex flex-col md:flex-row items-center gap-8 text-left w-full max-w-3xl">
         {/* Foto Profil */}
         <div className="flex-shrink-0">
           <Image
             className="rounded-full shadow-lg"
-            src="/profile.jpg" // Ganti dengan foto asli
+            src="/profile.jpg"
             alt="Profile Picture"
             width={160}
             height={160}
@@ -29,7 +28,7 @@ export default function About() {
 
       {/* Wrapper Utama */}
       <div className="w-full max-w-3xl mx-auto">
-        {/* About Saya */}
+        {/* About */}
         <section className="mb-10">
           <h2 className="text-3xl font-semibold mb-4 text-purple-300">About Me</h2>
           <p className="text-lg text-gray-300 leading-relaxed">
