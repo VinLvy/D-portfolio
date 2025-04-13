@@ -18,10 +18,10 @@ export default function About() {
             className="group relative pl-5 text-white transition-all duration-300 ease-in-out"
           >
             {/* Garis horizontal di kiri, absolut */}
-            <span className="absolute left-0 top-1/2 -translate-y-1/2 w-0 group-hover:w-4 h-0.5 bg-purple-400 transition-all duration-300"></span>
+            <span className="absolute left-0 top-1/2 -translate-y-1/2 w-0 group-hover:w-6 h-0.5 bg-purple-400 transition-all duration-300"></span>
 
             {/* Teks */}
-            <span className="inline-block group-hover:translate-x-1 group-hover:scale-105 group-hover:text-purple-400 transition-all duration-300">
+            <span className="inline-block group-hover:translate-x-2 group-hover:scale-100 group-hover:text-purple-400 transition-all duration-300">
               {item.label}
             </span>
           </a>
