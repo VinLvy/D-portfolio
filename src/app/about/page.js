@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div className="flex min-h-screen mt-30 text-white px-4 sm:px-6 lg:px-20">
       {/* Sidebar */}
-      <aside className="hidden md:flex flex-col space-y-4 pr-10 sticky top-32 h-fit text-left">
+      <aside className="hidden md:flex flex-col space-y-4 pr-10 sticky top-55 h-fit text-left">
         {[
           { href: "#about", label: "About Me" },
           { href: "#skills", label: "Skills" },
