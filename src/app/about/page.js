@@ -5,11 +5,27 @@ export default function About() {
     <div className="flex min-h-screen mt-30 text-white px-4 sm:px-6 lg:px-20">
       {/* Sidebar */}
       <aside className="hidden md:flex flex-col space-y-4 pr-10 sticky top-32 h-fit text-left">
-        <a href="#about" className="hover:text-purple-400 transition-colors">About Me</a>
-        <a href="#skills" className="hover:text-purple-400 transition-colors">Skills</a>
-        <a href="#experience" className="hover:text-purple-400 transition-colors">Experience</a>
-        <a href="#education" className="hover:text-purple-400 transition-colors">Education</a>
-        <a href="#interests" className="hover:text-purple-400 transition-colors">Interests</a>
+        {[
+          { href: "#about", label: "About Me" },
+          { href: "#skills", label: "Skills" },
+          { href: "#experience", label: "Experience" },
+          { href: "#education", label: "Education" },
+          { href: "#interests", label: "Interests" },
+        ].map((item) => (
+          <a
+            key={item.href}
+            href={item.href}
+            className="group relative pl-5 text-white transition-all duration-300 ease-in-out"
+          >
+            {/* Garis horizontal di kiri, absolut */}
+            <span className="absolute left-0 top-1/2 -translate-y-1/2 w-0 group-hover:w-4 h-0.5 bg-purple-400 transition-all duration-300"></span>
+
+            {/* Teks */}
+            <span className="inline-block group-hover:translate-x-1 group-hover:scale-105 group-hover:text-purple-400 transition-all duration-300">
+              {item.label}
+            </span>
+          </a>
+        ))}
       </aside>
 
       {/* Konten Utama */}
