@@ -40,7 +40,7 @@ export default function About() {
         {/* Wrapper Utama */}
         <div className="w-full max-w-3xl mx-auto">
           {/* About */}
-          <section className="mb-10">
+          <section id="about" className="mb-10">
             <h2 className="text-3xl font-semibold mb-4 text-purple-300">About Me</h2>
             <p className="text-lg text-gray-300 leading-relaxed">
               I&apos;m a <span className="text-purple-400 font-semibold">Full-Stack Developer</span> who is passionate about creating modern, user-friendly web applications. I have solid experience in PHP and am currently deepening my understanding of JavaScript and frameworks like React and Next.js. I&apos;m always eager to learn and explore new technologies to improve my craft.
@@ -81,7 +81,7 @@ export default function About() {
           </section>
 
           {/* Interests */}
-          <section id="interests" className="mb-10 max-w-2xl text-left">
+          <section id="interests" className="mb-20 max-w-2xl text-left">
             <h2 className="text-2xl font-semibold mb-3 text-purple-300">Interests</h2>
             <p className="text-gray-300">
               UI/UX Design, Open Source Contribution, Learning New Technologies, Traveling
