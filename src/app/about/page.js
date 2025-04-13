@@ -15,7 +15,7 @@ export default function About() {
           <a
             key={item.href}
             href={item.href}
-            className="group relative pl-5 text-white transition-all duration-300 ease-in-out"
+            className="group relative pl-5 text-white text-xl transition-all duration-300 ease-in-out"
           >
             {/* Garis horizontal di kiri, absolut */}
             <span className="absolute left-0 top-1/2 -translate-y-1/2 w-0 group-hover:w-6 h-0.5 bg-purple-400 transition-all duration-300"></span>
