@@ -5,10 +5,7 @@ export default function About() {
     <div className="flex min-h-screen mt-30 text-white px-4 sm:px-6 lg:px-20">
       {/* Sidebar */}
       <aside className="hidden md:flex flex-col space-y-4 pr-10 sticky top-55 h-fit text-left relative">
-        {/* Garis vertikal di kanan */}
-        <span className="absolute top-30 right-0 translate-x-15 -translate-y-1/2 h-100 w-px bg-white/30"></span>
-
-
+        <span className="absolute top-30 right-0 translate-x-15 -translate-y-1/2 h-100 w-px bg-white/20"></span>
         {[
           { href: "#about", label: "About Me" },
           { href: "#skills", label: "Skills" },
@@ -19,9 +16,9 @@ export default function About() {
           <a
             key={item.href}
             href={item.href}
-            className="group relative pl-5 text-white text-xl transition-all duration-300 ease-in-out"
+            className="group relative pl-5 text-gray-300 text-xl transition-all duration-300 ease-in-out"
           >
-            {/* Garis horizontal di kiri, absolut */}
+            {/* Garis horizontal di kiri */}
             <span className="absolute left-0 top-1/2 -translate-y-1/2 w-0 group-hover:w-6 h-0.5 bg-purple-400 transition-all duration-300"></span>
 
             {/* Teks */}
