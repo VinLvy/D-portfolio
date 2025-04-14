@@ -224,20 +224,31 @@ export default function About() {
 
             {/* Tools */}
             <div>
-              <h3 className="text-2xl font-semibold text-white mb-4">Tools</h3>
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-gray-300 justify-center">
+              <h3 className="text-2xl font-semibold text-white mb-6">Tools</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-gray-300">
                 {[
                   { name: "Github", icon: "/icons/github.png", stars: 5 },
                   { name: "Git", icon: "/icons/icons8-git.svg", stars: 3 },
                   { name: "VS Code", icon: "/icons/vscode.svg", stars: 5 },
                   { name: "Figma", icon: "/icons/figma.png", stars: 3 },
                 ].map((tech, index) => (
-                  <div key={index} className="flex flex-col items-center bg-gray-900/50 backdrop-blur-lg bg-opacity-50 p-6 rounded-lg w-40 h-48">
-                    <div className="w-16 h-16 flex items-center justify-center mb-3">
-                      <Image src={tech.icon} alt={tech.name} width={50} height={50} className="object-contain" />
+                  <div
+                    key={index}
+                    className="flex flex-col items-center bg-gray-800/55 p-8 rounded-2xl min-w-[150px] shadow-lg"
+                  >
+                    <div className="w-20 h-20 flex items-center justify-center mb-4">
+                      <Image
+                        src={tech.icon}
+                        alt={tech.name}
+                        width={50}
+                        height={50}
+                        className="object-contain"
+                      />
                     </div>
-                    <p className="text-lg font-medium text-center">{tech.name}</p>
-                    <p className="text-yellow-400 text-2xl">{"★".repeat(tech.stars) + "☆".repeat(5 - tech.stars)}</p>
+                    <p className="text-md font-semibold text-center">{tech.name}</p>
+                    <p className="text-yellow-400 text-xl mt-2">
+                      {"★".repeat(tech.stars) + "☆".repeat(5 - tech.stars)}
+                    </p>
                   </div>
                 ))}
               </div>
