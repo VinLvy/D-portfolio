@@ -46,7 +46,7 @@ export default function Home() {
         </Link>
       </div>
 
-      {/* Skills Section */}
+      {/* Tech Stack Section */}
       <div className="mt-24">
         <h2 className="text-4xl font-semibold mb-8">Tech Stack</h2>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-gray-300 justify-center">
