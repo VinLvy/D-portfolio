@@ -14,7 +14,7 @@ export default function About() {
   
           if (section) {
             const sectionTop = section.getBoundingClientRect().top;
-            const offset = sectionTop + window.pageYOffset - (window.innerHeight / 2) + (section.offsetHeight / 2) + 123; // Adjust the offset value as needed
+            const offset = sectionTop + window.pageYOffset - (window.innerHeight / 2) + (section.offsetHeight / 2) + 123; // Adjust the offset value
   
             window.scrollTo({
               top: offset,
@@ -85,7 +85,7 @@ export default function About() {
         {/* Wrapper Utama */}
         <div className="w-full max-w-3xl mx-auto">
           {/* About */}
-          <section id="about" className="mb-10">
+          <section id="about" className="mb-15">
             <h2 className="text-3xl font-semibold mb-4 text-purple-300">About Me</h2>
             <p className="text-lg text-gray-300 leading-relaxed">
               I&apos;m a <span className="text-purple-400 font-semibold">Full-Stack Developer</span> who is passionate about creating modern, user-friendly web applications. I have solid experience in PHP and am currently deepening my understanding of JavaScript and frameworks like React and Next.js. I&apos;m always eager to learn and explore new technologies to improve my craft.
@@ -93,7 +93,7 @@ export default function About() {
           </section>
 
           {/* Skills */}
-          <section id="skills" className="mb-10">
+          <section id="skills" className="mb-15">
             <h2 className="text-3xl font-semibold mb-4 text-purple-300">Skills</h2>
             <ul className="list-disc list-inside text-lg text-gray-300 leading-relaxed">
               <li>Frontend: React.js, Next.js, Tailwind CSS</li>
@@ -104,7 +104,7 @@ export default function About() {
           </section>
 
           {/* Experience */}
-          <section id="experience" className="mb-10 max-w-2xl text-left">
+          <section id="experience" className="mb-15 max-w-2xl text-left">
             <h2 className="text-2xl font-semibold mb-3 text-purple-300">Experience</h2>
             <div className="mb-4">
               <h3 className="text-lg font-bold">Web Developer - Freelance</h3>
@@ -117,7 +117,7 @@ export default function About() {
           </section>
 
           {/* Education */}
-          <section id="education" className="mb-10 max-w-2xl text-left">
+          <section id="education" className="mb-15 max-w-2xl text-left">
             <h2 className="text-2xl font-semibold mb-3 text-purple-300">Education</h2>
             <div>
               <h3 className="text-lg font-bold">Bachelor of Computer Science</h3>
@@ -126,7 +126,7 @@ export default function About() {
           </section>
 
           {/* Interests */}
-          <section id="interests" className="mb-20 max-w-2xl text-left">
+          <section id="interests" className="mb-25 max-w-2xl text-left">
             <h2 className="text-2xl font-semibold mb-3 text-purple-300">Interests</h2>
             <p className="text-gray-300">
               UI/UX Design, Open Source Contribution, Learning New Technologies, Traveling
