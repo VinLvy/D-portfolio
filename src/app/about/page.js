@@ -1,6 +1,33 @@
+'use client';
 import Image from "next/image";
+import { useEffect } from "react";
 
 export default function About() {
+
+    useEffect(() => {
+      const handleClick = (e) => {
+        const target = e.target.closest('[data-scroll]');
+        if (target) {
+          e.preventDefault();
+          const href = target.getAttribute('href');
+          const section = document.querySelector(href);
+  
+          if (section) {
+            const sectionTop = section.getBoundingClientRect().top;
+            const offset = sectionTop + window.pageYOffset - (window.innerHeight / 2) + (section.offsetHeight / 2);
+  
+            window.scrollTo({
+              top: offset,
+              behavior: 'smooth',
+            });
+          }
+        }
+      };
+  
+      document.addEventListener('click', handleClick);
+      return () => document.removeEventListener('click', handleClick);
+    }, []);
+
   return (
     <div className="flex min-h-screen mt-30 text-white px-4 sm:px-6 lg:px-20">
       {/* Sidebar */}
@@ -16,6 +43,7 @@ export default function About() {
           <a
             key={item.href}
             href={item.href}
+            data-scroll
             className="group relative pl-5 text-gray-300 text-xl transition-all duration-300 ease-in-out"
           >
             {/* Garis horizontal di kiri */}
