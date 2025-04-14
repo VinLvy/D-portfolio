@@ -98,7 +98,9 @@ export default function About() {
 
             {/* Frontend */}
             <div className="mb-10">
-              <h3 className="text-2xl font-semibold text-white mb-6">Frontend</h3>
+              <h3 className="text-2xl font-semibold text-white mb-6 border-b-4 border-amber-500 inline-block pb-1">
+                Frontend
+              </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-gray-300">
                 {[
                   // { name: "React.js", icon: "/icons/react.svg", stars: 4 },
@@ -134,7 +136,7 @@ export default function About() {
                 ].map((tech, index) => (
                   <div
                     key={index}
-                    className="flex flex-col items-center bg-gray-800/55 p-8 rounded-2xl min-w-[150px] shadow-lg"
+                    className="flex flex-col items-center bg-gray-800/55 p-8 rounded-2xl min-w-[150px] shadow-lg border-2 border-amber-500"
                   >
                     <div className="w-20 h-20 flex items-center justify-center mb-4">
                       {typeof tech.icon === "string" ? (
@@ -160,7 +162,9 @@ export default function About() {
 
             {/* Backend */}
             <div className="mb-10">
-              <h3 className="text-2xl font-semibold text-white mb-6">Backend</h3>
+              <h3 className="text-2xl font-semibold text-white mb-6 border-b-4 border-rose-500 inline-block pb-1">
+                Backend
+              </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-gray-300">
                 {[
                   { name: "PHP", icon: "/icons/php.svg", stars: 5 },
@@ -172,7 +176,7 @@ export default function About() {
                 ].map((tech, index) => (
                   <div
                     key={index}
-                    className="flex flex-col items-center bg-gray-800/55 p-8 rounded-2xl min-w-[150px] shadow-lg"
+                    className="flex flex-col items-center bg-gray-800/55 p-8 rounded-2xl min-w-[150px] shadow-lg border-2 border-rose-500"
                   >
                     <div className="w-20 h-20 flex items-center justify-center mb-4">
                       <Image
@@ -194,7 +198,9 @@ export default function About() {
 
             {/* Database */}
             <div className="mb-10">
-              <h3 className="text-2xl font-semibold text-white mb-6">Database</h3>
+              <h3 className="text-2xl font-semibold text-white mb-6 border-b-4 border-cyan-500 inline-block pb-1">
+                Database
+              </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-gray-300">
                 {[
                   { name: "MySQL", icon: "/icons/mysql.svg", stars: 5 },
@@ -202,7 +208,7 @@ export default function About() {
                 ].map((tech, index) => (
                   <div
                     key={index}
-                    className="flex flex-col items-center bg-gray-800/55 p-8 rounded-2xl min-w-[150px] shadow-lg"
+                    className="flex flex-col items-center bg-gray-800/55 p-8 rounded-2xl min-w-[150px] shadow-lg border-2 border-cyan-500"
                   >
                     <div className="w-20 h-20 flex items-center justify-center mb-4">
                       <Image
@@ -223,8 +229,10 @@ export default function About() {
             </div>
 
             {/* Tools */}
-            <div>
-              <h3 className="text-2xl font-semibold text-white mb-6">Tools</h3>
+            <div className="mb-10">
+              <h3 className="text-2xl font-semibold text-white mb-6 border-b-4 border-purple-500 inline-block pb-1">
+                Tools
+              </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-gray-300">
                 {[
                   { name: "Github", icon: "/icons/github.png", stars: 5 },
@@ -234,7 +242,7 @@ export default function About() {
                 ].map((tech, index) => (
                   <div
                     key={index}
-                    className="flex flex-col items-center bg-gray-800/55 p-8 rounded-2xl min-w-[150px] shadow-lg"
+                    className="flex flex-col items-center bg-gray-800/55 p-8 rounded-2xl min-w-[150px] shadow-lg border-2 border-purple-500"
                   >
                     <div className="w-20 h-20 flex items-center justify-center mb-4">
                       <Image
