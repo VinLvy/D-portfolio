@@ -14,7 +14,7 @@ export default function About() {
   
           if (section) {
             const sectionTop = section.getBoundingClientRect().top;
-            const offset = sectionTop + window.pageYOffset - (window.innerHeight / 2) + (section.offsetHeight / 2);
+            const offset = sectionTop + window.pageYOffset - (window.innerHeight / 2) + (section.offsetHeight / 2) + 123; // Adjust the offset value as needed
   
             window.scrollTo({
               top: offset,
