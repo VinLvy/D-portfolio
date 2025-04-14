@@ -98,13 +98,14 @@ export default function About() {
 
             {/* Frontend */}
             <div className="mb-10">
-              <h3 className="text-2xl font-semibold text-white mb-4">Frontend</h3>
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-gray-300 justify-center">
+              <h3 className="text-2xl font-semibold text-white mb-6">Frontend</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-gray-300">
                 {[
                   // { name: "React.js", icon: "/icons/react.svg", stars: 4 },
                   {
-                    name: "Next.js", icon: (
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="50" height="50">
+                    name: "Next.js",
+                    icon: (
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="60" height="60">
                         <mask id="mask0" maskUnits="userSpaceOnUse" x="0" y="0" width="180" height="180" style={{ maskType: 'alpha' }}>
                           <circle cx="90" cy="90" r="90" fill="black" />
                         </mask>
@@ -124,22 +125,34 @@ export default function About() {
                           </linearGradient>
                         </defs>
                       </svg>
-                    ), stars: 4
+                    ),
+                    stars: 4,
                   },
                   { name: "Tailwind CSS", icon: "/icons/tailwind.svg", stars: 4 },
                   { name: "HTML", icon: "/icons/html.svg", stars: 5 },
                   { name: "CSS", icon: "/icons/css.svg", stars: 5 },
                 ].map((tech, index) => (
-                  <div key={index} className="flex flex-col items-center bg-gray-900/50 backdrop-blur-lg bg-opacity-50 p-6 rounded-lg w-40 h-48">
-                    <div className="w-16 h-16 flex items-center justify-center mb-3">
+                  <div
+                    key={index}
+                    className="flex flex-col items-center bg-gray-800/55 p-8 rounded-2xl min-w-[150px] shadow-lg"
+                  >
+                    <div className="w-20 h-20 flex items-center justify-center mb-4">
                       {typeof tech.icon === "string" ? (
-                        <Image src={tech.icon} alt={tech.name} width={50} height={50} className="object-contain" />
+                        <Image
+                          src={tech.icon}
+                          alt={tech.name}
+                          width={50}
+                          height={50}
+                          className="object-contain"
+                        />
                       ) : (
                         tech.icon
                       )}
                     </div>
-                    <p className="text-lg font-medium text-center">{tech.name}</p>
-                    <p className="text-yellow-400 text-2xl">{"★".repeat(tech.stars) + "☆".repeat(5 - tech.stars)}</p>
+                    <p className="text-md font-semibold text-center">{tech.name}</p>
+                    <p className="text-yellow-400 text-xl mt-2">
+                      {"★".repeat(tech.stars) + "☆".repeat(5 - tech.stars)}
+                    </p>
                   </div>
                 ))}
               </div>
