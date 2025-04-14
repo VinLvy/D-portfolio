@@ -150,8 +150,8 @@ export default function About() {
                       )}
                     </div>
                     <p className="text-md font-semibold text-center">{tech.name}</p>
-                    <p className="text-yellow-400 text-xl mt-2">
-                      {"★".repeat(tech.stars) + "☆".repeat(5 - tech.stars)}
+                    <p className="text-yellow-400 text-xl mt-2 text-center">
+                      {"★".repeat(tech.stars)}
                     </p>
                   </div>
                 ))}
@@ -184,8 +184,8 @@ export default function About() {
                       />
                     </div>
                     <p className="text-md font-semibold text-center">{tech.name}</p>
-                    <p className="text-yellow-400 text-xl mt-2">
-                      {"★".repeat(tech.stars) + "☆".repeat(5 - tech.stars)}
+                    <p className="text-yellow-400 text-xl mt-2 text-center">
+                      {"★".repeat(tech.stars)}
                     </p>
                   </div>
                 ))}
@@ -214,8 +214,8 @@ export default function About() {
                       />
                     </div>
                     <p className="text-md font-semibold text-center">{tech.name}</p>
-                    <p className="text-yellow-400 text-xl mt-2">
-                      {"★".repeat(tech.stars) + "☆".repeat(5 - tech.stars)}
+                    <p className="text-yellow-400 text-xl mt-2 text-center">
+                      {"★".repeat(tech.stars)}
                     </p>
                   </div>
                 ))}
@@ -246,8 +246,8 @@ export default function About() {
                       />
                     </div>
                     <p className="text-md font-semibold text-center">{tech.name}</p>
-                    <p className="text-yellow-400 text-xl mt-2">
-                      {"★".repeat(tech.stars) + "☆".repeat(5 - tech.stars)}
+                    <p className="text-yellow-400 text-xl mt-2 text-center">
+                      {"★".repeat(tech.stars)}
                     </p>
                   </div>
                 ))}
