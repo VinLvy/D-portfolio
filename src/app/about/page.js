@@ -133,6 +133,7 @@ export default function About() {
                   { name: "Tailwind CSS", icon: "/icons/tailwind.svg", stars: 4 },
                   { name: "HTML", icon: "/icons/html.svg", stars: 5 },
                   { name: "CSS", icon: "/icons/css.svg", stars: 5 },
+                  { name: "JavaScript", icon: "/icons/javascript.png", stars: 4 },
                 ].map((tech, index) => (
                   <div
                     key={index}
