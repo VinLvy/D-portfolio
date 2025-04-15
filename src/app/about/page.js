@@ -13,11 +13,11 @@ export default function About() {
         const section = document.querySelector(href);
 
         if (section) {
-          const sectionTop = section.getBoundingClientRect().top;
-          const offset = sectionTop + window.pageYOffset - (window.innerHeight / 2) + (section.offsetHeight / 2) + 123; // Adjust the offset value
+          const headerOffset = 80;
+          const offsetTop = section.offsetTop - headerOffset;
 
           window.scrollTo({
-            top: offset,
+            top: offsetTop,
             behavior: 'smooth',
           });
         }
