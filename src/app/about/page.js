@@ -268,9 +268,12 @@ export default function About() {
             <h2 className="text-2xl font-semibold mb-3 text-purple-300">Experience</h2>
 
             <div className="mb-4">
-              <h3 className="text-lg font-bold">Fullstack Web Developer - Internship at Elecomp Indonesia</h3>
-              <p className="text-sm text-gray-400">2024 - 2025</p>
-              <p className="text-gray-300">
+              <h3 className="text-lg font-bold flex items-center gap-2">
+                <span className="text-purple-400 text-xl">•</span>
+                Fullstack Web Developer - Internship at Elecomp Indonesia
+              </h3>
+              <p className="text-sm text-gray-400 ml-4 mt-1">2024 - 2025</p>
+              <p className="text-gray-300 ml-4 mt-2">
                 Worked on both frontend and backend development, contributing to real-world web applications. Collaborated with a team to build scalable features and maintain code quality.
                 Specialized in developing company profile websites using CodeIgniter 4, focusing on creating responsive and user-friendly designs tailored to client needs.
               </p>
