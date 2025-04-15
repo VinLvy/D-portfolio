@@ -266,14 +266,16 @@ export default function About() {
           {/* Experience */}
           <section id="experience" className="mb-15 max-w-2xl text-left">
             <h2 className="text-2xl font-semibold mb-3 text-purple-300">Experience</h2>
+
             <div className="mb-4">
-              <h3 className="text-lg font-bold">Web Developer - Freelance</h3>
-              <p className="text-sm text-gray-400">2023 - Present</p>
+              <h3 className="text-lg font-bold">Fullstack Web Developer - Internship at Elecomp Indonesia</h3>
+              <p className="text-sm text-gray-400">2024 - 2025</p>
               <p className="text-gray-300">
-                Developed and maintained responsive websites for various clients using PHP and modern JavaScript frameworks.
+                Worked on both frontend and backend development, contributing to real-world web applications. Collaborated with a team to build scalable features and maintain code quality.
+                Specialized in developing company profile websites using CodeIgniter 4, focusing on creating responsive and user-friendly designs tailored to client needs.
               </p>
             </div>
-            {/* Tambahkan pengalaman lain di sini */}
+
           </section>
 
           {/* Education */}
