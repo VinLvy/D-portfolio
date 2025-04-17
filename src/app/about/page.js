@@ -285,9 +285,16 @@ export default function About() {
           {/* Education */}
           <section id="education" className="mb-15 max-w-2xl text-left">
             <h2 className="text-2xl font-semibold mb-3 text-purple-300">Education</h2>
-            <div>
-              <h3 className="text-lg font-bold">Bachelor of Computer Science</h3>
-              <p className="text-sm text-gray-400">Universitas XYZ - 2019–2023</p>
+
+            <div className="mb-4">
+              <h3 className="text-lg font-bold flex items-center gap-2">
+                <span className="text-purple-400 text-xl">•</span>
+                SMKN 1 Boyolangu - Rekayasa Perangkat Lunak
+              </h3>
+              <p className="text-sm text-gray-400 ml-4 mt-1">2022 - 2025</p>
+              <p className="text-gray-300 ml-4 mt-2">
+                Focused on software engineering fundamentals, including web development, database design, and programming languages. Participated in practical projects and developed skills in building dynamic and responsive web applications.
+              </p>
             </div>
           </section>
 
