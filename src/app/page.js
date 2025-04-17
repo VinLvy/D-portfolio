@@ -94,7 +94,7 @@ export default function Home() {
                 )}
               </div>
               <p className="text-lg font-medium text-center">{tech.name}</p>
-              <p className="text-yellow-400 text-2xl">{"★".repeat(tech.stars) + "☆".repeat(5 - tech.stars)}</p>
+              <p className="text-yellow-400 text-2xl">{"★".repeat(tech.stars)}</p>
             </div>
           ))}
         </div>
