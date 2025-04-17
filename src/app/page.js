@@ -20,7 +20,7 @@ export default function Home() {
       </div>
 
       {/* Nama dan Deskripsi */}
-      <h1 className="text-4xl font-bold mb-4 mt-2">Davin P F</h1>
+      <h1 className="text-4xl font-bold mb-4 mt-4">Davin P F</h1>
       <p className="text-lg text-gray-300 max-w-lg">
         <span className="text-purple-400 font-semibold">Full-Stack Developer</span> | Passionate about building modern web applications. Experienced with PHP programming language and currently diving deeper into JavaScript.
       </p>
