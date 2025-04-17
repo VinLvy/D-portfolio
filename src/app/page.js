@@ -55,7 +55,7 @@ export default function Home() {
             { name: "CSS", icon: "/icons/css.svg", stars: 5 },
             { name: "Tailwind CSS", icon: "/icons/tailwind.svg", stars: 4 },
             { name: "Golang", icon: "/icons/golang.svg", stars: 2 },
-            { name: "JavaScript", icon: "/icons/javascript.png", stars: 5 },
+            { name: "JavaScript", icon: "/icons/javascript.png", stars: 4 },
             { name: "PHP", icon: "/icons/php.svg", stars: 5 },
             { name: "MySQL", icon: "/icons/mysql.svg", stars: 5 },
             { name: "CodeIgniter 4", icon: "/icons/codeigniter.svg", stars: 5 },
