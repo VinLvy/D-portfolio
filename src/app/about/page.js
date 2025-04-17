@@ -299,12 +299,17 @@ export default function About() {
           </section>
 
           {/* Interests */}
-          <section id="interests" className="mb-25 max-w-2xl text-left">
+          <section id="interests" className="mb-30 max-w-2xl text-left">
             <h2 className="text-2xl font-semibold mb-3 text-purple-300">Interests</h2>
             <p className="text-gray-300">
-              UI/UX Design, Open Source Contribution, Learning New Technologies, Traveling
+              I have a deep interest in exploring the ever-evolving world of technology. I&apos;m particularly passionate about UI/UX design, as I enjoy crafting intuitive and engaging user experiences. I&apos;m also an avid supporter of open-source projects and enjoy contributing to collaborative development communities.
+              <br /><br />
+              Beyond that, I’m fascinated by emerging technologies such as blockchain, Web3, artificial intelligence (AI), and cryptocurrency. I believe these innovations are reshaping the future of the digital world, and I love diving into resources and discussions that help me understand them better.
+              <br /><br />
+              In addition to software development, I’ve always had a strong appreciation for the gaming industry — both from a player and a developer perspective. The intersection of creativity and technology in game development truly inspires me. Outside of tech, I enjoy traveling to experience new cultures and gain fresh perspectives that fuel my creativity and growth.
             </p>
           </section>
+
         </div>
       </div>
     </div>
