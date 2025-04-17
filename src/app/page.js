@@ -104,7 +104,7 @@ export default function Home() {
       <div className="mt-24 max-w-2xl mx-auto text-center mb-16">
         <h2 className="text-4xl font-semibold mb-6 text-white">How to Contact Me</h2>
         <p className="text-gray-400 mb-8">
-          I'm always open to connect and collaborate. Whether it's about tech, design, or just a friendly chat — feel free to reach out!
+          I&apos;m always open to connect and collaborate. Whether it&apos;s about tech, design, or just a friendly chat — feel free to reach out!
         </p>
         <div className="flex justify-center flex-wrap gap-x-8 gap-y-6 text-gray-300">
           {[
