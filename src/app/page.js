@@ -48,7 +48,10 @@ export default function Home() {
 
       {/* Tech Stack Section */}
       <div className="mt-24">
-        <h2 className="text-4xl font-semibold mb-8">Tech Stack</h2>
+        <h2 className="text-4xl font-semibold mb-5">Tech Stack</h2>
+        <p className="text-gray-400 mb-8">
+          These are some of the technologies I use to build applications and websites.
+        </p>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-gray-300 justify-center">
           {[
             { name: "HTML", icon: "/icons/html.svg", stars: 5 },
