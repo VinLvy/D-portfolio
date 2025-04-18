@@ -105,7 +105,7 @@ export default function Home() {
 
       {/* How to Contact Me */}
       <div className="mt-24 max-w-2xl mx-auto text-center mb-16">
-        <h2 className="text-4xl font-semibold mb-6 text-white">How to Contact Me</h2>
+        <h2 className="text-4xl font-semibold mb-5 text-white">How to Contact Me</h2>
         <p className="text-gray-400 mb-8">
           I&apos;m always open to connect and collaborate. Whether it&apos;s about tech, design, or just a friendly chat — feel free to reach out!
         </p>
