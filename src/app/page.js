@@ -1,11 +1,15 @@
 'use client';
 
+import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 export default function Home() {
+  const techStackRef = useRef(null);
+  const isInView = useInView(techStackRef, { once: true });
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -56,7 +60,7 @@ export default function Home() {
         </div>
 
         {/* Tech Stack Section */}
-        <div className="mt-24">
+        <div ref={techStackRef} className="mt-24">
           <h2 className="text-4xl font-semibold mb-5">Tech Stack</h2>
           <p className="text-gray-400 mb-8">
             These are some of the technologies I use to build applications and websites.
@@ -101,8 +105,8 @@ export default function Home() {
                 key={index}
                 className="flex flex-col items-center bg-gray-900/50 backdrop-blur-lg bg-opacity-50 p-6 rounded-lg w-40 h-48"
                 initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: index * 0.2, duration: 0.5 }}
               >
                 <div className="w-16 h-16 flex items-center justify-center mb-3">
                   {typeof tech.icon === "string" ? (
