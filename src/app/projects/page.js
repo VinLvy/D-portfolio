@@ -1,4 +1,7 @@
+'use client';
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -20,19 +23,36 @@ const projects = [
 
 export default function Projects() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-6 py-12 text-center">
-      <h1 className="text-4xl font-bold text-white mb-8">My Projects</h1>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 w-full max-w-4xl">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="flex flex-col items-center justify-center min-h-screen px-6 py-12 text-center"
+    >
+      <h1 className="text-4xl md:text-5xl font-bold text-white mb-12">My Projects</h1>
+      
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 w-full max-w-6xl">
         {projects.map((project, index) => (
-          <div key={index} className="bg-gray-800 p-6 rounded-lg shadow-md text-left">
-            <h2 className="text-2xl font-semibold text-white">{project.title}</h2>
-            <p className="text-gray-300 mt-2">{project.description}</p>
-            <Link href={project.link} className="text-blue-400 hover:underline mt-4 inline-block">
+          <motion.div
+            key={index}
+            className="bg-gray-900 border border-gray-700 hover:border-purple-500 p-6 rounded-2xl shadow-md hover:shadow-purple-900/30 transition-all duration-300 group"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.2, duration: 0.5 }}
+          >
+            <h2 className="text-2xl font-semibold text-white mb-2 group-hover:text-purple-400 transition-colors duration-300">
+              {project.title}
+            </h2>
+            <p className="text-gray-400 mb-4">{project.description}</p>
+            <Link
+              href={project.link}
+              className="inline-flex items-center gap-1 text-purple-400 font-medium hover:underline hover:gap-2 transition-all duration-300"
+            >
               View Project →
             </Link>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
