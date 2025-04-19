@@ -17,7 +17,7 @@ export default function Home() {
       transition={{ duration: 0.5 }}
       className="min-h-screen"
     >
-      <div className="flex flex-col items-center justify-center min-h-screen px-6 py-12 text-center mt-24">
+      <div className="flex flex-col items-center justify-center min-h-screen px-6 py-12 text-center mt-12 md:mt-24">
         {/* Foto Profil dengan Link ke About */}
         <div className="flex justify-center">
           <Link href="/about">
