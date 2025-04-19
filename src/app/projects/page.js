@@ -32,7 +32,7 @@ export default function Projects() {
       transition={{ duration: 0.6 }}
       className="flex flex-col items-center justify-center min-h-screen px-6 py-12"
     >
-      <h1 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">
+      <h1 className="text-4xl md:text-5xl mt-15 md:mt-30 font-bold text-white mb-12 text-center">
         My Projects
       </h1>
 
