@@ -29,7 +29,7 @@ export default function Projects() {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.5 }}
       className="flex flex-col items-center justify-center min-h-screen px-6 py-12"
     >
       <h1 className="text-4xl md:text-5xl mt-15 md:mt-30 font-bold text-white mb-12 text-center">
@@ -43,9 +43,8 @@ export default function Projects() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2, duration: 0.5 }}
-            className={`flex flex-col md:flex-row ${
-              index % 2 !== 0 ? "md:flex-row-reverse" : ""
-            } items-stretch bg-gray-900 border border-gray-700 hover:border-purple-500 rounded-2xl overflow-hidden shadow-md hover:shadow-purple-900/30 transition-all duration-300 max-w-4xl w-full mx-auto`}
+            className={`flex flex-col md:flex-row ${index % 2 !== 0 ? "md:flex-row-reverse" : ""
+              } items-stretch bg-gray-900/50 border border-gray-700 hover:border-purple-500 rounded-2xl overflow-hidden shadow-md hover:shadow-purple-900/30 transition-all duration-300 max-w-4xl w-full mx-auto backdrop-blur-md`}
           >
             <div className="w-full md:w-1/2 h-60 md:h-auto">
               <img
@@ -63,7 +62,7 @@ export default function Projects() {
               </div>
               <Link
                 href={project.link}
-                className="inline-flex items-center gap-1 text-purple-400 font-medium hover:underline hover:gap-2 transition-all duration-300"
+                className="inline-block w-fit px-5 py-2 rounded-full bg-purple-600 text-white font-medium shadow-md hover:bg-purple-700 transition-all duration-300"
               >
                 View Project →
               </Link>
