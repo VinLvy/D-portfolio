@@ -37,7 +37,7 @@ export default function About() {
       transition={{ duration: 0.5 }}
       className="min-h-screen"
     >
-      <div className="flex min-h-screen mt-30 text-white px-4 sm:px-6 lg:px-20">
+      <div className="flex min-h-screen mt-15 md:mt-30 text-white px-4 sm:px-6 lg:px-20">
         {/* Sidebar */}
         <aside className="hidden md:flex flex-col space-y-4 pr-10 sticky top-55 h-fit text-left relative">
           <span className="absolute top-30 right-0 translate-x-15 -translate-y-1/2 h-100 w-px bg-white/20"></span>
