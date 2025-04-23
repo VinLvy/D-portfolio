@@ -46,13 +46,14 @@ export default function Projects() {
             className={`flex flex-col md:flex-row ${index % 2 !== 0 ? "md:flex-row-reverse" : ""
               } items-stretch bg-gray-900/50 border border-gray-700 hover:border-purple-500 rounded-2xl overflow-hidden shadow-md hover:shadow-purple-900/30 transition-all duration-300 max-w-4xl w-full mx-auto backdrop-blur-md`}
           >
-            <div className="w-full md:w-1/2 h-60 md:h-auto">
+            <div className="w-full md:w-1/2 flex items-center justify-center p-4">
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-full object-cover"
+                className="max-w-full h-auto rounded-xl shadow-sm"
               />
             </div>
+
             <div className="p-6 flex flex-col justify-between md:w-1/2 text-center md:text-left">
               <div>
                 <h2 className="text-2xl font-semibold text-white mb-2 transition-colors duration-300">
