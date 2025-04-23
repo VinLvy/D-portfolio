@@ -8,19 +8,19 @@ const projects = [
     title: "Landing Page",
     description: "A responsive landing page built with Next.js and Tailwind CSS.",
     link: "#",
-    image: "/images/portfolio.jpg",
+    image: "/images/project1.png",
   },
   {
     title: "Point of Sale System",
     description: "A web-based point of sale system for managing sales and inventory.",
     link: "#",
-    image: "/images/task.jpg",
+    image: "/images/project2.png",
   },
   {
     title: "Company Website",
     description: "A corporate website showcasing services and portfolio.",
     link: "#",
-    image: "/images/ecommerce.jpg",
+    image: "/images/project3.png",
   },
 ];
 
