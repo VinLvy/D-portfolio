@@ -7,19 +7,19 @@ const projects = [
   {
     title: "Landing Page",
     description: "A modern and responsive landing page built with Next.js and Tailwind CSS, optimized for performance and user engagement.",
-    link: "#",
+    link: "https://github.com/VinLvy/Landing-page",
     image: "/images/project1.png",
   },
   {
     title: "Point of Sale (POS) System",
     description: "A web-based Point of Sale (POS) system designed to streamline sales, manage inventory, and generate real-time reports for small to medium businesses.",
-    link: "#",
+    link: "https://github.com/VinLvy/Point-of-Saless",
     image: "/images/project2.png",
   },
   {
     title: "Company Profile Website",
     description: "A professional company profile website that highlights the organization’s services, projects, and brand identity, tailored for both desktop and mobile viewing.",
-    link: "#",
+    link: "https://github.com/VinLvy/Web-Competent",
     image: "/images/project3.png",
   },
 ];
@@ -45,7 +45,7 @@ export default function Projects() {
             key={index}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.2, duration: 0.5 }}
+            transition={{ delay: index * 0.2, duration: 0.1 }}
             className={`flex flex-col md:flex-row ${index % 2 !== 0 ? "md:flex-row-reverse" : ""}
             items-stretch bg-gray-900/50 border border-gray-700 hover:border-purple-500 rounded-2xl overflow-hidden shadow-md hover:shadow-purple-900/30 transition-all duration-300 max-w-5xl w-full mx-auto backdrop-blur-md p-4 md:p-6`}
           >
