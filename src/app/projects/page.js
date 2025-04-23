@@ -6,19 +6,19 @@ import { motion } from "framer-motion";
 const projects = [
   {
     title: "Landing Page",
-    description: "A responsive landing page built with Next.js and Tailwind CSS.",
+    description: "A modern and responsive landing page built with Next.js and Tailwind CSS, optimized for performance and user engagement.",
     link: "#",
     image: "/images/project1.png",
   },
   {
-    title: "Point of Sale System",
-    description: "A web-based point of sale system for managing sales and inventory.",
+    title: "Point of Sale (POS) System",
+    description: "A web-based Point of Sale (POS) system designed to streamline sales, manage inventory, and generate real-time reports for small to medium businesses.",
     link: "#",
     image: "/images/project2.png",
   },
   {
-    title: "Company Website",
-    description: "A corporate website showcasing services and portfolio.",
+    title: "Company Profile Website",
+    description: "A professional company profile website that highlights the organization’s services, projects, and brand identity, tailored for both desktop and mobile viewing.",
     link: "#",
     image: "/images/project3.png",
   },
