@@ -32,11 +32,11 @@ export default function Projects() {
       transition={{ duration: 0.5 }}
       className="flex flex-col items-center justify-center min-h-screen px-6 py-12"
     >
-      <h1 className="text-4xl md:text-5xl mt-15 md:mt-30 font-bold text-white mb-12 text-center">
+      <h1 className="text-4xl md:text-4xl mt-15 md:mt-30 font-bold text-white mb-12 text-center">
         My Projects
       </h1>
 
-      <div className="flex flex-col gap-12 w-full">
+      <div className="flex flex-col gap-12 w-full mb-15">
         {projects.map((project, index) => (
           <motion.div
             key={index}
