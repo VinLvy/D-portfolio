@@ -5,20 +5,20 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "Portfolio Website",
-    description: "A personal portfolio website built with Next.js and Tailwind CSS.",
+    title: "Landing Page",
+    description: "A responsive landing page built with Next.js and Tailwind CSS.",
     link: "#",
     image: "/images/portfolio.jpg",
   },
   {
-    title: "Task Manager App",
-    description: "A to-do list application with project organization and local storage support.",
+    title: "Point of Sale System",
+    description: "A web-based point of sale system for managing sales and inventory.",
     link: "#",
     image: "/images/task.jpg",
   },
   {
-    title: "E-Commerce Platform",
-    description: "An online store built with Next.js, integrating payment and authentication.",
+    title: "Company Website",
+    description: "A corporate website showcasing services and portfolio.",
     link: "#",
     image: "/images/ecommerce.jpg",
   },
