@@ -32,9 +32,12 @@ export default function Projects() {
       transition={{ duration: 0.5 }}
       className="flex flex-col items-center justify-center min-h-screen px-6 py-12"
     >
-      <h1 className="text-4xl md:text-4xl mt-15 md:mt-30 font-bold text-white mb-12 text-center">
+      <h1 className="text-4xl md:text-4xl mt-8 md:mt-24 font-bold text-white mb-4 text-center">
         My Projects
       </h1>
+      <p className="text-gray-400 text-lg md:text-l mb-12 text-center max-w-2xl mx-auto">
+        A curated selection of personal and professional projects I've built using modern web technologies like Next.js and Tailwind CSS.
+      </p>
 
       <div className="flex flex-col gap-12 w-full mb-15">
         {projects.map((project, index) => (
