@@ -54,9 +54,9 @@ export default function Projects() {
               />
             </div>
 
-            <div className="p-6 flex flex-col justify-between md:w-1/2 text-center md:text-left">
+            <div className="p-6 flex flex-col justify-between md:w-1/2 text-center md:text-left items-center md:items-start">
               <div>
-                <h2 className="text-2xl font-semibold text-white mb-2 transition-colors duration-300">
+                <h2 className="text-2xl font-semibold text-white mb-3 transition-colors duration-300">
                   {project.title}
                 </h2>
                 <p className="text-gray-400 mb-4">{project.description}</p>
