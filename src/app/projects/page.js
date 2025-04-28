@@ -39,7 +39,7 @@ export default function Projects() {
         A curated selection of personal and professional projects I've built using modern web technologies like Next.js and Tailwind CSS.
       </p>
 
-      <div className="flex flex-col gap-12 w-full mb-15">
+      <div className="flex flex-col gap-12 w-full mb-5">
         {projects.map((project, index) => (
           <motion.div
             key={index}
@@ -76,7 +76,7 @@ export default function Projects() {
       </div>
 
       {/* Bagian penutup setelah daftar project */}
-      <div className="mt-20 text-center">
+      <div className="mt-20 text-center mb-15">
         <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
           More Projects Coming Soon
         </h2>
