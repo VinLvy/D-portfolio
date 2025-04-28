@@ -74,6 +74,17 @@ export default function Projects() {
           </motion.div>
         ))}
       </div>
+
+      {/* Bagian penutup setelah daftar project */}
+      <div className="mt-20 text-center">
+        <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+          More Projects Coming Soon
+        </h2>
+        <p className="text-md text-gray-400 max-w-xl mx-auto leading-relaxed">
+          I'm constantly learning, building, and exploring new technologies. Stay tuned for exciting new projects that push the boundaries of modern web development — and beyond.
+        </p>
+      </div>
+
     </motion.div>
   );
 }
