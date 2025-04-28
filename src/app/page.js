@@ -34,7 +34,7 @@ export default function Home() {
 
         {/* Nama dan Deskripsi */}
         <h1 className="text-4xl font-bold mb-4 mt-4">Davin P F</h1>
-        <p className="text-lg text-gray-300 max-w-xl md:max-w-2xl text-center mx-auto">
+        <p className="text-lg text-gray-700 dark:text-gray-300 max-w-xl md:max-w-2xl text-center mx-auto">
           <span className="text-purple-400 font-semibold">Full-Stack Developer</span> — passionate about building modern web applications. Experienced in PHP programming and currently diving deeper into JavaScript development. I’m also highly interested in decentralized technologies and actively exploring the world of Web3.
         </p>
 
@@ -62,10 +62,10 @@ export default function Home() {
         {/* Tech Stack Section */}
         <div ref={techStackRef} className="mt-24">
           <h2 className="text-4xl font-semibold mb-5">Tech Stack</h2>
-          <p className="text-gray-400 mb-8">
+          <p className="text-gray-700 dark:text-gray-400 mb-8">
             These are some of the technologies I use to build applications and websites.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-gray-300 justify-center">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-gray-200 justify-center">
             {[
               { name: "HTML", icon: "/icons/html.svg", stars: 5 },
               { name: "CSS", icon: "/icons/css.svg", stars: 5 },
@@ -103,7 +103,7 @@ export default function Home() {
             ].map((tech, index) => (
               <motion.div
                 key={index}
-                className="flex flex-col items-center bg-gray-900/50 backdrop-blur-lg bg-opacity-50 p-6 rounded-lg w-40 h-48"
+                className="flex flex-col items-center bg-gray-700/50 backdrop-blur-lg bg-opacity-50 p-6 rounded-lg w-40 h-48"
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: index * 0.2, duration: 0.5 }}
@@ -124,11 +124,11 @@ export default function Home() {
 
         {/* How to Contact Me */}
         <div className="mt-24 max-w-2xl mx-auto text-center mb-16">
-          <h2 className="text-4xl font-semibold mb-5 text-white">How to Contact Me</h2>
-          <p className="text-gray-400 mb-8">
+          <h2 className="text-4xl font-semibold mb-5">How to Contact Me</h2>
+          <p className="text-gray-700 dark:text-gray-400 mb-8">
             I&apos;m always open to connect and collaborate. Whether it&apos;s about tech, design, or just a friendly chat — feel free to reach out!
           </p>
-          <div className="flex justify-center flex-wrap gap-x-8 gap-y-6 text-gray-300">
+          <div className="flex justify-center flex-wrap gap-x-8 gap-y-6 dark:text-gray-300">
             {[
               { name: "Instagram", icon: "bi bi-instagram", link: "https://instagram.com/davin.fbrn" },
               { name: "Facebook", icon: "bi bi-facebook", link: "https://facebook.com/davin.fbrn" },
@@ -144,7 +144,7 @@ export default function Home() {
                 className="w-24 group flex flex-col items-center text-2xl transition-all duration-300 hover:text-purple-400"
               >
                 <i className={`${contact.icon} text-4xl mb-1 group-hover:scale-110 group-hover:drop-shadow-md transition-transform duration-300`}></i>
-                <span className="text-sm text-gray-400 group-hover:text-purple-300 text-center">{contact.name}</span>
+                <span className="text-sm text-gray-555 dark:text-gray-400 group-hover:text-purple-300 text-center">{contact.name}</span>
               </Link>
             ))}
           </div>
