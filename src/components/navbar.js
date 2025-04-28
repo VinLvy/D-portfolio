@@ -10,7 +10,7 @@ export default function Navbar() {
   return (
     <nav className="fixed bottom-0 sm:top-0 sm:bottom-auto w-full z-50 flex items-center justify-between sm:px-6 sm:py-3 px-4 py-2">
       {/* Kiri (hanya desktop) */}
-      <div className="hidden sm:block text-white text-xl font-bold tracking-widest font-mono">
+      <div className="hidden sm:block text-xl font-bold tracking-widest font-mono">
         D PORTFOLIO
       </div>
 
@@ -22,7 +22,7 @@ export default function Navbar() {
       </div>
 
       {/* Kanan (hanya desktop) */}
-      <div className="hidden sm:block text-white text-xl font-bold tracking-widest font-mono">
+      <div className="hidden sm:block text-xl font-bold tracking-widest font-mono">
         DAVIN P F
       </div>
     </nav>
