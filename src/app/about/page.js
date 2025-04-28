@@ -96,7 +96,7 @@ export default function About() {
             <section id="about" className="mb-15">
               <h2 className="text-3xl font-semibold mb-4 text-purple-300">About Me</h2>
               <p className="text-lg text-gray-300 leading-relaxed">
-                I&apos;m a <span className="text-purple-400 font-semibold">Full-Stack Developer</span> who is passionate about creating modern, user-friendly web applications. I have solid experience in PHP and am currently deepening my understanding of JavaScript and frameworks like React and Next.js. I&apos;m always eager to learn and explore new technologies to improve my craft.
+                I&apos;m a <span className="text-purple-400 font-semibold">Full-Stack Developer</span> who is passionate about creating modern, user-friendly web applications. I have solid experience in PHP and am currently deepening my understanding of JavaScript and frameworks like React and Next.js. I&apos;m always eager to learn and explore new technologies to improve my craft, and lately, I&apos;ve developed a strong interest in Web3, blockchain, and decentralized application development.
               </p>
             </section>
 
