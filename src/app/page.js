@@ -34,8 +34,8 @@ export default function Home() {
 
         {/* Nama dan Deskripsi */}
         <h1 className="text-4xl font-bold mb-4 mt-4">Davin P F</h1>
-        <p className="text-lg text-gray-300 max-w-lg">
-          <span className="text-purple-400 font-semibold">Full-Stack Developer</span> | Passionate about building modern web applications. Experienced with PHP programming language and currently diving deeper into JavaScript.
+        <p className="text-lg text-gray-300 max-w-xl md:max-w-2xl text-center mx-auto">
+          <span className="text-purple-400 font-semibold">Full-Stack Developer</span> — passionate about building modern web applications. Experienced in PHP programming and currently diving deeper into JavaScript development. I’m also highly interested in decentralized technologies and actively exploring the world of Web3.
         </p>
 
         {/* CTA Button */}
