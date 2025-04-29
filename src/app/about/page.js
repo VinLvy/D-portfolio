@@ -145,7 +145,7 @@ export default function About() {
                   ].map((tech, index) => (
                     <div
                       key={index}
-                      className="flex flex-col items-center bg-gray-800/55 p-8 rounded-2xl min-w-[150px] shadow-lg border-2 border-amber-500"
+                      className="flex flex-col items-center bg-gray-600/55 dark:bg-gray-800/55 p-8 rounded-2xl min-w-[150px] shadow-lg border-2 border-amber-500"
                     >
                       <div className="w-20 h-20 flex items-center justify-center mb-4">
                         {typeof tech.icon === "string" ? (
@@ -185,7 +185,7 @@ export default function About() {
                   ].map((tech, index) => (
                     <div
                       key={index}
-                      className="flex flex-col items-center bg-gray-800/55 p-8 rounded-2xl min-w-[150px] shadow-lg border-2 border-rose-500"
+                      className="flex flex-col items-center bg-gray-600/55 dark:bg-gray-800/55 p-8 rounded-2xl min-w-[150px] shadow-lg border-2 border-rose-500"
                     >
                       <div className="w-20 h-20 flex items-center justify-center mb-4">
                         <Image
@@ -217,7 +217,7 @@ export default function About() {
                   ].map((tech, index) => (
                     <div
                       key={index}
-                      className="flex flex-col items-center bg-gray-800/55 p-8 rounded-2xl min-w-[150px] shadow-lg border-2 border-cyan-500"
+                      className="flex flex-col items-center bg-gray-600/55 dark:bg-gray-800/55 p-8 rounded-2xl min-w-[150px] shadow-lg border-2 border-cyan-500"
                     >
                       <div className="w-20 h-20 flex items-center justify-center mb-4">
                         <Image
@@ -251,7 +251,7 @@ export default function About() {
                   ].map((tech, index) => (
                     <div
                       key={index}
-                      className="flex flex-col items-center bg-gray-800/55 p-8 rounded-2xl min-w-[150px] shadow-lg border-2 border-purple-500"
+                      className="flex flex-col items-center bg-gray-600/55 dark:bg-gray-800/55 p-8 rounded-2xl min-w-[150px] shadow-lg border-2 border-purple-500"
                     >
                       <div className="w-20 h-20 flex items-center justify-center mb-4">
                         <Image
