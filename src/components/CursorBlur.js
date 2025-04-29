@@ -23,7 +23,7 @@ export default function CursorBlur() {
       style={{ zIndex: -1 }}
     >
       <div
-        className="absolute w-100 h-100 bg-blue-500/30 blur-3xl rounded-full transition-transform duration-10"
+        className="absolute w-100 h-100 bg-blue-500/50 blur-3xl rounded-full transition-transform duration-10"
         style={{
           transform: `translate(${position.x - 200}px, ${position.y - 200}px)`,
         }}
