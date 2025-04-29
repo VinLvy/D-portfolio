@@ -1,5 +1,6 @@
 'use client';
 
+import { Rocket } from 'lucide-react';
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -80,6 +81,11 @@ export default function Projects() {
 
       {/* Bagian penutup setelah daftar project */}
       <div className="mt-20 text-center mb-15">
+        <div className="flex justify-center mb-6">
+          <div className="bg-purple-600 p-4 rounded-full shadow-lg animate-bounce">
+            <Rocket className="text-white w-8 h-8" />
+          </div>
+        </div>
         <h2 className="text-2xl md:text-3xl font-bold text-black dark:text-white mb-4">
           More Projects Coming Soon
         </h2>
