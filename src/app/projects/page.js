@@ -65,7 +65,7 @@ export default function Projects() {
                 <h2 className="text-2xl font-semibold text-white mb-3 transition-colors duration-300">
                   {project.title}
                 </h2>
-                <p className="text-gray-300 dark:text-gray-400 mb-4">{project.description}</p>
+                <p className="text-gray-200 dark:text-gray-400 mb-4">{project.description}</p>
               </div>
               <Link
                 href={project.link}
