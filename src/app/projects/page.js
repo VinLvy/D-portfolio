@@ -1,5 +1,6 @@
 'use client';
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -36,7 +37,7 @@ export default function Projects() {
         My Projects
       </h1>
       <p className="text-gray-400 text-lg md:text-l mb-12 text-center max-w-2xl mx-auto">
-        A curated selection of personal and professional projects I've built using modern web technologies like Next.js and Tailwind CSS.
+        A curated selection of personal and professional projects I&apos;ve built using modern web technologies like Next.js and Tailwind CSS.
       </p>
 
       <div className="flex flex-col gap-12 w-full mb-5">
@@ -50,9 +51,11 @@ export default function Projects() {
             items-stretch bg-gray-900/50 border border-gray-700 hover:border-purple-500 rounded-2xl overflow-hidden shadow-md hover:shadow-purple-900/30 transition-all duration-300 max-w-5xl w-full mx-auto backdrop-blur-md p-4 md:p-6`}
           >
             <div className="w-full md:w-1/2 flex items-center justify-center p-4">
-              <img
+              <Image
                 src={project.image}
                 alt={project.title}
+                width={600}
+                height={444}
                 className="max-w-full h-auto rounded-xl shadow-sm"
               />
             </div>
@@ -81,7 +84,7 @@ export default function Projects() {
           More Projects Coming Soon
         </h2>
         <p className="text-md text-gray-400 max-w-xl mx-auto leading-relaxed">
-          I'm constantly learning, building, and exploring new technologies. Stay tuned for exciting new projects that push the boundaries of modern web development — and beyond.
+          I&apos;m constantly learning, building, and exploring new technologies. Stay tuned for exciting new projects that push the boundaries of modern web development — and beyond.
         </p>
       </div>
 
