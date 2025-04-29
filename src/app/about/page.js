@@ -40,7 +40,7 @@ export default function About() {
       <div className="flex min-h-screen mt-15 md:mt-30 text-white px-4 sm:px-6 lg:px-20">
         {/* Sidebar */}
         <aside className="hidden md:flex flex-col space-y-4 pr-10 sticky top-55 h-fit text-left relative">
-          <span className="absolute top-30 right-0 translate-x-15 -translate-y-1/2 h-100 w-px dark:bg-white/20 bg-black/50"></span>
+          <span className="absolute top-30 right-0 translate-x-15 -translate-y-1/2 h-100 w-px dark:bg-white/30 bg-black/50"></span>
           {[
             { href: "#about", label: "About Me" },
             { href: "#skills", label: "Skills" },
@@ -82,34 +82,34 @@ export default function About() {
 
             {/* Info Pribadi */}
             <div className="space-y-2">
-              <h1 className="text-4xl font-extrabold text-purple-400 font-sans">Davin Putra Fibrian</h1>
-              <p className="text-lg font-medium text-gray-200 font-mono">Age: <span className="text-white">18</span></p>
-              <p className="text-lg font-medium text-gray-200 font-mono">Date of Birth: <span className="text-white">31 May 2006</span></p>
+              <h1 className="text-4xl font-extrabold text-purple-800 dark:text-purple-400 font-sans">Davin Putra Fibrian</h1>
+              <p className="text-lg font-medium text-gray-800 dark:text-gray-200 font-mono">Age: <span className="text-gray-800 dark:text-white">18</span></p>
+              <p className="text-lg font-medium text-gray-800 dark:text-gray-200 font-mono">Date of Birth: <span className="text-gray-800 dark:text-white">31 May 2006</span></p>
             </div>
           </div>
 
-          <div className="border-t border-white opacity-30 w-full max-w-3xl my-10"></div>
+          <div className="border-t border-black dark:border-white opacity-30 w-full max-w-3xl my-10"></div>
 
           {/* Wrapper Utama */}
           <div className="w-full max-w-3xl mx-auto">
             {/* About */}
             <section id="about" className="mb-15">
-              <h2 className="text-3xl font-semibold mb-4 text-purple-300">About Me</h2>
-              <p className="text-lg text-gray-300 leading-relaxed">
-                I&apos;m a <span className="text-purple-400 font-semibold">Full-Stack Developer</span> who is passionate about creating modern, user-friendly web applications. I have solid experience in PHP and am currently deepening my understanding of JavaScript and frameworks like React and Next.js. I&apos;m always eager to learn and explore new technologies to improve my craft, and lately, I&apos;ve developed a strong interest in Web3, blockchain, and decentralized application development.
+              <h2 className="text-3xl font-semibold mb-4 text-purple-700 dark:text-purple-300">About Me</h2>
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                I&apos;m a <span className="text-purple-600 dark:text-purple-400 font-semibold">Full-Stack Developer</span> who is passionate about creating modern, user-friendly web applications. I have solid experience in PHP and am currently deepening my understanding of JavaScript and frameworks like React and Next.js. I&apos;m always eager to learn and explore new technologies to improve my craft, and lately, I&apos;ve developed a strong interest in Web3, blockchain, and decentralized application development.
               </p>
             </section>
 
             {/* Skills */}
             <section id="skills" className="mb-15">
-              <h2 className="text-3xl font-semibold mb-8 text-purple-300">Skills</h2>
+              <h2 className="text-3xl font-semibold mb-8 text-purple-700 dark:text-purple-300">Skills</h2>
 
               {/* Frontend */}
               <div className="mb-10">
-                <h3 className="text-2xl font-semibold text-white mb-6 border-b-4 border-amber-500 inline-block pb-1">
+                <h3 className="text-2xl font-semibold text-black dark:text-white mb-6 border-b-4 border-amber-500 inline-block pb-1">
                   Frontend
                 </h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-gray-300">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-gray-200">
                   {[
                     // { name: "React.js", icon: "/icons/react.svg", stars: 4 },
                     {
@@ -171,10 +171,10 @@ export default function About() {
 
               {/* Backend */}
               <div className="mb-10">
-                <h3 className="text-2xl font-semibold text-white mb-6 border-b-4 border-rose-500 inline-block pb-1">
+                <h3 className="text-2xl font-semibold text-black dark:text-white mb-6 border-b-4 border-rose-500 inline-block pb-1">
                   Backend
                 </h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-gray-300">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-gray-200">
                   {[
                     { name: "PHP", icon: "/icons/php.svg", stars: 5 },
                     // { name: "Node.js", icon: "/icons/nodejs.svg", stars: 4 },
@@ -207,10 +207,10 @@ export default function About() {
 
               {/* Database */}
               <div className="mb-10">
-                <h3 className="text-2xl font-semibold text-white mb-6 border-b-4 border-cyan-500 inline-block pb-1">
+                <h3 className="text-2xl font-semibold text-black dark:text-white mb-6 border-b-4 border-cyan-500 inline-block pb-1">
                   Database
                 </h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-gray-300">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-gray-200">
                   {[
                     { name: "MySQL", icon: "/icons/mysql.svg", stars: 5 },
                     // { name: "MongoDB", icon: "/icons/mongodb.svg", stars: 4 },
@@ -239,10 +239,10 @@ export default function About() {
 
               {/* Tools */}
               <div className="mb-10">
-                <h3 className="text-2xl font-semibold text-white mb-6 border-b-4 border-purple-500 inline-block pb-1">
+                <h3 className="text-2xl font-semibold text-black dark:text-white mb-6 border-b-4 border-purple-500 inline-block pb-1">
                   Tools
                 </h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-gray-300">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-gray-200">
                   {[
                     { name: "Github", icon: "/icons/github.png", stars: 5 },
                     { name: "Git", icon: "/icons/icons8-git.svg", stars: 3 },
@@ -274,15 +274,15 @@ export default function About() {
 
             {/* Experience */}
             <section id="experience" className="mb-15 max-w-2xl text-left">
-              <h2 className="text-2xl font-semibold mb-3 text-purple-300">Experience</h2>
+              <h2 className="text-2xl font-semibold mb-3 text-purple-700 dark:text-purple-300">Experience</h2>
 
               <div className="mb-4">
-                <h3 className="text-lg font-bold flex items-center gap-2">
+                <h3 className="text-lg font-bold text-black dark:text-white flex items-center gap-2">
                   <span className="text-purple-400 text-xl">•</span>
                   Fullstack Web Developer - Internship at Elecomp Indonesia
                 </h3>
-                <p className="text-sm text-gray-400 ml-4 mt-1">2024 - 2025</p>
-                <p className="text-gray-300 ml-4 mt-2">
+                <p className="text-sm text-gray-600 dark:text-gray-400 ml-4 mt-1">2024 - 2025</p>
+                <p className="text-gray-700 dark:text-gray-300 ml-4 mt-2">
                   Worked on both frontend and backend development, contributing to real-world web applications. Collaborated with a team to build scalable features and maintain code quality.
                   Specialized in developing company profile websites using CodeIgniter 4, focusing on creating responsive and user-friendly designs tailored to client needs.
                 </p>
@@ -292,15 +292,15 @@ export default function About() {
 
             {/* Education */}
             <section id="education" className="mb-15 max-w-2xl text-left">
-              <h2 className="text-2xl font-semibold mb-3 text-purple-300">Education</h2>
+              <h2 className="text-2xl font-semibold mb-3 text-purple-700 dark:text-purple-300">Education</h2>
 
               <div className="mb-4">
-                <h3 className="text-lg font-bold flex items-center gap-2">
+                <h3 className="text-lg text-black dark:text-white font-bold flex items-center gap-2">
                   <span className="text-purple-400 text-xl">•</span>
                   SMKN 1 Boyolangu - Rekayasa Perangkat Lunak
                 </h3>
-                <p className="text-sm text-gray-400 ml-4 mt-1">2022 - 2025</p>
-                <p className="text-gray-300 ml-4 mt-2">
+                <p className="text-sm text-gray-600 dark:text-gray-400 ml-4 mt-1">2022 - 2025</p>
+                <p className="text-gray-700 dark:text-gray-300 ml-4 mt-2">
                   Focused on software engineering fundamentals, including web development, database design, and programming languages. Participated in practical projects and developed skills in building dynamic and responsive web applications.
                 </p>
               </div>
@@ -308,8 +308,8 @@ export default function About() {
 
             {/* Interests */}
             <section id="interests" className="mb-30 max-w-2xl text-left">
-              <h2 className="text-2xl font-semibold mb-3 text-purple-300">Interests</h2>
-              <p className="text-gray-300">
+              <h2 className="text-2xl font-semibold mb-3 text-purple-700 dark:text-purple-300">Interests</h2>
+              <p className="text-gray-700 dark:text-gray-300">
                 I have a deep interest in exploring the ever-evolving world of technology. I&apos;m particularly passionate about UI/UX design, as I enjoy crafting intuitive and engaging user experiences. I&apos;m also an avid supporter of open-source projects and enjoy contributing to collaborative development communities.
                 <br /><br />
                 Beyond that, I’m fascinated by emerging technologies such as blockchain, Web3, artificial intelligence (AI), and cryptocurrency. I believe these innovations are reshaping the future of the digital world, and I love diving into resources and discussions that help me understand them better.
