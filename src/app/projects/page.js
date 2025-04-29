@@ -33,10 +33,10 @@ export default function Projects() {
       transition={{ duration: 0.5 }}
       className="flex flex-col items-center justify-center min-h-screen px-6 py-12"
     >
-      <h1 className="text-4xl md:text-4xl mt-8 md:mt-24 font-bold text-white mb-4 text-center">
+      <h1 className="text-4xl md:text-4xl mt-8 md:mt-24 font-bold text-black dark:text-white mb-4 text-center">
         My Projects
       </h1>
-      <p className="text-gray-400 text-lg md:text-l mb-12 text-center max-w-2xl mx-auto">
+      <p className="text-gray-700 dark:text-gray-400 text-lg md:text-l mb-12 text-center max-w-2xl mx-auto">
         A curated selection of personal and professional projects I&apos;ve built using modern web technologies like Next.js and Tailwind CSS.
       </p>
 
@@ -48,7 +48,7 @@ export default function Projects() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2, duration: 0.1 }}
             className={`flex flex-col md:flex-row ${index % 2 !== 0 ? "md:flex-row-reverse" : ""}
-            items-stretch bg-gray-900/50 border border-gray-700 hover:border-purple-500 rounded-2xl overflow-hidden shadow-md hover:shadow-purple-900/30 transition-all duration-300 max-w-5xl w-full mx-auto backdrop-blur-md p-4 md:p-6`}
+            items-stretch bg-gray-600/50 dark:bg-gray-900/50 border border-gray-700 hover:border-purple-500 rounded-2xl overflow-hidden shadow-md hover:shadow-purple-900/30 transition-all duration-300 max-w-5xl w-full mx-auto backdrop-blur-md p-4 md:p-6`}
           >
             <div className="w-full md:w-1/2 flex items-center justify-center p-4">
               <Image
@@ -65,7 +65,7 @@ export default function Projects() {
                 <h2 className="text-2xl font-semibold text-white mb-3 transition-colors duration-300">
                   {project.title}
                 </h2>
-                <p className="text-gray-400 mb-4">{project.description}</p>
+                <p className="text-gray-300 dark:text-gray-400 mb-4">{project.description}</p>
               </div>
               <Link
                 href={project.link}
@@ -80,10 +80,10 @@ export default function Projects() {
 
       {/* Bagian penutup setelah daftar project */}
       <div className="mt-20 text-center mb-15">
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+        <h2 className="text-2xl md:text-3xl font-bold text-black dark:text-white mb-4">
           More Projects Coming Soon
         </h2>
-        <p className="text-md text-gray-400 max-w-xl mx-auto leading-relaxed">
+        <p className="text-md text-gray-700 dark:text-gray-400 max-w-xl mx-auto leading-relaxed">
           I&apos;m constantly learning, building, and exploring new technologies. Stay tuned for exciting new projects that push the boundaries of modern web development — and beyond.
         </p>
       </div>
