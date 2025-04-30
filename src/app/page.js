@@ -144,7 +144,7 @@ export default function Home() {
                 className="w-24 group flex flex-col items-center text-2xl transition-all duration-300 hover:text-purple-400"
               >
                 <i className={`${contact.icon} text-4xl mb-1 group-hover:scale-110 group-hover:drop-shadow-md transition-transform duration-300`}></i>
-                <span className="text-sm text-gray-555 dark:text-gray-400 group-hover:text-purple-300 text-center">{contact.name}</span>
+                <span className="text-sm dark:text-gray-400 text-purple-800 dark:group-hover:text-purple-400 text-center">{contact.name}</span>
               </Link>
             ))}
           </div>
