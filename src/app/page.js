@@ -115,7 +115,7 @@ export default function Home() {
                     tech.icon
                   )}
                 </div>
-                <p className="text-lg font-medium text-center">{tech.name}</p>
+                <p className="text-md font-semibold text-center">{tech.name}</p>
                 <p className="text-yellow-400 text-2xl">{"★".repeat(tech.stars)}</p>
               </motion.div>
             ))}
