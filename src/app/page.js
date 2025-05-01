@@ -103,7 +103,7 @@ export default function Home() {
             ].map((tech, index) => (
               <motion.div
                 key={index}
-                className="flex flex-col items-center bg-gray-600/55 dark:bg-gray-700/55 backdrop-blur-lg bg-opacity-50 p-6 rounded-lg w-40 h-48"
+                className="flex flex-col items-center bg-gray-600/60 dark:bg-gray-700/55 backdrop-blur-lg bg-opacity-50 p-6 rounded-lg w-40 h-48"
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: index * 0.2, duration: 0.5 }}
@@ -123,7 +123,7 @@ export default function Home() {
         </div>
 
         {/* How to Contact Me */}
-        <div className="mt-24 max-w-2xl mx-auto text-center mb-16">
+        <div className="mt-24 max-w-2xl mx-auto text-center mb-20">
           <h2 className="text-4xl font-semibold mb-5">How to Contact Me</h2>
           <p className="text-gray-700 dark:text-gray-400 mb-8">
             I&apos;m always open to connect and collaborate. Whether it&apos;s about tech, design, or just a friendly chat — feel free to reach out!
