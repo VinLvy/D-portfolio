@@ -82,9 +82,14 @@ export default function About() {
 
             {/* Info Pribadi */}
             <div className="space-y-2">
-              <h1 className="text-4xl font-extrabold text-purple-800 dark:text-purple-500 font-sans">Davin Putra Fibrian</h1>
-              <p className="text-lg font-medium text-gray-800 dark:text-gray-200 font-mono">Age: <span className="text-gray-800 dark:text-white">18</span></p>
-              <p className="text-lg font-medium text-gray-800 dark:text-gray-200 font-mono">Date of Birth: <span className="text-gray-800 dark:text-white">31 May 2006</span></p>
+              <h1 className="text-4xl font-extrabold text-purple-800 dark:text-purple-500 font-sans mb-4">Davin Putra Fibrian</h1>
+              {/* <p className="text-lg font-medium text-gray-800 dark:text-gray-200 font-mono">Age: <span className="text-gray-800 dark:text-white">18</span></p> */}
+              <p className="text-lg font-medium text-gray-800 dark:text-gray-200 font-mono">
+                Date of Birth: <span className="text-gray-800 dark:text-white">31 May 2006</span>
+              </p>
+              <p className="text-lg font-medium text-gray-800 dark:text-gray-200 font-mono">
+                Location: <span className="text-gray-800 dark:text-white">East Java, Indonesia</span>
+              </p>
             </div>
           </div>
 
