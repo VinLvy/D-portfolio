@@ -82,7 +82,7 @@ export default function About() {
 
             {/* Info Pribadi */}
             <div className="space-y-2">
-              <h1 className="text-4xl font-extrabold text-purple-800 dark:text-purple-400 font-sans">Davin Putra Fibrian</h1>
+              <h1 className="text-4xl font-extrabold text-purple-800 dark:text-purple-500 font-sans">Davin Putra Fibrian</h1>
               <p className="text-lg font-medium text-gray-800 dark:text-gray-200 font-mono">Age: <span className="text-gray-800 dark:text-white">18</span></p>
               <p className="text-lg font-medium text-gray-800 dark:text-gray-200 font-mono">Date of Birth: <span className="text-gray-800 dark:text-white">31 May 2006</span></p>
             </div>
@@ -94,7 +94,7 @@ export default function About() {
           <div className="w-full max-w-3xl mx-auto">
             {/* About */}
             <section id="about" className="mb-15">
-              <h2 className="text-3xl font-semibold mb-4 text-purple-700 dark:text-purple-300">About Me</h2>
+              <h2 className="text-3xl font-semibold mb-4 text-purple-700 dark:text-purple-400">About Me</h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                 I&apos;m a <span className="text-purple-600 dark:text-purple-400 font-semibold">Full-Stack Developer</span> who is passionate about creating modern, user-friendly web applications. I have solid experience in PHP and am currently deepening my understanding of JavaScript and frameworks like React and Next.js. I&apos;m always eager to learn and explore new technologies to improve my craft, and lately, I&apos;ve developed a strong interest in Web3, blockchain, and decentralized application development.
               </p>
@@ -102,7 +102,7 @@ export default function About() {
 
             {/* Skills */}
             <section id="skills" className="mb-15">
-              <h2 className="text-3xl font-semibold mb-8 text-purple-700 dark:text-purple-300">Skills</h2>
+              <h2 className="text-3xl font-semibold mb-8 text-purple-700 dark:text-purple-400">Skills</h2>
 
               {/* Frontend */}
               <div className="mb-10">
@@ -274,7 +274,7 @@ export default function About() {
 
             {/* Experience */}
             <section id="experience" className="mb-15 max-w-2xl text-left">
-              <h2 className="text-2xl font-semibold mb-3 text-purple-700 dark:text-purple-300">Experience</h2>
+              <h2 className="text-2xl font-semibold mb-3 text-purple-700 dark:text-purple-400">Experience</h2>
 
               <div className="mb-4">
                 <h3 className="text-lg font-bold text-black dark:text-white flex items-center gap-2">
@@ -292,7 +292,7 @@ export default function About() {
 
             {/* Education */}
             <section id="education" className="mb-15 max-w-2xl text-left">
-              <h2 className="text-2xl font-semibold mb-3 text-purple-700 dark:text-purple-300">Education</h2>
+              <h2 className="text-2xl font-semibold mb-3 text-purple-700 dark:text-purple-400">Education</h2>
 
               <div className="mb-4">
                 <h3 className="text-lg text-black dark:text-white font-bold flex items-center gap-2">
@@ -308,7 +308,7 @@ export default function About() {
 
             {/* Interests */}
             <section id="interests" className="mb-30 max-w-2xl text-left">
-              <h2 className="text-2xl font-semibold mb-3 text-purple-700 dark:text-purple-300">Interests</h2>
+              <h2 className="text-2xl font-semibold mb-3 text-purple-700 dark:text-purple-400">Interests</h2>
               <p className="text-gray-700 dark:text-gray-300">
                 I have a deep interest in exploring the ever-evolving world of technology. I&apos;m particularly passionate about UI/UX design, as I enjoy crafting intuitive and engaging user experiences. I&apos;m also an avid supporter of open-source projects and enjoy contributing to collaborative development communities.
                 <br /><br />
