@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import { useRef } from "react";
@@ -5,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { motion, useInView } from "framer-motion";
+import GitHubCalendar from 'react-github-calendar'
 
 export default function Home() {
   const techStackRef = useRef(null);
@@ -57,6 +59,33 @@ export default function Home() {
             </svg>
             My GitHub
           </Link>
+        </div>
+
+        {/* GitHub Contributions */}
+        <div className="mt-24 max-w-4xl mx-auto px-4">
+          <div className="bg-white/50 dark:bg-gray-900/50 rounded-2xl shadow-lg p-6 md:p-10 text-center">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4 md:mb-6 text-gray-900 dark:text-white">
+              GitHub Contributions
+            </h2>
+            <p className="text-gray-700 dark:text-gray-400 mb-6 md:mb-8">
+              Here’s a snapshot of my GitHub activity in the past year.
+            </p>
+            <div className="overflow-auto">
+              <div className="w-full max-w-3xl mx-auto border rounded-md shadow border-gray-300 dark:border-gray-700 bg-gray-300 dark:bg-gray-800">
+                <GitHubCalendar
+                  username="VinLvy"
+                  blockSize={15}
+                  blockMargin={5}
+                  color="#16a34a"
+                  fontSize={14}
+                  theme={{
+                    light: ['#e5e7eb', '#a7f3d0', '#34d399', '#10b981', '#047857'],
+                    dark: ['#374151', '#4ade80', '#22c55e', '#16a34a', '#15803d']
+                  }}
+                />
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Tech Stack Section */}
