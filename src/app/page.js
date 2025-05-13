@@ -7,11 +7,18 @@ import Link from "next/link";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { motion, useInView } from "framer-motion";
 import GitHubCalendar from 'react-github-calendar'
+import { useEffect, useState } from 'react';
 
 export default function Home() {
   const techStackRef = useRef(null);
   const isInView = useInView(techStackRef, { once: true });
 
+  const [calendarSize, setCalendarSize] = useState({
+    blockSize: 10,
+    fontSize: 14,
+  });
+
+  
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -70,14 +77,14 @@ export default function Home() {
             <p className="text-gray-700 dark:text-gray-400 mb-6 md:mb-8">
               Here’s a snapshot of my GitHub activity in the past year.
             </p>
-            <div className="overflow-auto">
+            <div className="overflow-x-auto">
               <div className="w-full max-w-3xl mx-auto border rounded-md shadow border-gray-300 dark:border-gray-700 bg-gray-300 dark:bg-gray-800">
-                <GitHubCalendar
+                <GitHubCalendar style={{ width: '100%' }}
                   username="VinLvy"
-                  blockSize={15}
-                  blockMargin={5}
+                  blockSize={calendarSize.blockSize}
+                  blockMargin={4}
+                  fontSize={calendarSize.fontSize}
                   color="#16a34a"
-                  fontSize={14}
                   theme={{
                     light: ['#e5e7eb', '#a7f3d0', '#34d399', '#10b981', '#047857'],
                     dark: ['#374151', '#4ade80', '#22c55e', '#16a34a', '#15803d']
