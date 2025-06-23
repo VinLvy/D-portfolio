@@ -75,7 +75,7 @@ export default function Home() {
         </div>
 
         {/* GitHub Contributions */}
-        <div className="mt-24 max-w-4xl mx-auto px-4 hidden md:block">
+        {/* <div className="mt-24 max-w-4xl mx-auto px-4 hidden md:block">
           <div className="bg-white/50 dark:bg-gray-900/50 rounded-2xl shadow-lg p-6 md:p-10 text-center">
             <h2 className="text-3xl md:text-4xl font-semibold mb-4 md:mb-6 text-gray-900 dark:text-white">
               GitHub Contributions
@@ -99,7 +99,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Tech Stack Section */}
         <div ref={techStackRef} className="mt-24">
