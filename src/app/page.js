@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useRef } from "react";
@@ -8,6 +7,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import { motion, useInView } from "framer-motion";
 import GitHubCalendar from 'react-github-calendar'
 import { useEffect, useState } from 'react';
+import BlurText from '../components/BlurText';
 
 export default function Home() {
   const techStackRef = useRef(null);
@@ -18,7 +18,7 @@ export default function Home() {
     fontSize: 14,
   });
 
-  
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -42,7 +42,13 @@ export default function Home() {
         </div>
 
         {/* Nama dan Deskripsi */}
-        <h1 className="text-4xl font-bold mb-4 mt-4">Davin P F</h1>
+        <BlurText
+          text="Hi, I'm Davin P F"
+          delay={150}
+          animateBy="words"
+          direction="top"
+          className="text-4xl font-bold mb-4 mt-4"
+        />
         <p className="text-lg text-gray-700 dark:text-gray-300 max-w-xl md:max-w-2xl text-center mx-auto">
           <span className="text-purple-400 font-semibold">Full-Stack Developer</span> — passionate about building modern web applications. Experienced in PHP programming and currently diving deeper into JavaScript development. I’m also highly interested in decentralized technologies and actively exploring the world of Web3.
         </p>
