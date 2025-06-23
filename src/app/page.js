@@ -44,8 +44,8 @@ export default function Home() {
         {/* Nama dan Deskripsi */}
         <BlurText
           text="Hi, I'm Davin P F"
-          delay={150}
-          animateBy="words"
+          delay={100}
+          animateBy="letters"
           direction="top"
           className="text-4xl font-bold mb-4 mt-4"
         />
