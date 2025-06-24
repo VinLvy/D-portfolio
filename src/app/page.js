@@ -42,13 +42,21 @@ export default function Home() {
         </div>
 
         {/* Nama dan Deskripsi */}
-        <BlurText
-          text="Hi, I'm Davin P F"
-          delay={100}
-          animateBy="letters"
-          direction="top"
-          className="text-4xl font-bold mb-4 mt-4"
-        />
+        <div className="text-4xl font-bold mb-4 mt-4 flex flex-wrap justify-center gap-2">
+          <BlurText
+            text="Hi, I'm"
+            delay={100}
+            animateBy="words"
+            direction="top"
+          />
+          <BlurText
+            text="Davin"
+            delay={250}
+            animateBy="letters"
+            direction="top"
+            className="text-purple-400"
+          />
+        </div>
         <p className="text-lg text-gray-700 dark:text-gray-300 max-w-xl md:max-w-2xl text-center mx-auto">
           <span className="text-purple-400 font-semibold">Full-Stack Developer</span> — passionate about building modern web applications. Experienced in PHP programming and currently diving deeper into JavaScript development. I’m also highly interested in decentralized technologies and actively exploring the world of Web3.
         </p>
