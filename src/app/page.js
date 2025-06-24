@@ -5,9 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { motion, useInView } from "framer-motion";
-import GitHubCalendar from 'react-github-calendar'
 import { useEffect, useState } from 'react';
 import BlurText from '../components/BlurText';
+import SpotlightCard from "../components/SpotlightCard";
 
 export default function Home() {
   const techStackRef = useRef(null);
