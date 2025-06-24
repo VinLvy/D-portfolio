@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import GlareHover from "../../components/GlareHover";
 
 export default function About() {
 
@@ -148,28 +149,27 @@ export default function About() {
                     { name: "CSS", icon: "/icons/css.svg", stars: 5 },
                     { name: "JavaScript", icon: "/icons/javascript.png", stars: 4 },
                   ].map((tech, index) => (
-                    <div
-                      key={index}
-                      className="flex flex-col items-center bg-gray-600/55 dark:bg-gray-800/55 p-8 rounded-2xl min-w-[150px] shadow-lg border-2 border-amber-500"
+                    <GlareHover
+                      key={tech.name}
+                      glareColor="#FFBF00"
+                      glareOpacity={0.3}
+                      glareAngle={-30}
+                      glareSize={300}
+                      transitionDuration={800}
+                      playOnce={false}
                     >
-                      <div className="w-20 h-20 flex items-center justify-center mb-4">
-                        {typeof tech.icon === "string" ? (
-                          <Image
-                            src={tech.icon}
-                            alt={tech.name}
-                            width={50}
-                            height={50}
-                            className="object-contain"
-                          />
-                        ) : (
-                          tech.icon
-                        )}
+                      <div className="flex flex-col items-center bg-gray-600/55 dark:bg-gray-800/55 p-8 rounded-3xl min-w-[150px] shadow-lg border-2 border-amber-500 w-full h-full">
+                        <div className="w-20 h-20 flex items-center justify-center mb-4">
+                          {typeof tech.icon === "string" ? (
+                            <Image src={tech.icon} alt={tech.name} width={50} height={50} className="object-contain" />
+                          ) : (
+                            tech.icon
+                          )}
+                        </div>
+                        <p className="text-md font-semibold text-center">{tech.name}</p>
+                        <p className="text-yellow-400 text-xl mt-2 text-center">{"★".repeat(tech.stars)}</p>
                       </div>
-                      <p className="text-md font-semibold text-center">{tech.name}</p>
-                      <p className="text-yellow-400 text-xl mt-2 text-center">
-                        {"★".repeat(tech.stars)}
-                      </p>
-                    </div>
+                    </GlareHover>
                   ))}
                 </div>
               </div>
