@@ -1,9 +1,15 @@
 "use client";
 
 import { useRef } from "react";
+import { motion } from "framer-motion";
 import "./SpotlightCard.css";
 
-const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(255, 255, 255, 0.25)" }) => {
+const SpotlightCard = ({
+  children,
+  className = "",
+  spotlightColor = "rgba(255, 255, 255, 0.25)",
+  ...rest // ini penting agar props tambahan seperti animate, initial masuk
+}) => {
   const divRef = useRef(null);
 
   const handleMouseMove = (e) => {
@@ -17,13 +23,14 @@ const SpotlightCard = ({ children, className = "", spotlightColor = "rgba(255, 2
   };
 
   return (
-    <div
+    <motion.div
       ref={divRef}
       onMouseMove={handleMouseMove}
       className={`card-spotlight ${className}`}
+      {...rest} // biar bisa kasih initial, animate, transition dll
     >
       {children}
-    </div>
+    </motion.div>
   );
 };
 

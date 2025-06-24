@@ -151,9 +151,10 @@ export default function Home() {
                 ), stars: 4
               },
             ].map((tech, index) => (
-              <motion.div
-                key={index}
-                className="flex flex-col items-center bg-gray-600/60 dark:bg-gray-700/55 backdrop-blur-lg bg-opacity-50 p-6 rounded-lg w-40 h-48"
+              <SpotlightCard
+                key={tech.name} // Lebih baik pakai tech.name supaya unik, atau fallback ke index
+                spotlightColor="rgba(136, 0, 255, 0.52)"
+                className="flex flex-col items-center p-4 w-full sm:w-40 h-48"
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: index * 0.2, duration: 0.5 }}
@@ -167,7 +168,7 @@ export default function Home() {
                 </div>
                 <p className="text-md font-semibold text-center">{tech.name}</p>
                 <p className="text-yellow-400 text-2xl">{"★".repeat(tech.stars)}</p>
-              </motion.div>
+              </SpotlightCard>
             ))}
           </div>
         </div>
