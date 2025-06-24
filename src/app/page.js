@@ -8,6 +8,7 @@ import { motion, useInView } from "framer-motion";
 import { useEffect, useState } from 'react';
 import BlurText from '../components/BlurText';
 import SpotlightCard from "../components/SpotlightCard";
+import GlareHover from "../components/GlareHover";
 
 export default function Home() {
   const techStackRef = useRef(null);
@@ -151,24 +152,34 @@ export default function Home() {
                 ), stars: 4
               },
             ].map((tech, index) => (
-              <SpotlightCard
-                key={tech.name} // Lebih baik pakai tech.name supaya unik, atau fallback ke index
-                spotlightColor="rgba(136, 0, 255, 0.52)"
-                className="flex flex-col items-center p-4 w-full sm:w-40 h-48"
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: index * 0.2, duration: 0.5 }}
+              <GlareHover
+                key={tech.name} // key taruh di sini, element paling luar hasil map
+                glareColor="#ffffff"
+                glareOpacity={0.3}
+                glareAngle={-30}
+                glareSize={300}
+                transitionDuration={800}
+                playOnce={false}
               >
-                <div className="w-16 h-16 flex items-center justify-center mb-3">
-                  {typeof tech.icon === "string" ? (
-                    <Image src={tech.icon} alt={tech.name} width={50} height={50} className="object-contain" />
-                  ) : (
-                    tech.icon
-                  )}
-                </div>
-                <p className="text-md font-semibold text-center">{tech.name}</p>
-                <p className="text-yellow-400 text-2xl">{"★".repeat(tech.stars)}</p>
-              </SpotlightCard>
+                <SpotlightCard
+                  spotlightColor="rgba(136, 0, 255, 0.52)"
+                  className="flex flex-col items-center p-4 w-full sm:w-40 h-48"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ delay: index * 0.2, duration: 0.5 }}
+                >
+                  <div className="w-16 h-16 flex items-center justify-center mb-3">
+                    {typeof tech.icon === "string" ? (
+                      <Image src={tech.icon} alt={tech.name} width={50} height={50} className="object-contain" />
+                    ) : (
+                      tech.icon
+                    )}
+                  </div>
+                  <p className="text-md font-semibold text-center">{tech.name}</p>
+                  <p className="text-yellow-400 text-2xl">{"★".repeat(tech.stars)}</p>
+                </SpotlightCard>
+              </GlareHover>
+
             ))}
           </div>
         </div>
