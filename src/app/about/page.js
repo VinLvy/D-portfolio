@@ -182,8 +182,8 @@ export default function About() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-gray-200">
                   {[
                     { name: "PHP", icon: "/icons/php.svg", stars: 5 },
-                    // { name: "Node.js", icon: "/icons/nodejs.svg", stars: 4 },
-                    // { name: "Express", icon: "/icons/express.svg", stars: 4 },
+                    { name: "Node.js", icon: "/icons/Node.js.svg", stars: 3 },
+                    { name: "Express", icon: "/icons/Express-js.svg", stars: 4 },
                     { name: "Golang", icon: "/icons/golang.svg", stars: 2 },
                     { name: "CodeIgniter 4", icon: "/icons/codeigniter.svg", stars: 5 },
                     { name: "Laravel", icon: "/icons/laravel.svg", stars: 4 },
