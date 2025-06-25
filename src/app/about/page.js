@@ -270,7 +270,7 @@ export default function About() {
                   ].map((tech, index) => (
                     <GlareHover
                       key={tech.name}
-                      glareColor="#800080"
+                      glareColor="#BF40BF"
                       glareOpacity={0.3}
                       glareAngle={-30}
                       glareSize={300}
