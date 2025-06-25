@@ -155,6 +155,7 @@ export default function Home() {
               { name: "Node.js", icon: "/icons/node.js.svg", stars: 3 },
               { name: "Express.js", icon: "/icons/express-js.svg", stars: 4 },
               { name: "MongoDB", icon: "/icons/mongo-db.png", stars: 4 },
+              { name: "Solidity", icon: "/icons/Solidity.svg", stars: 3 },
             ].map((tech, index) => (
               <GlareHover
                 key={tech.name}
