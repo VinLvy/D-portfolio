@@ -151,9 +151,13 @@ export default function Home() {
                   </svg>
                 ), stars: 4
               },
+              {name: "React", icon: "/icons/react.png", stars: 3 },
+              { name: "Node.js", icon: "/icons/node.js.svg", stars: 3 },
+              { name: "Express.js", icon: "/icons/express-js.svg", stars: 4 },
+              { name: "MongoDB", icon: "/icons/mongo-db.png", stars: 4 },
             ].map((tech, index) => (
               <GlareHover
-                key={tech.name} // key taruh di sini, element paling luar hasil map
+                key={tech.name}
                 glareColor="#ffffff"
                 glareOpacity={0.3}
                 glareAngle={-30}
