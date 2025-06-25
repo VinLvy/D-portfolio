@@ -258,7 +258,7 @@ export default function About() {
 
               {/* Tools */}
               <div className="mb-10">
-                <h3 className="text-2xl font-semibold text-black dark:text-white mb-6 border-b-4 border-purple-500 inline-block pb-1">
+                <h3 className="text-2xl font-semibold text-black dark:text-white mb-6 border-b-4 border-purple-800 inline-block pb-1">
                   Tools
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-gray-200">
@@ -277,7 +277,7 @@ export default function About() {
                       transitionDuration={800}
                       playOnce={false}
                     >
-                      <div className="flex flex-col items-center bg-gray-600/55 dark:bg-gray-800/55 p-8 rounded-3xl min-w-[150px] shadow-lg border-2 border-purple-500 w-full h-full">
+                      <div className="flex flex-col items-center bg-gray-600/55 dark:bg-gray-800/55 p-8 rounded-3xl min-w-[150px] shadow-lg border-2 border-purple-800 w-full h-full">
                         <div className="w-20 h-20 flex items-center justify-center mb-4">
                           <Image
                             src={tech.icon}
