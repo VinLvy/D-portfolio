@@ -296,6 +296,46 @@ export default function About() {
                   ))}
                 </div>
               </div>
+
+              {/* Web3 */}
+              <div className="mb-10">
+                <h3 className="text-2xl font-semibold text-black dark:text-white mb-6 border-b-4 border-blue-500 inline-block pb-1">
+                  Web3
+                </h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-gray-200">
+                  {[
+                    { name: "Solidity", icon: "/icons/Solidity.svg", stars: 3 },
+                    // { name: "Ethereum", icon: "/icons/ethereum.png", stars: 4 },
+                    // { name: "Smart Contracts", icon: "/icons/smart-contracts.png", stars: 3 },
+                  ].map((tech, index) => (
+                    <GlareHover
+                      key={tech.name}
+                      glareColor="#0000FF"
+                      glareOpacity={0.3}
+                      glareAngle={-30}
+                      glareSize={300}
+                      transitionDuration={800}
+                      playOnce={false}
+                    >
+                      <div className="flex flex-col items-center bg-gray-600/55 dark:bg-gray-800/55 p-8 rounded-3xl min-w-[150px] shadow-lg border-2 border-blue-500 w-full h-full">
+                        <div className="w-20 h-20 flex items-center justify-center mb-4">
+                          <Image
+                            src={tech.icon}
+                            alt={tech.name}
+                            width={50}
+                            height={50}
+                            className="object-contain"
+                          />
+                        </div>
+                        <p className="text-md font-semibold text-center">{tech.name}</p>
+                        <p className="text-yellow-400 text-xl mt-2 text-center">
+                          {"★".repeat(tech.stars)}
+                        </p>
+                      </div>
+                    </GlareHover>
+                  ))}
+                </div>
+              </div>
             </section>
 
             {/* Experience */}
