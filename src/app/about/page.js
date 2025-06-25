@@ -190,7 +190,7 @@ export default function About() {
                   ].map((tech, index) => (
                     <GlareHover
                       key={tech.name}
-                      glareColor="#FF3D68" // Warna merah muda sesuai tema backend
+                      glareColor="#FF3D68"
                       glareOpacity={0.3}
                       glareAngle={-30}
                       glareSize={300}
@@ -225,7 +225,7 @@ export default function About() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-gray-200">
                   {[
                     { name: "MySQL", icon: "/icons/mysql.svg", stars: 5 },
-                    // { name: "MongoDB", icon: "/icons/mongodb.svg", stars: 4 },
+                    { name: "MongoDB", icon: "/icons/mongo-db.png", stars: 4 },
                   ].map((tech, index) => (
                     <GlareHover
                       key={tech.name}
