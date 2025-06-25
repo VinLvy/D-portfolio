@@ -117,7 +117,7 @@ export default function About() {
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-gray-200">
                   {[
-                    // { name: "React.js", icon: "/icons/react.svg", stars: 4 },
+                    { name: "React.js", icon: "/icons/react.png", stars: 3 },
                     {
                       name: "Next.js",
                       icon: (
