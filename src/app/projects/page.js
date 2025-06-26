@@ -7,8 +7,8 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "DApps (Decentralized Applications)",
-    description: "A collection of decentralized applications built on blockchain technology, showcasing smart contracts and user interactions with Web3.",
+    title: "DApps Lock Contract",
+    description: "",
     link: "https://github.com/VinLvy/DApp-LockContract",
     image: "/images/project4.png",
   },
