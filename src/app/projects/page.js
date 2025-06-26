@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 const projects = [
   {
     title: "DApps Lock Contract",
-    description: "",
+    description: "A decentralized application (DApp) lock contract that allows users to securely lock their tokens for a specified period, ensuring trust and transparency in token transactions.",
     link: "https://github.com/VinLvy/DApp-LockContract",
     image: "/images/project4.png",
   },
