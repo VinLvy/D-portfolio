@@ -7,6 +7,12 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    title: "DApps (Decentralized Applications)",
+    description: "A collection of decentralized applications built on blockchain technology, showcasing smart contracts and user interactions with Web3.",
+    link: "https://github.com/VinLvy/DApp-LockContract",
+    image: "/images/project4.png",
+  },
+  {
     title: "Landing Page",
     description: "A modern and responsive landing page built with Next.js and Tailwind CSS, optimized for performance and user engagement.",
     link: "https://github.com/VinLvy/Landing-page",
