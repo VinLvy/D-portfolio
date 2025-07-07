@@ -47,8 +47,8 @@ const BlurText = ({
     );
     observer.observe(ref.current);
     return () => observer.disconnect();
-
-  }, [threshold, rootMargin]);
+    
+  }, [threshold, rootMargin, ref.current]);
 
   const defaultFrom = useMemo(
     () =>
