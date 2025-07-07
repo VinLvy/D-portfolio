@@ -183,7 +183,7 @@ export default function About() {
                   {[
                     { name: "PHP", icon: "/icons/php.svg", stars: 5 },
                     { name: "Node.js", icon: "/icons/Node.js.svg", stars: 3 },
-                    { name: "Express", icon: "/icons/Express-js.svg", stars: 4 },
+                    { name: "Express", icon: "/icons/express-js.svg", stars: 4 },
                     { name: "Golang", icon: "/icons/golang.svg", stars: 2 },
                     { name: "CodeIgniter 4", icon: "/icons/codeigniter.svg", stars: 5 },
                     { name: "Laravel", icon: "/icons/laravel.svg", stars: 4 },
