@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# D-Portfolio
 
-## Getting Started
+Welcome to **D-Portfolio**, my personal portfolio website showcasing my skills, projects, and experiences as a Full-Stack Developer. This portfolio is designed to be modern, responsive, and interactive, built with cutting-edge web technologies.
 
-First, run the development server:
+-----
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🌟 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+  * **Interactive Homepage**: A dynamic introduction with a prominent call to action for my GitHub profile.
+  * **Detailed About Page**: A comprehensive overview of my professional background, including:
+      * **Personal Information**: My date of birth and location.
+      * **About Me Section**: A description of my passion for full-stack development, with a growing interest in Web3 and decentralized technologies.
+      * **Skills Section**: Categorized display of my technical expertise (Frontend, Backend, Database, Tools, Web3) with interactive "Spotlight Cards" and "Glare Hover" effects. Each skill is rated with stars.
+      * **Experience**: Details about my internship as a Fullstack Web Developer at Elecomp Indonesia.
+      * **Education**: Information about my software engineering studies at SMKN 1 Boyolangu.
+      * **Interests**: Insights into my passion for UI/UX design, open-source, blockchain, AI, cryptocurrency, gaming, and travel.
+  * **Project Showcase**: (Implied, based on the project data) A section dedicated to my key projects, such as a "dApps Lock Contract," demonstrating my practical application of skills.
+  * **Responsive Design**: Optimized for various screen sizes, from mobile to desktop.
+  * **Smooth Animations**: Utilizes `framer-motion` for fluid transitions and engaging user experience.
+  * **Contact Information**: Easy access to my social media and email.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+-----
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 💻 Tech Stack
 
-## Learn More
+This portfolio is built using the following technologies:
 
-To learn more about Next.js, take a look at the following resources:
+  * **Next.js**: A React framework for production-grade applications, enabling server-side rendering and static site generation.
+  * **React.js**: For building interactive user interfaces.
+  * **Tailwind CSS**: A utility-first CSS framework for rapid and custom UI development.
+  * **Framer Motion**: A production-ready animation library for React.
+  * **JavaScript (ES6+)**: Core programming language for front-end interactivity.
+  * **PHP**: My primary backend language, with experience in frameworks like CodeIgniter 4 and Laravel.
+  * **Node.js & Express.js**: For building robust backend APIs.
+  * **MySQL & MongoDB**: For database management.
+  * **Solidity**: For smart contract development in the Web3 space.
+  * **Git & GitHub**: For version control and collaboration.
+  * **Figma**: For UI/UX design and prototyping.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-----
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Getting Started
 
-## Deploy on Vercel
+To run this project locally, follow these steps:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/VinLvy/D-Portfolio.git
+    ```
+2.  **Navigate to the project directory:**
+    ```bash
+    cd D-Portfolio
+    ```
+3.  **Install dependencies:**
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+4.  **Run the development server:**
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```
+5.  **Open your browser:**
+    Visit `http://localhost:3000` to see the portfolio.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+-----
+
+## 🌐 Live Demo
+
+You can view the live version of my portfolio [here](https://www.google.com/search?q=YOUR_DEPLOYED_LINK_HERE).
+
+-----
+
+## 🤝 Connect with Me
+
+Feel free to connect with me through any of the following platforms:
+
+  * **GitHub**: [github.com/VinLvy](https://github.com/VinLvy)
+  * **LinkedIn**: [Davin Putra Fibrian](https://www.linkedin.com/in/davin-p-f-0b00a12b7/)
+  * **Instagram**: [@davin.fbrn](https://instagram.com/davin.fbrn)
+  * **Facebook**: [Davin Fibrian](https://facebook.com/davin.fbrn)
+  * **Email**: davinfibrian@gmail.com
+
+-----
+
+Thank you for visiting my D-Portfolio\!
+
+-----
