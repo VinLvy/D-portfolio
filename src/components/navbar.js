@@ -47,9 +47,9 @@ export default function Navbar() {
 
   return (
     <nav className="fixed bottom-0 sm:top-0 sm:bottom-auto w-full z-50 flex items-center justify-between sm:px-6 sm:py-3 px-4 py-2">
-      <div className="relative mt-2 bg-gray-900/50 backdrop-blur-lg shadow-md rounded-full flex px-2 py-1 sm:px-3 sm:py-1 space-x-2 sm:space-x-4 max-w-full mx-auto mb-5">
+      <div className="relative mt-2 bg-gray-900/50 backdrop-blur-lg shadow-md rounded-full flex px-2 py-1 sm:px-3 sm:py-2 space-x-2 sm:space-x-4 max-w-full mx-auto mb-5">
         <div
-          className="absolute bg-gray-700/80 rounded-full transition-all duration-300 ease-in-out"
+          className="absolute bg-gray-500/50 rounded-full transition-all duration-300 ease-in-out"
           style={indicatorStyle}
         ></div>
 
@@ -73,9 +73,8 @@ const NavItem = ({ href, icon, label, active }, ref) => {
     <Link
       ref={ref}
       href={href}
-      className={`relative z-10 flex items-center sm:space-x-2 px-3 py-2 sm:px-4 text-sm sm:text-base font-medium rounded-full transition ${
-        active ? "text-white" : "text-white hover:bg-gray-700/30 hover:shadow"
-      }`}
+      className={`relative z-10 flex items-center sm:space-x-2 px-3 py-2 sm:px-4 text-sm sm:text-base font-medium rounded-full transition ${active ? "text-white" : "text-white hover:bg-gray-700/50 hover:shadow"
+        }`}
     >
       {icon}
       <span className="hidden sm:inline">{label}</span>
