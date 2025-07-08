@@ -6,7 +6,6 @@ import { Home, User, Briefcase } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import React from 'react';
 
-// PASTIKAN navItemsConfig berada DI SINI, DI LUAR KOMPONEN Navbar
 const navItemsConfig = [
   { href: "/", label: "Home", icon: <Home size={20} /> },
   { href: "/about", label: "About", icon: <User size={20} /> },
@@ -44,7 +43,7 @@ export default function Navbar() {
         }
       }
     }
-  }, [pathname]); // <-- PASTIKAN navItemsConfig TIDAK ADA DI SINI
+  }, [pathname]);
 
   return (
     <nav className="fixed bottom-0 sm:top-0 sm:bottom-auto w-full z-50 flex items-center justify-between sm:px-6 sm:py-3 px-4 py-2">
