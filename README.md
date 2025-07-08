@@ -70,7 +70,7 @@ To run this project locally, follow these steps:
 
 ## 🌐 Live Demo
 
-You can view the live version of my portfolio [here](https://www.google.com/search?q=YOUR_DEPLOYED_LINK_HERE).
+You can view the live version of my portfolio [here](https://d-portfolio-weld.vercel.app).
 
 -----
 
