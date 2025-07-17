@@ -63,7 +63,23 @@ export default function Home() {
         </p>
 
         {/* CTA Button */}
-        <div className="mt-6 flex justify-center">
+        <div className="mt-6 flex justify-center gap-4"> {/* Added gap-4 for spacing between buttons */}
+          <Link
+            href="/Davin-Resume.pdf"
+            download
+            className="px-6 py-3 flex items-center gap-2 rounded-full bg-blue-600 text-white font-medium transition duration-300 transform hover:bg-blue-700 hover:scale-105 hover:shadow-lg"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+            </svg>
+            Download Resume
+          </Link>
           <Link
             href="https://github.com/VinLvy"
             target="_blank"
@@ -151,7 +167,7 @@ export default function Home() {
                   </svg>
                 ), stars: 4
               },
-              {name: "React", icon: "/icons/react.png", stars: 3 },
+              { name: "React", icon: "/icons/react.png", stars: 3 },
               { name: "Node.js", icon: "/icons/Node.js.svg", stars: 3 },
               { name: "Express.js", icon: "/icons/express-js.svg", stars: 4 },
               { name: "MongoDB", icon: "/icons/mongo-db.png", stars: 4 },
