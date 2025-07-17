@@ -64,7 +64,7 @@ export default function Home() {
 
         {/* CTA Button */}
         <div className="mt-6 flex justify-center gap-4"> {/* Added gap-4 for spacing between buttons */}
-          <Link
+          {/* <Link
             href="/Davin-Resume.pdf"
             download
             className="px-6 py-3 flex items-center gap-2 rounded-full bg-blue-600 text-white font-medium transition duration-300 transform hover:bg-blue-700 hover:scale-105 hover:shadow-lg"
@@ -79,7 +79,7 @@ export default function Home() {
               <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
             </svg>
             Download Resume
-          </Link>
+          </Link> */}
           <Link
             href="https://github.com/VinLvy"
             target="_blank"
