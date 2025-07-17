@@ -216,7 +216,7 @@ export default function Home() {
           <div className="flex justify-center flex-wrap gap-x-8 gap-y-6 dark:text-gray-300">
             {[
               { name: "Instagram", icon: "bi bi-instagram", link: "https://instagram.com/davin.fbrn" },
-              { name: "Facebook", icon: "bi bi-facebook", link: "https://facebook.com/davin.fbrn" },
+              // { name: "Facebook", icon: "bi bi-facebook", link: "https://facebook.com/davin.fbrn" },
               { name: "GitHub", icon: "bi bi-github", link: "https://github.com/VinLvy" },
               { name: "LinkedIn", icon: "bi bi-linkedin", link: "https://www.linkedin.com/in/davin-p-f-0b00a12b7/" },
               { name: "Gmail", icon: "bi bi-envelope-fill", link: "mailto:davinfibrian@gmail.com" },
