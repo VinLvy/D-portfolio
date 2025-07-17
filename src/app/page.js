@@ -64,6 +64,7 @@ export default function Home() {
 
         {/* CTA Button */}
         <div className="mt-6 flex justify-center gap-4"> {/* Added gap-4 for spacing between buttons */}
+          
           {/* <Link
             href="/Davin-Resume.pdf"
             download
@@ -80,6 +81,7 @@ export default function Home() {
             </svg>
             Download Resume
           </Link> */}
+
           <Link
             href="https://github.com/VinLvy"
             target="_blank"
