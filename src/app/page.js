@@ -63,7 +63,7 @@ export default function Home() {
         </p>
 
         {/* CTA Button */}
-        <div className="mt-6 flex justify-center gap-4"> {/* Added gap-4 for spacing between buttons */}
+        <div className="mt-6 flex justify-center gap-4">
           
           {/* <Link
             href="/Davin-Resume.pdf"
