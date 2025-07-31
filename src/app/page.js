@@ -142,7 +142,7 @@ export default function Home() {
               { name: "Golang", icon: "/icons/golang.svg", stars: 2 },
               { name: "JavaScript", icon: "/icons/javascript.png", stars: 4 },
               { name: "PHP", icon: "/icons/php.svg", stars: 5 },
-              { name: "Python", icon: "/icons/python.svg", stars: 3 },
+              // { name: "Python", icon: "/icons/python.svg", stars: 3 },
               // { name: "Django", icon: "/icons/django.svg", stars: 4 },
               // { name: "Flask", icon: "/icons/flask.svg", stars: 3 },
               // { name: "PostgreSQL", icon: "/icons/postgresql.svg", stars: 5 },
