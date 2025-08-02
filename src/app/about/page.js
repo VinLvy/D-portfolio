@@ -187,7 +187,7 @@ export default function About() {
                     { name: "Golang", icon: "/icons/golang.svg", stars: 2 },
                     { name: "CodeIgniter 4", icon: "/icons/codeigniter.svg", stars: 5 },
                     { name: "Laravel", icon: "/icons/laravel.svg", stars: 4 },
-                    { name: "Python", icon: "/icons/python.svg", stars: 3 },
+                    // { name: "Python", icon: "/icons/python.svg", stars: 3 },
                   ].map((tech, index) => (
                     <GlareHover
                       key={tech.name}
