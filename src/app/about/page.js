@@ -47,6 +47,7 @@ export default function About() {
             { href: "#skills", label: "Skills" },
             { href: "#experience", label: "Experience" },
             { href: "#education", label: "Education" },
+            { href: "#resume", label: "Resume" },
             { href: "#interests", label: "Interests" },
           ].map((item) => (
             <a
@@ -370,6 +371,98 @@ export default function About() {
                 <p className="text-gray-700 dark:text-gray-300 ml-4 mt-2">
                   Focused on software engineering fundamentals, including web development, database design, and programming languages. Participated in practical projects and developed skills in building dynamic and responsive web applications.
                 </p>
+              </div>
+            </section>
+
+            {/* Resume */}
+            <section id="resume" className="mb-15 max-w-2xl text-left">
+              <h2 className="text-2xl font-semibold mb-6 text-purple-700 dark:text-purple-400">Resume</h2>
+
+              <div className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-6 border-2 border-purple-200 dark:border-purple-600 shadow-lg">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-white">Davin Putra Fibrian</h3>
+                  <span className="text-sm text-purple-600 dark:text-purple-400 font-medium">Full-Stack Developer</span>
+                </div>
+
+                <div className="space-y-4">
+                  {/* Contact Info */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <div className="flex items-center gap-2">
+                      <span className="text-purple-500">📧</span>
+                      <span className="text-gray-700 dark:text-gray-300">davinfibrian@gmail.com</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-purple-500">📍</span>
+                      <span className="text-gray-700 dark:text-gray-300">East Java, Indonesia</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-purple-500">🔗</span>
+                      <span className="text-gray-700 dark:text-gray-300">github.com/VinLvy</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-purple-500">💼</span>
+                      <span className="text-gray-700 dark:text-gray-300">linkedin.com/in/davin-p-f-0b00a12b7</span>
+                    </div>
+                  </div>
+
+                  {/* Summary */}
+                  <div className="border-t border-purple-200 dark:border-purple-600 pt-4">
+                    <h4 className="font-semibold text-gray-800 dark:text-white mb-2">Professional Summary</h4>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                      Passionate Full-Stack Developer with expertise in PHP development and modern JavaScript frameworks.
+                      Experienced in building responsive web applications using CodeIgniter 4, Laravel, React, and Next.js.
+                      Currently exploring Web3 technologies and blockchain development. Strong problem-solving skills and
+                      commitment to writing clean, maintainable code.
+                    </p>
+                  </div>
+
+                  {/* Key Skills */}
+                  <div className="border-t border-purple-200 dark:border-purple-600 pt-4">
+                    <h4 className="font-semibold text-gray-800 dark:text-white mb-3">Key Technical Skills</h4>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
+                        <span className="text-sm text-gray-700 dark:text-gray-300">PHP (CodeIgniter 4, Laravel)</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
+                        <span className="text-gray-700 dark:text-gray-300">JavaScript (React, Next.js)</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
+                        <span className="text-gray-700 dark:text-gray-300">MySQL & MongoDB</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
+                        <span className="text-sm text-gray-700 dark:text-gray-300">Tailwind CSS</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
+                        <span className="text-sm text-gray-700 dark:text-gray-300">Node.js & Express</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
+                        <span className="text-sm text-gray-700 dark:text-gray-300">Solidity (Web3)</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Download Button */}
+                  <div className="border-t border-purple-200 dark:border-purple-600 pt-4">
+                    <div className="flex justify-center">
+                      <a
+                        href="/RESUME Davin.pdf"
+                        download
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium rounded-full hover:from-purple-700 hover:to-blue-700 transform hover:scale-105 transition-all duration-300 shadow-lg"
+                      >
+                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                        Download Full Resume (PDF)
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
 
