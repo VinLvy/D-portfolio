@@ -63,7 +63,7 @@ export default function Home() {
         </p>
 
         {/* CTA Button */}
-        <div className="mt-6 flex justify-center gap-4">
+        <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4">
 
           <Link
             href="/RESUME Davin.pdf"
@@ -79,7 +79,7 @@ export default function Home() {
             >
               <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
             </svg>
-            Download Resume
+            My Resume
           </Link>
 
           <Link
