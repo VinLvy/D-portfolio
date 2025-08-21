@@ -68,7 +68,7 @@ export default function Home() {
           <Link
             href="/RESUME Davin.pdf"
             download
-            className="px-6 py-3 flex items-center gap-2 rounded-full bg-blue-600 text-white font-medium transition duration-300 transform hover:bg-blue-700 hover:scale-105 hover:shadow-lg"
+            className="px-6 py-3 flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium transition duration-300 transform hover:from-purple-700 hover:to-pink-700 hover:scale-105 hover:shadow-lg"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
