@@ -74,7 +74,7 @@ export default function About() {
             <div className="flex-shrink-0">
               <Image
                 className="rounded-full shadow-lg"
-                src="/profile.jpg"
+                src="/profile.png"
                 alt="Profile Picture"
                 width={160}
                 height={160}
