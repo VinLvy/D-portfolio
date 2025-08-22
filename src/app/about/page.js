@@ -86,12 +86,12 @@ export default function About() {
             <div className="space-y-3">
               <h1 className="text-4xl font-extrabold text-purple-800 dark:text-purple-500 font-sans mb-4">Davin Putra Fibrian</h1>
 
-              {/* Professional Title */}
+              {/* Professional Title
               <p className="text-xl font-semibold text-purple-600 dark:text-purple-400 font-mono mb-3">
                 Full-Stack Developer
-              </p>
+              </p> */}
 
-              {/* Contact Information */}
+              {/* Contact Information
               <div className="space-y-2">
                 <p className="text-lg font-medium text-gray-800 dark:text-gray-200 font-mono flex items-center gap-2">
                   <span className="text-purple-500">📧</span>
@@ -109,7 +109,7 @@ export default function About() {
                     linkedin.com/in/davin-p-f-0b00a12b7
                   </a>
                 </p>
-              </div>
+              </div> */}
 
               {/* Personal Details */}
               <div className="space-y-2 pt-2">
