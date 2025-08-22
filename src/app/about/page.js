@@ -375,7 +375,7 @@ export default function About() {
             </section>
 
             {/* Resume */}
-            <section id="resume" className="mb-15 max-w-2xl text-left">
+            {/* <section id="resume" className="mb-15 max-w-2xl text-left">
               <h2 className="text-2xl font-semibold mb-6 text-purple-700 dark:text-purple-400">Resume</h2>
 
               <div className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-6 border-2 border-purple-200 dark:border-purple-600 shadow-lg">
@@ -385,7 +385,6 @@ export default function About() {
                 </div>
 
                 <div className="space-y-4">
-                  {/* Contact Info */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                     <div className="flex items-center gap-2">
                       <span className="text-purple-500">📧</span>
@@ -405,7 +404,6 @@ export default function About() {
                     </div>
                   </div>
 
-                  {/* Summary */}
                   <div className="border-t border-purple-200 dark:border-purple-600 pt-4">
                     <h4 className="font-semibold text-gray-800 dark:text-white mb-2">Professional Summary</h4>
                     <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
@@ -416,7 +414,6 @@ export default function About() {
                     </p>
                   </div>
 
-                  {/* Key Skills */}
                   <div className="border-t border-purple-200 dark:border-purple-600 pt-4">
                     <h4 className="font-semibold text-gray-800 dark:text-white mb-3">Key Technical Skills</h4>
                     <div className="grid grid-cols-2 gap-3">
@@ -447,7 +444,6 @@ export default function About() {
                     </div>
                   </div>
 
-                  {/* Download Button */}
                   <div className="border-t border-purple-200 dark:border-purple-600 pt-4">
                     <div className="flex justify-center">
                       <a
@@ -464,7 +460,7 @@ export default function About() {
                   </div>
                 </div>
               </div>
-            </section>
+            </section> */}
 
             {/* Interests */}
             <section id="interests" className="mb-30 max-w-2xl text-left">
