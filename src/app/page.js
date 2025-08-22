@@ -33,7 +33,7 @@ export default function Home() {
           <Link href="/about">
             <Image
               className="cursor-pointer rounded-full shadow-2xl border-4 border-purple-500 p-1 transition-transform duration-300 hover:scale-105 hover:shadow-lg"
-              src="/profile.jpg"
+              src="/profile.png"
               alt="Profile Picture"
               width={200}
               height={200}
