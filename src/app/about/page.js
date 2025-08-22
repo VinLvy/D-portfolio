@@ -47,7 +47,7 @@ export default function About() {
             { href: "#skills", label: "Skills" },
             { href: "#experience", label: "Experience" },
             { href: "#education", label: "Education" },
-            { href: "#resume", label: "Resume" },
+            // { href: "#resume", label: "Resume" },
             { href: "#interests", label: "Interests" },
           ].map((item) => (
             <a
