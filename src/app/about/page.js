@@ -500,7 +500,7 @@ export default function About() {
 
             {/* Interests */}
             <section id="interests" className="mb-30 max-w-2xl text-left">
-              <h2 className="text-2xl font-semibold mb-3 text-purple-700 dark:text-purple-400">Professional Interests & Hobbies</h2>
+              <h2 className="text-2xl font-semibold mb-3 text-purple-700 dark:text-purple-400">Interests & Hobbies</h2>
               <p className="text-gray-700 dark:text-gray-300">
                 I maintain a keen interest in the rapidly evolving technology landscape, with particular focus on user interface and user experience design principles. I believe that creating intuitive and engaging user experiences is fundamental to successful software development. I actively support and contribute to open-source projects, recognizing the value of collaborative development communities in advancing technology.
               </p>
