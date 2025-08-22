@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from " @@/components/navbar";
 import CursorBlur from "../components/CursorBlur";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main className="w-full">{children}</main>
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
