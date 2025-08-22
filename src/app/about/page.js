@@ -83,15 +83,46 @@ export default function About() {
             </div>
 
             {/* Info Pribadi */}
-            <div className="space-y-2">
+            <div className="space-y-3">
               <h1 className="text-4xl font-extrabold text-purple-800 dark:text-purple-500 font-sans mb-4">Davin Putra Fibrian</h1>
-              {/* <p className="text-lg font-medium text-gray-800 dark:text-gray-200 font-mono">Age: <span className="text-gray-800 dark:text-white">18</span></p> */}
-              <p className="text-lg font-medium text-gray-800 dark:text-gray-200 font-mono">
-                Date of Birth: <span className="text-gray-800 dark:text-white">31 May 2006</span>
+
+              {/* Professional Title */}
+              <p className="text-xl font-semibold text-purple-600 dark:text-purple-400 font-mono mb-3">
+                Full-Stack Developer
               </p>
-              <p className="text-lg font-medium text-gray-800 dark:text-gray-200 font-mono">
-                Location: <span className="text-gray-800 dark:text-white">East Java, Indonesia</span>
-              </p>
+
+              {/* Contact Information */}
+              <div className="space-y-2">
+                <p className="text-lg font-medium text-gray-800 dark:text-gray-200 font-mono flex items-center gap-2">
+                  <span className="text-purple-500">📧</span>
+                  <span className="text-gray-800 dark:text-white">davinfibrian@gmail.com</span>
+                </p>
+                <p className="text-lg font-medium text-gray-800 dark:text-gray-200 font-mono flex items-center gap-2">
+                  <span className="text-purple-500">🔗</span>
+                  <a href="https://github.com/VinLvy" target="_blank" rel="noopener noreferrer" className="text-gray-800 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+                    github.com/VinLvy
+                  </a>
+                </p>
+                <p className="text-lg font-medium text-gray-800 dark:text-gray-200 font-mono flex items-center gap-2">
+                  <span className="text-purple-500">💼</span>
+                  <a href="https://linkedin.com/in/davin-p-f-0b00a12b7" target="_blank" rel="noopener noreferrer" className="text-gray-800 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+                    linkedin.com/in/davin-p-f-0b00a12b7
+                  </a>
+                </p>
+              </div>
+
+              {/* Personal Details */}
+              <div className="space-y-2 pt-2">
+                <p className="text-lg font-medium text-gray-800 dark:text-gray-200 font-mono">
+                  <span className="text-gray-600 dark:text-gray-400">Date of Birth:</span> <span className="text-gray-800 dark:text-white">31 May 2006</span>
+                </p>
+                <p className="text-lg font-medium text-gray-800 dark:text-gray-200 font-mono">
+                  <span className="text-gray-600 dark:text-gray-400">Location:</span> <span className="text-gray-800 dark:text-white">East Java, Indonesia</span>
+                </p>
+                <p className="text-lg font-medium text-gray-800 dark:text-gray-200 font-mono">
+                  <span className="text-gray-600 dark:text-gray-400">Availability:</span> <span className="text-green-600 dark:text-green-400 font-semibold">Open to Opportunities</span>
+                </p>
+              </div>
             </div>
           </div>
 
@@ -103,7 +134,13 @@ export default function About() {
             <section id="about" className="mb-15">
               <h2 className="text-3xl font-semibold mb-4 text-purple-700 dark:text-purple-400">About Me</h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                I&apos;m a <span className="text-purple-600 dark:text-purple-400 font-semibold">Full-Stack Developer</span> who is passionate about creating modern, user-friendly web applications. I have solid experience in PHP and am currently deepening my understanding of JavaScript and frameworks like React and Next.js. I&apos;m always eager to learn and explore new technologies to improve my craft, and lately, I&apos;ve developed a strong interest in Web3, blockchain, and decentralized application development.
+                I am a <span className="text-purple-600 dark:text-purple-400 font-semibold">Full-Stack Developer</span> with a strong foundation in modern web development technologies. My expertise encompasses both frontend and backend development, with particular proficiency in PHP frameworks and contemporary JavaScript ecosystems including React and Next.js.
+              </p>
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-4">
+                Currently, I am expanding my knowledge in emerging technologies, particularly in the Web3 space, blockchain development, and decentralized applications. I maintain a commitment to continuous learning and staying current with industry best practices to deliver high-quality, scalable solutions.
+              </p>
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mt-4">
+                I approach each project with a focus on clean code architecture, user experience optimization, and performance-driven development. My collaborative nature and problem-solving mindset enable me to work effectively in team environments while contributing innovative solutions to complex technical challenges.
               </p>
             </section>
 
@@ -342,17 +379,16 @@ export default function About() {
 
             {/* Experience */}
             <section id="experience" className="mb-15 max-w-2xl text-left">
-              <h2 className="text-2xl font-semibold mb-3 text-purple-700 dark:text-purple-400">Experience</h2>
+              <h2 className="text-2xl font-semibold mb-3 text-purple-700 dark:text-purple-400">Professional Experience</h2>
 
               <div className="mb-4">
                 <h3 className="text-lg font-bold text-black dark:text-white flex items-center gap-2">
                   <span className="text-purple-400 text-xl">•</span>
-                  Fullstack Web Developer - Internship at Elecomp Indonesia
+                  Full-Stack Web Developer - Internship at Elecomp Indonesia
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 ml-4 mt-1">2024 - 2025</p>
                 <p className="text-gray-700 dark:text-gray-300 ml-4 mt-2">
-                  Worked on both frontend and backend development, contributing to real-world web applications. Collaborated with a team to build scalable features and maintain code quality.
-                  Specialized in developing company profile websites using CodeIgniter 4, focusing on creating responsive and user-friendly designs tailored to client needs.
+                  Developed and maintained full-stack web applications using modern development practices. Collaborated with cross-functional teams to implement scalable features while maintaining high code quality standards. Specialized in building responsive company profile websites utilizing CodeIgniter 4 framework, with a focus on creating intuitive user interfaces and optimizing user experience.
                 </p>
               </div>
 
@@ -360,16 +396,16 @@ export default function About() {
 
             {/* Education */}
             <section id="education" className="mb-15 max-w-2xl text-left">
-              <h2 className="text-2xl font-semibold mb-3 text-purple-700 dark:text-purple-400">Education</h2>
+              <h2 className="text-2xl font-semibold mb-3 text-purple-700 dark:text-purple-400">Educational Background</h2>
 
               <div className="mb-4">
                 <h3 className="text-lg text-black dark:text-white font-bold flex items-center gap-2">
                   <span className="text-purple-400 text-xl">•</span>
-                  SMKN 1 Boyolangu - Rekayasa Perangkat Lunak
+                  SMKN 1 Boyolangu - Software Engineering (Rekayasa Perangkat Lunak)
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 ml-4 mt-1">2022 - 2025</p>
                 <p className="text-gray-700 dark:text-gray-300 ml-4 mt-2">
-                  Focused on software engineering fundamentals, including web development, database design, and programming languages. Participated in practical projects and developed skills in building dynamic and responsive web applications.
+                  Comprehensive curriculum focused on software engineering principles, including web development methodologies, database design, and programming fundamentals. Actively participated in hands-on projects, developing practical skills in building dynamic web applications and implementing responsive design principles.
                 </p>
               </div>
             </section>
@@ -464,13 +500,15 @@ export default function About() {
 
             {/* Interests */}
             <section id="interests" className="mb-30 max-w-2xl text-left">
-              <h2 className="text-2xl font-semibold mb-3 text-purple-700 dark:text-purple-400">Interests</h2>
+              <h2 className="text-2xl font-semibold mb-3 text-purple-700 dark:text-purple-400">Professional Interests & Hobbies</h2>
               <p className="text-gray-700 dark:text-gray-300">
-                I have a deep interest in exploring the ever-evolving world of technology. I&apos;m particularly passionate about UI/UX design, as I enjoy crafting intuitive and engaging user experiences. I&apos;m also an avid supporter of open-source projects and enjoy contributing to collaborative development communities.
-                <br /><br />
-                Beyond that, I’m fascinated by emerging technologies such as blockchain, Web3, artificial intelligence (AI), and cryptocurrency. I believe these innovations are reshaping the future of the digital world, and I love diving into resources and discussions that help me understand them better.
-                <br /><br />
-                In addition to software development, I’ve always had a strong appreciation for the gaming industry — both from a player and a developer perspective. The intersection of creativity and technology in game development truly inspires me. Outside of tech, I enjoy traveling to experience new cultures and gain fresh perspectives that fuel my creativity and growth.
+                I maintain a keen interest in the rapidly evolving technology landscape, with particular focus on user interface and user experience design principles. I believe that creating intuitive and engaging user experiences is fundamental to successful software development. I actively support and contribute to open-source projects, recognizing the value of collaborative development communities in advancing technology.
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 mt-4">
+                My professional interests extend to emerging technologies, including blockchain infrastructure, Web3 protocols, artificial intelligence applications, and cryptocurrency ecosystems. I dedicate time to studying these innovations as they represent the future of digital transformation and decentralized systems.
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 mt-4">
+                Beyond software development, I have a longstanding appreciation for the gaming industry from both consumer and developer perspectives. The intersection of creative design and technical implementation in game development serves as inspiration for my approach to software engineering. Additionally, I value cultural experiences through travel, as they provide fresh perspectives that enhance creativity and professional growth.
               </p>
             </section>
 
