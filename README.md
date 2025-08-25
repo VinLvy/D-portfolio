@@ -2,8 +2,6 @@
 
 Welcome to **D-Portfolio**, my personal portfolio website showcasing my skills, projects, and experiences as a Full-Stack Developer. This portfolio is designed to be modern, responsive, and interactive, built with cutting-edge web technologies.
 
------
-
 ## 🌟 Features
 
   * **Interactive Homepage**: A dynamic introduction with a prominent call to action for my GitHub profile.
@@ -18,8 +16,6 @@ Welcome to **D-Portfolio**, my personal portfolio website showcasing my skills, 
   * **Responsive Design**: Optimized for various screen sizes, from mobile to desktop.
   * **Smooth Animations**: Utilizes `framer-motion` for fluid transitions and engaging user experience.
   * **Contact Information**: Easy access to my social media and email.
-
------
 
 ## 💻 Tech Stack
 
@@ -36,8 +32,6 @@ This portfolio is built using the following technologies:
   * **Solidity**: For smart contract development in the Web3 space.
   * **Git & GitHub**: For version control and collaboration.
   * **Figma**: For UI/UX design and prototyping.
-
------
 
 ## 🚀 Getting Started
 
@@ -66,13 +60,9 @@ To run this project locally, follow these steps:
 5.  **Open your browser:**
     Visit `http://localhost:3000` to see the portfolio.
 
------
-
 ## 🌐 Live Demo
 
 You can view the live version of my portfolio [here](https://d-portfolio-weld.vercel.app).
-
------
 
 ## 🤝 Connect with Me
 
@@ -84,8 +74,4 @@ Feel free to connect with me through any of the following platforms:
   * **Facebook**: [Davin Fibrian](https://facebook.com/davin.fbrn)
   * **Email**: davinfibrian@gmail.com
 
------
-
 Thank you for visiting my D-Portfolio\!
-
------
