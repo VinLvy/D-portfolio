@@ -7,6 +7,12 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    title: "SUNDAE Crypto Futures Analyst",
+    description: "A powerful Streamlit application that uses Google's Gemini AI to automatically analyze crypto trading charts and provide ready-to-execute trading signals using the SUNDAE system prompt.",
+    link: "https://github.com/VinLvy/SUNDAE",
+    image: "/images/project5.png",
+  },
+  {
     title: "dApps Lock Contract",
     description: "A decentralized application (dApp) lock contract that allows users to securely lock their tokens for a specified period, ensuring trust and transparency in token transactions.",
     link: "https://github.com/VinLvy/DApp-LockContract",
