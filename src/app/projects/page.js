@@ -7,6 +7,12 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    title: "BatikChain",
+    description: "An Indonesian batik product authenticity verification platform uses Ethereum blockchain technology. This system allows artisans to register their batik products with complete and transparent information, while consumers can verify their authenticity through the blockchain.",
+    link: "https://github.com/VinLvy/BatikChain",
+    image: "/images/project6.png",
+  },
+  {
     title: "SUNDAE Crypto Futures Analyst",
     description: "A powerful Streamlit application that uses Google's Gemini AI to automatically analyze crypto trading charts and provide ready-to-execute trading signals using the SUNDAE system prompt.",
     link: "https://github.com/VinLvy/SUNDAE",
