@@ -29,7 +29,7 @@ export default function Home() {
   const heroStats = [
     { label: "Projects Delivered", value: "20+" },
     { label: "Tech Stack", value: "12 tools" },
-    { label: "Clients", value: "8 happy" },
+    // { label: "Clients", value: "8 happy" },
   ];
 
   const experienceTimeline = [
@@ -139,7 +139,7 @@ export default function Home() {
         {/* Hero */}
         <section className="relative">
           <AuroraBackground className="p-8 sm:p-12 lg:p-16">
-            <RetroGrid className="opacity-80" />
+            {/* <RetroGrid className="opacity-80" /> */}
             <div className="relative grid items-center gap-12 lg:grid-cols-2">
               <div>
                 <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white/80">
@@ -165,7 +165,7 @@ export default function Home() {
                     className="group flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 px-6 py-3 text-white shadow-lg shadow-purple-500/40 transition hover:scale-105"
                   >
                     <Rocket className="transition group-hover:-translate-y-0.5" size={18} />
-                    Lihat CV
+                    Download my Resume
                   </Link>
                   <Link
                     href="https://github.com/VinLvy"
@@ -173,7 +173,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="rounded-full border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
                   >
-                    Kunjungi GitHub
+                    My GitHub
                   </Link>
                 </div>
 
