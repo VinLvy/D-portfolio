@@ -36,7 +36,7 @@ export default function Home() {
     {
       title: "Full-Stack Developer",
       company: "Freelance & Personal Labs",
-      period: "2022 — now",
+      period: "",
       summary:
         "Build bespoke dashboards, company profiles, and experimental Web3 tools with modern stacks like Next.js & Laravel.",
       highlights: [
@@ -48,7 +48,7 @@ export default function Home() {
     {
       title: "Web3 & Solidity Explorer",
       company: "Side quests",
-      period: "2023 — now",
+      period: "",
       summary:
         "Prototype on-chain utilities to understand real decentralized workflows and security implications.",
       highlights: [
