@@ -133,9 +133,9 @@ export default function Home() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-gradient-to-b from-white via-purple-50 to-white dark:from-slate-950 dark:via-slate-900 dark:to-slate-950"
+      className="min-h-screen"
     >
-      <div className="mx-auto flex min-h-screen max-w-6xl flex-col gap-20 px-5 py-16 text-gray-900 dark:text-gray-100">
+      <div className="mx-auto flex min-h-screen max-w-6xl flex-col gap-20 px-5 py-16 text-gray-900 dark:text-gray-100 mt-10 md:mt-10">
         {/* Hero */}
         <section className="relative">
           <AuroraBackground className="p-8 sm:p-12 lg:p-16">
