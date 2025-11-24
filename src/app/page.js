@@ -165,7 +165,7 @@ export default function Home() {
                     className="group flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 px-6 py-3 text-white shadow-lg shadow-purple-500/40 transition hover:scale-105"
                   >
                     <Rocket className="transition group-hover:-translate-y-0.5" size={18} />
-                    Download my Resume
+                    My Resume
                   </Link>
                   <Link
                     href="https://github.com/VinLvy"
@@ -173,6 +173,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="rounded-full border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
                   >
+                    
                     My GitHub
                   </Link>
                 </div>
@@ -206,13 +207,13 @@ export default function Home() {
                   </div>
                 </Link>
 
-                <OrbitingIcon radius={120} delay={0}>
+                <OrbitingIcon radius={120} angle={-30}>
                   <Code2 size={20} />
                 </OrbitingIcon>
-                <OrbitingIcon radius={150} delay={6}>
+                <OrbitingIcon radius={150} angle={50}>
                   <Rocket size={20} />
                 </OrbitingIcon>
-                <OrbitingIcon radius={95} delay={12}>
+                <OrbitingIcon radius={95} angle={250}>
                   <Sparkles size={20} />
                 </OrbitingIcon>
 
