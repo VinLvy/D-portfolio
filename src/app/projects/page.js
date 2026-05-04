@@ -24,7 +24,7 @@ const projects = [
     ],
     tech: ["Solidity", "ERC-721", "Ethereum", "Next.js", "React", "Ethers.js", "OpenZeppelin"],
     link: "https://github.com/VinLvy/BatikChain",
-    image: "/images/project6.png",
+    images: ["/images/project6.png", "/images/project6.png"],
     accent: "from-yellow-500/20 to-orange-500/10",
     borderAccent: "hover:border-yellow-500/50",
     badgeColor: "bg-yellow-500/10 border-yellow-500/30 text-yellow-300",
@@ -48,7 +48,7 @@ const projects = [
     ],
     tech: ["React", "TypeScript", "Vite", "Supabase", "PostgreSQL", "Google Gemini API", "Framer Motion", "Recharts"],
     link: "https://github.com/VinLvy",
-    image: "/images/project5.png",
+    images: ["/images/project5.png", "/images/project5.png"],
     accent: "from-blue-500/20 to-purple-500/10",
     borderAccent: "hover:border-blue-500/50",
     badgeColor: "bg-blue-500/10 border-blue-500/30 text-blue-300",
@@ -72,7 +72,7 @@ const projects = [
     ],
     tech: ["Next.js", "TypeScript", "FastAPI", "Python", "Google Gemini API", "Edge TTS", "REST API"],
     link: "https://github.com/VinLvy",
-    image: "/images/project4.png",
+    images: ["/images/project4.png", "/images/project4.png"],
     accent: "from-emerald-500/20 to-cyan-500/10",
     borderAccent: "hover:border-emerald-500/50",
     badgeColor: "bg-emerald-500/10 border-emerald-500/30 text-emerald-300",
@@ -96,7 +96,7 @@ const projects = [
     ],
     tech: ["Laravel 11", "PHP", "MySQL", "REST API", "Spatie Permissions", "Laravel Queues"],
     link: "https://github.com/VinLvy/Point-of-Saless",
-    image: "/images/project2.png",
+    images: ["/images/project2.png", "/images/project2.png"],
     accent: "from-purple-500/20 to-pink-500/10",
     borderAccent: "hover:border-purple-500/50",
     badgeColor: "bg-purple-500/10 border-purple-500/30 text-purple-300",
@@ -120,7 +120,7 @@ const projects = [
     ],
     tech: ["CodeIgniter 4", "PHP", "MySQL", "Schema.org", "SEO", "Responsive Design"],
     link: "https://github.com/VinLvy/Web-Competent",
-    image: "/images/project3.png",
+    images: ["/images/project3.png", "/images/project3.png"],
     accent: "from-pink-500/20 to-rose-500/10",
     borderAccent: "hover:border-pink-500/50",
     badgeColor: "bg-pink-500/10 border-pink-500/30 text-pink-300",
@@ -159,7 +159,7 @@ export default function Projects() {
             Featured Projects — From Resume
           </motion.div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
-            Things I've{" "}
+            Things I&apos;ve{" "}
             <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
               Built & Shipped
             </span>
@@ -195,16 +195,22 @@ export default function Projects() {
               )}
 
               <div className={`relative flex flex-col ${index % 2 !== 0 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-0`}>
-                {/* Image */}
-                <div className="w-full lg:w-5/12 flex-shrink-0 flex items-center justify-center bg-slate-950/60 p-4 lg:p-6">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    width={600}
-                    height={400}
-                    className="w-full h-auto max-h-72 lg:max-h-80 rounded-xl object-contain transition-transform duration-700 group-hover:scale-[1.03]"
-                    sizes="(max-width: 1024px) 100vw, 45vw"
-                  />
+                {/* Images */}
+                <div className="relative w-full lg:w-5/12 flex-shrink-0 flex flex-col items-center justify-center p-6 lg:p-8 gap-6">
+                  {/* Subtle glow behind the images */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${project.accent} opacity-20 blur-3xl rounded-full scale-90 pointer-events-none`} />
+                  
+                  {project.images?.map((imgSrc, imgIndex) => (
+                    <Image
+                      key={imgIndex}
+                      src={imgSrc}
+                      alt={`${project.title} screenshot ${imgIndex + 1}`}
+                      width={800}
+                      height={500}
+                      className="relative z-10 w-full h-auto rounded-xl object-contain shadow-[0_0_30px_rgba(0,0,0,0.4)] ring-1 ring-white/10 transition-all duration-500 hover:scale-[1.05] hover:-translate-y-1"
+                      sizes="(max-width: 1024px) 100vw, 45vw"
+                    />
+                  ))}
                 </div>
 
                 {/* Content */}
@@ -288,7 +294,7 @@ export default function Projects() {
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">More Projects Coming Soon</h2>
           <p className="text-gray-400 max-w-xl mx-auto leading-relaxed mb-8">
-            I'm constantly learning, building, and exploring new technologies. Stay tuned for exciting projects
+            I&apos;m constantly learning, building, and exploring new technologies. Stay tuned for exciting projects
             pushing the boundaries of modern web development — and beyond.
           </p>
           <Link
