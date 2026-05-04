@@ -120,7 +120,7 @@ const projects = [
     ],
     tech: ["CodeIgniter 4", "PHP", "MySQL", "Schema.org", "SEO", "Responsive Design"],
     link: "https://github.com/VinLvy/Web-Competent",
-    images: ["/images/project3.png", "/images/project3.png"],
+    images: ["/images/project3.png", "/images/project3b.png"],
     accent: "from-pink-500/20 to-rose-500/10",
     borderAccent: "hover:border-pink-500/50",
     badgeColor: "bg-pink-500/10 border-pink-500/30 text-pink-300",
