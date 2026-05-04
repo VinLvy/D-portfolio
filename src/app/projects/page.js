@@ -1,6 +1,6 @@
 'use client';
 
-import { Rocket } from 'lucide-react';
+import { Rocket, ExternalLink, Github, Trophy, Zap, TrendingUp, Users, Star } from 'lucide-react';
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -8,41 +8,135 @@ import { motion } from "framer-motion";
 const projects = [
   {
     title: "BatikChain",
-    description: "An Indonesian batik product authenticity verification platform uses Ethereum blockchain technology. This system allows artisans to register their batik products with complete and transparent information, while consumers can verify their authenticity through the blockchain.",
+    subtitle: "Blockchain Product Authentication Platform",
+    period: "Oct 2025 – Dec 2025",
+    description:
+      "A decentralized product authentication platform on the Ethereum blockchain targeting Indonesia's artisan batik industry. Artisans can register products with immutable on-chain provenance, while consumers verify authenticity via QR code in real-time.",
+    impact: [
+      { icon: Trophy, label: "Infinity Hackathon OJK 2025", value: "National Finalist", color: "text-yellow-400" },
+      { icon: Star, label: "Smart Contracts Audited", value: "OWASP Compliant", color: "text-emerald-400" },
+      { icon: Users, label: "Team Role", value: "Blockchain Lead", color: "text-purple-400" },
+    ],
+    highlights: [
+      "Architected & deployed ERC-721 Solidity smart contracts with immutable on-chain metadata & provenance tracking",
+      "Built React / Next.js frontend integrated with Ethers.js for real-time contract interaction",
+      "Enforced Ownable access control & validated against reentrancy and integer overflow vectors per OWASP",
+    ],
+    tech: ["Solidity", "ERC-721", "Ethereum", "Next.js", "React", "Ethers.js", "OpenZeppelin"],
     link: "https://github.com/VinLvy/BatikChain",
     image: "/images/project6.png",
+    accent: "from-yellow-500/20 to-orange-500/10",
+    borderAccent: "hover:border-yellow-500/50",
+    badgeColor: "bg-yellow-500/10 border-yellow-500/30 text-yellow-300",
+    featured: true,
   },
   {
-    title: "SUNDAE Crypto Futures Analyst",
-    description: "A powerful Streamlit application that uses Google's Gemini AI to automatically analyze crypto trading charts and provide ready-to-execute trading signals using the SUNDAE system prompt.",
-    link: "https://github.com/VinLvy/SUNDAE",
+    title: "ReLife RPG",
+    subtitle: "AI-Powered Gamified Life Tracker",
+    period: "Jan 2026 – Mar 2026",
+    description:
+      "A full-stack gamified life-tracking app where users log daily journal entries analyzed in real-time by Google Gemini 2.5 Flash AI. The LLM parses natural language into typed stat-delta objects that power a real-time leveling engine with 6 RPG attributes.",
+    impact: [
+      { icon: Zap, label: "AI Engine", value: "Gemini 2.5 Flash", color: "text-blue-400" },
+      { icon: TrendingUp, label: "RPG Attributes", value: "6 Live Stats", color: "text-purple-400" },
+      { icon: Star, label: "Architecture", value: "Zero-latency LLM", color: "text-pink-400" },
+    ],
+    highlights: [
+      "Engineered a structured LLM prompt pipeline (gemini.ts) parsing unstructured text into typed stat-delta objects",
+      "Implemented Supabase JWT auth with auto-session-timeout and a Framer Motion + Recharts live Radar Chart UI",
+      "Glassmorphism theming with real-time leveling engine, class & title unlock logic across 6 RPG attributes",
+    ],
+    tech: ["React", "TypeScript", "Vite", "Supabase", "PostgreSQL", "Google Gemini API", "Framer Motion", "Recharts"],
+    link: "https://github.com/VinLvy",
     image: "/images/project5.png",
+    accent: "from-blue-500/20 to-purple-500/10",
+    borderAccent: "hover:border-blue-500/50",
+    badgeColor: "bg-blue-500/10 border-blue-500/30 text-blue-300",
+    featured: false,
   },
   {
-    title: "dApps Lock Contract",
-    description: "A decentralized application (dApp) lock contract that allows users to securely lock their tokens for a specified period, ensuring trust and transparency in token transactions.",
-    link: "https://github.com/VinLvy/DApp-LockContract",
+    title: "AntiFlow",
+    subtitle: "AI Content Automation Engine",
+    period: "Jul 2025 – Sep 2025",
+    description:
+      "A zero-cost AI content automation engine that produces complete YouTube video asset kits — scripts, visual prompts, and voiceovers — from a single topic input, using a decoupled Next.js + FastAPI architecture for independent pipeline scaling.",
+    impact: [
+      { icon: Zap, label: "Infrastructure Cost", value: "$0 / month", color: "text-emerald-400" },
+      { icon: TrendingUp, label: "Assets per Topic", value: "Scripts + Voiceovers", color: "text-cyan-400" },
+      { icon: Star, label: "AI Models", value: "Gemini + Edge TTS", color: "text-purple-400" },
+    ],
+    highlights: [
+      "Architected decoupled backend with isolated AI logic and file management for independent pipeline scaling",
+      "Integrated Google Gemini 2.5 Flash for structured LLM scriptwriting and Microsoft Edge TTS for narration",
+      "Eliminated all production infrastructure costs by engineering the full pipeline exclusively on free-tier APIs",
+    ],
+    tech: ["Next.js", "TypeScript", "FastAPI", "Python", "Google Gemini API", "Edge TTS", "REST API"],
+    link: "https://github.com/VinLvy",
     image: "/images/project4.png",
+    accent: "from-emerald-500/20 to-cyan-500/10",
+    borderAccent: "hover:border-emerald-500/50",
+    badgeColor: "bg-emerald-500/10 border-emerald-500/30 text-emerald-300",
+    featured: false,
   },
   {
-    title: "Landing Page",
-    description: "A modern and responsive landing page built with Next.js and Tailwind CSS, optimized for performance and user engagement.",
-    link: "https://github.com/VinLvy/Landing-page",
-    image: "/images/project1.png",
-  },
-  {
-    title: "Point of Sale (POS) System",
-    description: "A web-based Point of Sale (POS) system designed to streamline sales, manage inventory, and generate real-time reports for small to medium businesses.",
+    title: "Point of Sales System",
+    subtitle: "Full-Stack Business Operations Platform",
+    period: "Jan 2025 – Feb 2025",
+    description:
+      "A production-grade full-stack POS system in Laravel 11 with real-time inventory tracking, automated PDF/CSV report generation via Laravel Queues, and role-based authentication integrated with third-party POS hardware.",
+    impact: [
+      { icon: TrendingUp, label: "Staff Workload Reduced", value: "↓ 40%", color: "text-emerald-400" },
+      { icon: Zap, label: "Report Generation", value: "Automated PDF/CSV", color: "text-blue-400" },
+      { icon: Star, label: "Auth System", value: "Role-Based (Spatie)", color: "text-purple-400" },
+    ],
+    highlights: [
+      "Engineered automated PDF/CSV report generation via Laravel Queues, cutting accounting reconciliation by 40%",
+      "Designed real-time inventory tracking across multiple product categories with audit trails",
+      "Implemented Spatie Permissions RBAC and a RESTful API layer for third-party POS hardware integration",
+    ],
+    tech: ["Laravel 11", "PHP", "MySQL", "REST API", "Spatie Permissions", "Laravel Queues"],
     link: "https://github.com/VinLvy/Point-of-Saless",
     image: "/images/project2.png",
+    accent: "from-purple-500/20 to-pink-500/10",
+    borderAccent: "hover:border-purple-500/50",
+    badgeColor: "bg-purple-500/10 border-purple-500/30 text-purple-300",
+    featured: false,
   },
   {
-    title: "Company Profile Website",
-    description: "A professional company profile website that highlights the organization’s services, projects, and brand identity, tailored for both desktop and mobile viewing.",
+    title: "Company Profile Websites",
+    subtitle: "8× Production Client Deployments",
+    period: "Jul 2024 – Dec 2024",
+    description:
+      "Delivered 8 production company profile websites using CodeIgniter 4 and MySQL, each with custom responsive layouts, lazy-loaded media, and Schema.org structured data. Consistently maintained Lighthouse scores above 90 and achieved measurable SEO gains.",
+    impact: [
+      { icon: TrendingUp, label: "Organic Search Visibility", value: "+25%", color: "text-emerald-400" },
+      { icon: Star, label: "Lighthouse Score", value: "90+ All Sites", color: "text-yellow-400" },
+      { icon: Users, label: "Sites Delivered", value: "8 Clients", color: "text-blue-400" },
+    ],
+    highlights: [
+      "Maintained Lighthouse scores above 90 through image optimization, minified assets & server-side caching",
+      "Implemented Schema.org structured data driving a 25% increase in organic search visibility",
+      "Conducted technical onboarding for interns with codebase walkthroughs and end-to-end cPanel deployment",
+    ],
+    tech: ["CodeIgniter 4", "PHP", "MySQL", "Schema.org", "SEO", "Responsive Design"],
     link: "https://github.com/VinLvy/Web-Competent",
     image: "/images/project3.png",
+    accent: "from-pink-500/20 to-rose-500/10",
+    borderAccent: "hover:border-pink-500/50",
+    badgeColor: "bg-pink-500/10 border-pink-500/30 text-pink-300",
+    featured: false,
   },
 ];
+
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.15 } },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+};
 
 export default function Projects() {
   return (
@@ -50,68 +144,164 @@ export default function Projects() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col items-center justify-center min-h-screen px-6 py-12"
+      className="min-h-screen px-5 py-12"
     >
-      <h1 className="text-4xl md:text-4xl mt-8 md:mt-24 font-bold text-black dark:text-white mb-4 text-center">
-        My Projects
-      </h1>
-      <p className="text-gray-700 dark:text-gray-400 text-lg md:text-l mb-12 text-center max-w-2xl mx-auto">
-        A curated selection of personal and professional projects I&apos;ve built using modern web technologies like Next.js and Tailwind CSS.
-      </p>
-
-      <div className="flex flex-col gap-12 w-full mb-5">
-        {projects.map((project, index) => (
+      <div className="mx-auto max-w-6xl">
+        {/* Header */}
+        <div className="mt-8 md:mt-20 mb-16 text-center">
           <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.2, duration: 0.1 }}
-            className={`flex flex-col md:flex-row ${index % 2 !== 0 ? "md:flex-row-reverse" : ""}
-            items-stretch bg-gray-600/50 dark:bg-gray-900/50 border border-gray-700 hover:border-purple-500 rounded-2xl overflow-hidden shadow-md hover:shadow-purple-900/30 transition-all duration-300 max-w-5xl w-full mx-auto backdrop-blur-md p-4 md:p-6`}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-4 py-2 text-sm text-purple-300 mb-5"
           >
-            <div className="w-full md:w-1/2 flex items-center justify-center p-4">
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={600}
-                height={444}
-                className="max-w-full h-auto rounded-xl shadow-sm"
-              />
-            </div>
-
-            <div className="p-6 flex flex-col justify-between md:w-1/2 text-center md:text-left items-center md:items-start">
-              <div>
-                <h2 className="text-2xl font-semibold text-white mb-3 transition-colors duration-300">
-                  {project.title}
-                </h2>
-                <p className="text-gray-200 dark:text-gray-400 mb-4">{project.description}</p>
-              </div>
-              <Link
-                href={project.link}
-                className="inline-block w-fit px-5 py-2 rounded-full bg-purple-600 text-white font-medium shadow-md hover:bg-purple-700 transition-all duration-300"
-              >
-                View Project →
-              </Link>
-            </div>
+            <Trophy size={14} />
+            Featured Projects — From Resume
           </motion.div>
-        ))}
-      </div>
-
-      {/* Bagian penutup setelah daftar project */}
-      <div className="mt-20 text-center mb-15">
-        <div className="flex justify-center mb-6">
-          <div className="bg-purple-600 p-4 rounded-full shadow-lg animate-bounce">
-            <Rocket className="text-white w-8 h-8" />
-          </div>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+            Things I've{" "}
+            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Built & Shipped
+            </span>
+          </h1>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            Production-grade projects spanning blockchain, AI automation, and full-stack web apps —
+            each built to solve real problems and measured by real impact.
+          </p>
         </div>
-        <h2 className="text-2xl md:text-3xl font-bold text-black dark:text-white mb-4">
-          More Projects Coming Soon
-        </h2>
-        <p className="text-md text-gray-700 dark:text-gray-400 max-w-xl mx-auto leading-relaxed">
-          I&apos;m constantly learning, building, and exploring new technologies. Stay tuned for exciting new projects that push the boundaries of modern web development — and beyond.
-        </p>
-      </div>
 
+        {/* Projects List */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="flex flex-col gap-10 mb-10"
+        >
+          {projects.map((project, index) => (
+            <motion.article
+              key={project.title}
+              variants={cardVariants}
+              className={`group relative rounded-3xl border border-white/10 ${project.borderAccent} bg-slate-900/70 backdrop-blur-md overflow-hidden shadow-xl transition-all duration-500 hover:shadow-purple-900/20`}
+            >
+              {/* Gradient overlay */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${project.accent} opacity-60 pointer-events-none`} />
+
+              {/* Featured badge */}
+              {project.featured && (
+                <div className="absolute top-4 right-4 z-10 flex items-center gap-1.5 rounded-full bg-yellow-500/20 border border-yellow-500/40 px-3 py-1 text-xs font-semibold text-yellow-300">
+                  <Trophy size={11} />
+                  National Hackathon
+                </div>
+              )}
+
+              <div className={`relative flex flex-col ${index % 2 !== 0 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-0`}>
+                {/* Image */}
+                <div className="w-full lg:w-5/12 flex-shrink-0 flex items-center justify-center bg-slate-950/60 p-4 lg:p-6">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={600}
+                    height={400}
+                    className="w-full h-auto max-h-72 lg:max-h-80 rounded-xl object-contain transition-transform duration-700 group-hover:scale-[1.03]"
+                    sizes="(max-width: 1024px) 100vw, 45vw"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="relative flex flex-col justify-between p-7 lg:p-9 lg:w-7/12">
+                  {/* Period */}
+                  <p className="text-xs font-mono text-gray-500 mb-2">{project.period}</p>
+
+                  {/* Title */}
+                  <div className="mb-4">
+                    <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight">{project.title}</h2>
+                    <p className="text-sm text-purple-300 mt-1 font-medium">{project.subtitle}</p>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-gray-300 text-sm leading-relaxed mb-5">{project.description}</p>
+
+                  {/* Impact metrics */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5">
+                    {project.impact.map((item) => (
+                      <div
+                        key={item.label}
+                        className="rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 text-center"
+                      >
+                        <item.icon size={14} className={`mx-auto mb-1 ${item.color}`} />
+                        <p className={`text-base font-bold ${item.color}`}>{item.value}</p>
+                        <p className="text-xs text-gray-500 leading-tight mt-0.5">{item.label}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Highlights */}
+                  <ul className="space-y-1.5 mb-5">
+                    {project.highlights.map((h) => (
+                      <li key={h} className="flex items-start gap-2 text-xs text-gray-400 leading-relaxed">
+                        <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-purple-500" />
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Tech badges */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tech.map((t) => (
+                      <span
+                        key={t}
+                        className={`rounded-full border px-2.5 py-1 text-xs font-medium ${project.badgeColor}`}
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* CTA */}
+                  <div className="flex items-center gap-3">
+                    <Link
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-purple-500/30 transition-all duration-300 hover:scale-105 hover:shadow-purple-500/50"
+                    >
+                      <Github size={15} />
+                      View on GitHub
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </motion.article>
+          ))}
+        </motion.div>
+
+        {/* Footer CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-20 mb-16 text-center"
+        >
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 shadow-xl shadow-purple-500/40 mb-6 animate-bounce">
+            <Rocket className="text-white w-7 h-7" />
+          </div>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">More Projects Coming Soon</h2>
+          <p className="text-gray-400 max-w-xl mx-auto leading-relaxed mb-8">
+            I'm constantly learning, building, and exploring new technologies. Stay tuned for exciting projects
+            pushing the boundaries of modern web development — and beyond.
+          </p>
+          <Link
+            href="https://github.com/VinLvy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10 hover:scale-105"
+          >
+            <Github size={16} />
+            Follow on GitHub
+          </Link>
+        </motion.div>
+      </div>
     </motion.div>
   );
 }
