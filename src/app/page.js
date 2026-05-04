@@ -74,7 +74,7 @@ export default function Home() {
     },
     {
       name: "LinkedIn",
-      link: "https://www.linkedin.com/in/davin-p-f-0b00a12b7/",
+      link: "https://www.linkedin.com/in/davinpfbrn/",
       icon: <Linkedin size={22} />,
       description: "Professional journey & updates.",
     },
@@ -160,7 +160,7 @@ export default function Home() {
 
                 <div className="mt-8 flex flex-wrap gap-4">
                   <Link
-                    href="/RESUME Davin.pdf"
+                    href="/DavinPutraFibrian-Resume.pdf"
                     download
                     className="group flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 px-6 py-3 text-white shadow-lg shadow-purple-500/40 transition hover:scale-105"
                   >
