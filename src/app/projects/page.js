@@ -143,10 +143,10 @@ const projects = [
       "Engineered a modular, component-based layout using Figma specifications for seamless desktop and mobile experiences",
     ],
     tech: ["Next.js", "JavaScript", "Tailwind CSS", "Lottie", "Figma", "Responsive Design"],
-    link: "https://github.com/VinLvy/Web-Competent",
+    link: "https://github.com/VinLvy/landing-page",
     images: ["/images/project1.png", "/images/project1b.png"],
-    accent: "from-pink-500/20 to-rose-500/10",
-    borderAccent: "hover:border-pink-500/50",
+    accent: "from-indigo-500/20 to-indigo-500/10",
+    borderAccent: "hover:border-indigo-500/50",
     badgeColor: "bg-indigo-500/10 border-indigo-500/30 text-indigo-300",
     featured: false,
   }
