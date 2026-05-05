@@ -187,12 +187,7 @@ export default function Projects() {
               <div className={`absolute inset-0 bg-gradient-to-br ${project.accent} opacity-60 pointer-events-none`} />
 
               {/* Featured badge */}
-              {project.featured && (
-                <div className="absolute top-4 right-4 z-10 flex items-center gap-1.5 rounded-full bg-yellow-500/20 border border-yellow-500/40 px-3 py-1 text-xs font-semibold text-yellow-300">
-                  <Trophy size={11} />
-                  National Hackathon
-                </div>
-              )}
+              
 
               <div className={`relative flex flex-col ${index % 2 !== 0 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-0`}>
                 {/* Images */}
