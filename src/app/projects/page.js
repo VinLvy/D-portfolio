@@ -174,7 +174,7 @@ export default function Projects() {
             className="inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-4 py-2 text-sm text-purple-300 mb-5"
           >
             <Trophy size={14} />
-            Featured Projects — From Resume
+            Featured Projects
           </motion.div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
             Things I&apos;ve{" "}
