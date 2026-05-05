@@ -126,6 +126,30 @@ const projects = [
     badgeColor: "bg-pink-500/10 border-pink-500/30 text-pink-300",
     featured: false,
   },
+  {
+    title: "Landing Page",
+    subtitle: "Landing Page For A Technology Company",
+    period: "March 2025 - May 2025",
+    description:
+      "A modern, high-performance landing page for a technology company, featuring a sleek, glassmorphic design with smooth scrolling, micro-interactions, and a full-responsive layout for seamless desktop and mobile experiences.",
+    impact: [
+      { icon: TrendingUp, label: "Performance", value: "98.6", color: "text-emerald-400" },
+      { icon: Star, label: "Accessibility", value: "100", color: "text-yellow-400" },
+      { icon: Users, label: "SEO", value: "100", color: "text-blue-400" },
+    ],
+    highlights: [
+      "Achieved a performance score of 98.6 and 100% on accessibility through optimized assets and ARIA-compliant markup",
+      "Implemented a custom, high-performance animation system with Lottie micro-interactions and smooth scrolling effects",
+      "Engineered a modular, component-based layout using Figma specifications for seamless desktop and mobile experiences",
+    ],
+    tech: ["Next.js", "JavaScript", "Tailwind CSS", "Lottie", "Figma", "Responsive Design"],
+    link: "https://github.com/VinLvy/Web-Competent",
+    images: ["/images/project1.png", "/images/project1b.png"],
+    accent: "from-pink-500/20 to-rose-500/10",
+    borderAccent: "hover:border-pink-500/50",
+    badgeColor: "bg-indigo-500/10 border-indigo-500/30 text-indigo-300",
+    featured: false,
+  }
 ];
 
 const containerVariants = {
