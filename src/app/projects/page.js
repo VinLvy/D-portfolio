@@ -28,7 +28,6 @@ const projects = [
     accent: "from-yellow-500/20 to-orange-500/10",
     borderAccent: "hover:border-yellow-500/50",
     badgeColor: "bg-yellow-500/10 border-yellow-500/30 text-yellow-300",
-    featured: true,
   },
   {
     title: "ReLife RPG",
@@ -52,7 +51,6 @@ const projects = [
     accent: "from-blue-500/20 to-purple-500/10",
     borderAccent: "hover:border-blue-500/50",
     badgeColor: "bg-blue-500/10 border-blue-500/30 text-blue-300",
-    featured: false,
   },
   {
     title: "AntiFlow",
@@ -76,7 +74,6 @@ const projects = [
     accent: "from-emerald-500/20 to-cyan-500/10",
     borderAccent: "hover:border-emerald-500/50",
     badgeColor: "bg-emerald-500/10 border-emerald-500/30 text-emerald-300",
-    featured: false,
   },
   {
     title: "Point of Sales System",
@@ -100,7 +97,6 @@ const projects = [
     accent: "from-purple-500/20 to-pink-500/10",
     borderAccent: "hover:border-purple-500/50",
     badgeColor: "bg-purple-500/10 border-purple-500/30 text-purple-300",
-    featured: false,
   },
   {
     title: "Company Profile Websites",
@@ -124,7 +120,6 @@ const projects = [
     accent: "from-pink-500/20 to-rose-500/10",
     borderAccent: "hover:border-pink-500/50",
     badgeColor: "bg-pink-500/10 border-pink-500/30 text-pink-300",
-    featured: false,
   },
   {
     title: "Landing Page",
@@ -148,7 +143,6 @@ const projects = [
     accent: "from-indigo-500/20 to-indigo-500/10",
     borderAccent: "hover:border-indigo-500/50",
     badgeColor: "bg-indigo-500/10 border-indigo-500/30 text-indigo-300",
-    featured: false,
   }
 ];
 
@@ -209,9 +203,6 @@ export default function Projects() {
             >
               {/* Gradient overlay */}
               <div className={`absolute inset-0 bg-gradient-to-br ${project.accent} opacity-60 pointer-events-none`} />
-
-              {/* Featured badge */}
-              
 
               <div className={`relative flex flex-col ${index % 2 !== 0 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-0`}>
                 {/* Images */}
