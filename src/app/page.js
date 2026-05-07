@@ -138,22 +138,14 @@ export default function Home() {
       stars: 4
     },
     { name: "Python", icon: "/icons/Python.svg", stars: 4 },
-    {
-      name: "FastAPI",
-      icon: <Server className="text-teal-500" size={40} />,
-      stars: 4
-    },
+    { name: "Golang", icon: "/icons/golang.svg", stars: 4 },
     { name: "Solidity", icon: "/icons/Solidity.svg", stars: 4 },
     {
       name: "Supabase",
       icon: <Zap className="text-emerald-500" size={40} />,
       stars: 4
     },
-    {
-      name: "Gemini AI",
-      icon: <Bot className="text-purple-400" size={40} />,
-      stars: 5
-    },
+    { name: "Node.js", icon: "/icons/Node.js.svg", stars: 4 },
   ];
 
   return (
