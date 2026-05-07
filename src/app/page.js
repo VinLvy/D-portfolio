@@ -20,6 +20,10 @@ import {
   Instagram,
   Linkedin,
   Mail,
+  Database,
+  Server,
+  Zap,
+  Bot,
 } from "lucide-react";
 
 export default function Home() {
@@ -28,7 +32,7 @@ export default function Home() {
 
   const heroStats = [
     { label: "Projects Delivered", value: "20+" },
-    { label: "Tech Stack", value: "12 tools" },
+    { label: "Tech Stack", value: "15 tools" },
     // { label: "Clients", value: "8 happy" },
   ];
 
@@ -87,15 +91,6 @@ export default function Home() {
   ];
 
   const techStack = [
-    { name: "HTML", icon: "/icons/html.svg", stars: 5 },
-    { name: "CSS", icon: "/icons/css.svg", stars: 5 },
-    { name: "Tailwind CSS", icon: "/icons/tailwind.svg", stars: 4 },
-    { name: "JavaScript", icon: "/icons/javascript.png", stars: 4 },
-    { name: "PHP", icon: "/icons/php.svg", stars: 5 },
-    { name: "Python", icon: "/icons/Python.svg", stars: 3 },
-    { name: "MySQL", icon: "/icons/mysql.svg", stars: 5 },
-    { name: "CodeIgniter 4", icon: "/icons/codeigniter.svg", stars: 5 },
-    { name: "Laravel", icon: "/icons/laravel.svg", stars: 4 },
     {
       name: "Next.js",
       icon: (
@@ -119,13 +114,46 @@ export default function Home() {
             </linearGradient>
           </defs>
         </svg>
-      ), stars: 4
+      ), stars: 5
     },
-    { name: "React", icon: "/icons/react.png", stars: 3 },
-    { name: "Node.js", icon: "/icons/Node.js.svg", stars: 3 },
-    { name: "Express.js", icon: "/icons/express-js.svg", stars: 4 },
-    { name: "MongoDB", icon: "/icons/mongo-db.png", stars: 4 },
-    { name: "Solidity", icon: "/icons/Solidity.svg", stars: 3 },
+    { name: "React", icon: "/icons/react.png", stars: 5 },
+    {
+      name: "TypeScript",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="50" height="50">
+          <rect width="128" height="128" fill="#3178C6" rx="12"/>
+          <text x="64" y="92" fill="white" fontFamily="Arial, sans-serif" fontSize="64" fontWeight="bold" textAnchor="middle">TS</text>
+        </svg>
+      ), stars: 5
+    },
+    { name: "JavaScript", icon: "/icons/javascript.png", stars: 5 },
+    { name: "Tailwind CSS", icon: "/icons/tailwind.svg", stars: 5 },
+    { name: "PHP", icon: "/icons/php.svg", stars: 5 },
+    { name: "Laravel", icon: "/icons/laravel.svg", stars: 5 },
+    { name: "CodeIgniter 4", icon: "/icons/codeigniter.svg", stars: 5 },
+    { name: "MySQL", icon: "/icons/mysql.svg", stars: 5 },
+    {
+      name: "PostgreSQL",
+      icon: <Database className="text-blue-400" size={40} />,
+      stars: 4
+    },
+    { name: "Python", icon: "/icons/Python.svg", stars: 4 },
+    {
+      name: "FastAPI",
+      icon: <Server className="text-teal-500" size={40} />,
+      stars: 4
+    },
+    { name: "Solidity", icon: "/icons/Solidity.svg", stars: 4 },
+    {
+      name: "Supabase",
+      icon: <Zap className="text-emerald-500" size={40} />,
+      stars: 4
+    },
+    {
+      name: "Gemini AI",
+      icon: <Bot className="text-purple-400" size={40} />,
+      stars: 5
+    },
   ];
 
   return (
