@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import GlareHover from "../../components/GlareHover";
+import { Database, Server, Zap, Bot } from "lucide-react";
 
 export default function About() {
 
@@ -155,7 +156,7 @@ export default function About() {
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-gray-200">
                   {[
-                    { name: "React", icon: "/icons/react.png", stars: 3 },
+                    { name: "React", icon: "/icons/react.png", stars: 5 },
                     {
                       name: "Next.js",
                       icon: (
@@ -180,12 +181,22 @@ export default function About() {
                           </defs>
                         </svg>
                       ),
-                      stars: 4,
+                      stars: 5,
                     },
-                    { name: "Tailwind CSS", icon: "/icons/tailwind.svg", stars: 4 },
+                    {
+                      name: "TypeScript",
+                      icon: (
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="50" height="50">
+                          <rect width="128" height="128" fill="#3178C6" rx="12"/>
+                          <text x="64" y="92" fill="white" fontFamily="Arial, sans-serif" fontSize="64" fontWeight="bold" textAnchor="middle">TS</text>
+                        </svg>
+                      ), stars: 5
+                    },
+                    { name: "Vite", icon: "/icons/vite.svg", stars: 4 },
+                    { name: "Tailwind CSS", icon: "/icons/tailwind.svg", stars: 5 },
                     { name: "HTML", icon: "/icons/html.svg", stars: 5 },
                     { name: "CSS", icon: "/icons/css.svg", stars: 5 },
-                    { name: "JavaScript", icon: "/icons/javascript.png", stars: 4 },
+                    { name: "JavaScript", icon: "/icons/javascript.png", stars: 5 },
                   ].map((tech, index) => (
                     <GlareHover
                       key={tech.name}
@@ -220,12 +231,13 @@ export default function About() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-gray-200">
                   {[
                     { name: "PHP", icon: "/icons/php.svg", stars: 5 },
-                    { name: "Node.js", icon: "/icons/Node.js.svg", stars: 3 },
+                    { name: "Node.js", icon: "/icons/Node.js.svg", stars: 4 },
                     { name: "Express", icon: "/icons/express-js.svg", stars: 4 },
-                    { name: "Golang", icon: "/icons/golang.svg", stars: 2 },
+                    { name: "Golang", icon: "/icons/golang.svg", stars: 4 },
                     { name: "CodeIgniter 4", icon: "/icons/codeigniter.svg", stars: 5 },
-                    { name: "Laravel", icon: "/icons/laravel.svg", stars: 4 },
-                    // { name: "Python", icon: "/icons/python.svg", stars: 3 },
+                    { name: "Laravel", icon: "/icons/laravel.svg", stars: 5 },
+                    { name: "Python", icon: "/icons/Python.svg", stars: 4 },
+                    { name: "FastAPI", icon: <Server className="text-teal-500" size={50} />, stars: 4 },
                   ].map((tech, index) => (
                     <GlareHover
                       key={tech.name}
@@ -238,13 +250,11 @@ export default function About() {
                     >
                       <div className="flex flex-col items-center bg-gray-600/55 dark:bg-gray-800/55 p-8 rounded-3xl min-w-[150px] shadow-lg border-2 border-rose-500 w-full h-full">
                         <div className="w-20 h-20 flex items-center justify-center mb-4">
-                          <Image
-                            src={tech.icon}
-                            alt={tech.name}
-                            width={50}
-                            height={50}
-                            className="object-contain"
-                          />
+                          {typeof tech.icon === "string" ? (
+                            <Image src={tech.icon} alt={tech.name} width={50} height={50} className="object-contain" />
+                          ) : (
+                            tech.icon
+                          )}
                         </div>
                         <p className="text-md font-semibold text-center">{tech.name}</p>
                         <p className="text-yellow-400 text-xl mt-2 text-center">
@@ -264,7 +274,9 @@ export default function About() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-gray-200">
                   {[
                     { name: "MySQL", icon: "/icons/mysql.svg", stars: 5 },
+                    { name: "PostgreSQL", icon: <Database className="text-blue-400" size={50} />, stars: 4 },
                     { name: "MongoDB", icon: "/icons/mongo-db.png", stars: 4 },
+                    { name: "Supabase", icon: <Zap className="text-emerald-500" size={50} />, stars: 4 },
                   ].map((tech, index) => (
                     <GlareHover
                       key={tech.name}
@@ -277,13 +289,11 @@ export default function About() {
                     >
                       <div className="flex flex-col items-center bg-gray-600/55 dark:bg-gray-800/55 p-8 rounded-3xl min-w-[150px] shadow-lg border-2 border-cyan-500 w-full h-full">
                         <div className="w-20 h-20 flex items-center justify-center mb-4">
-                          <Image
-                            src={tech.icon}
-                            alt={tech.name}
-                            width={50}
-                            height={50}
-                            className="object-contain"
-                          />
+                          {typeof tech.icon === "string" ? (
+                            <Image src={tech.icon} alt={tech.name} width={50} height={50} className="object-contain" />
+                          ) : (
+                            tech.icon
+                          )}
                         </div>
                         <p className="text-md font-semibold text-center">{tech.name}</p>
                         <p className="text-yellow-400 text-xl mt-2 text-center">
@@ -303,9 +313,10 @@ export default function About() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-gray-200">
                   {[
                     { name: "Github", icon: "/icons/github.png", stars: 5 },
-                    { name: "Git", icon: "/icons/icons8-git.svg", stars: 3 },
+                    { name: "Git", icon: "/icons/icons8-git.svg", stars: 4 },
                     { name: "VS Code", icon: "/icons/vscode.svg", stars: 5 },
-                    { name: "Figma", icon: "/icons/figma.png", stars: 3 },
+                    { name: "Figma", icon: "/icons/figma.png", stars: 4 },
+                    { name: "Gemini AI", icon: <Bot className="text-purple-400" size={50} />, stars: 5 },
                   ].map((tech, index) => (
                     <GlareHover
                       key={tech.name}
@@ -318,13 +329,11 @@ export default function About() {
                     >
                       <div className="flex flex-col items-center bg-gray-600/55 dark:bg-gray-800/55 p-8 rounded-3xl min-w-[150px] shadow-lg border-2 border-purple-800 w-full h-full">
                         <div className="w-20 h-20 flex items-center justify-center mb-4">
-                          <Image
-                            src={tech.icon}
-                            alt={tech.name}
-                            width={50}
-                            height={50}
-                            className="object-contain"
-                          />
+                          {typeof tech.icon === "string" ? (
+                            <Image src={tech.icon} alt={tech.name} width={50} height={50} className="object-contain" />
+                          ) : (
+                            tech.icon
+                          )}
                         </div>
                         <p className="text-md font-semibold text-center">{tech.name}</p>
                         <p className="text-yellow-400 text-xl mt-2 text-center">
@@ -343,7 +352,7 @@ export default function About() {
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-gray-200">
                   {[
-                    { name: "Solidity", icon: "/icons/Solidity.svg", stars: 3 },
+                    { name: "Solidity", icon: "/icons/Solidity.svg", stars: 4 },
                     // { name: "Ethereum", icon: "/icons/ethereum.png", stars: 4 },
                     // { name: "Smart Contracts", icon: "/icons/smart-contracts.png", stars: 3 },
                   ].map((tech, index) => (
@@ -358,13 +367,11 @@ export default function About() {
                     >
                       <div className="flex flex-col items-center bg-gray-600/55 dark:bg-gray-800/55 p-8 rounded-3xl min-w-[150px] shadow-lg border-2 border-blue-500 w-full h-full">
                         <div className="w-20 h-20 flex items-center justify-center mb-4">
-                          <Image
-                            src={tech.icon}
-                            alt={tech.name}
-                            width={50}
-                            height={50}
-                            className="object-contain"
-                          />
+                          {typeof tech.icon === "string" ? (
+                            <Image src={tech.icon} alt={tech.name} width={50} height={50} className="object-contain" />
+                          ) : (
+                            tech.icon
+                          )}
                         </div>
                         <p className="text-md font-semibold text-center">{tech.name}</p>
                         <p className="text-yellow-400 text-xl mt-2 text-center">
