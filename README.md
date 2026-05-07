@@ -69,9 +69,8 @@ You can view the live version of my portfolio [here](https://d-portfolio-weld.ve
 Feel free to connect with me through any of the following platforms:
 
   * **GitHub**: [github.com/VinLvy](https://github.com/VinLvy)
-  * **LinkedIn**: [Davin Putra Fibrian](https://www.linkedin.com/in/davin-p-f-0b00a12b7/)
+  * **LinkedIn**: [Davin Putra Fibrian](https://www.linkedin.com/in/davinpfbrn/)
   * **Instagram**: [@davin.fbrn](https://instagram.com/davin.fbrn)
-  * **Facebook**: [Davin Fibrian](https://facebook.com/davin.fbrn)
   * **Email**: davinfibrian@gmail.com
 
 Thank you for visiting my D-Portfolio\!
