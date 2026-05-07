@@ -132,11 +132,7 @@ export default function Home() {
     { name: "Laravel", icon: "/icons/laravel.svg", stars: 5 },
     { name: "CodeIgniter 4", icon: "/icons/codeigniter.svg", stars: 5 },
     { name: "MySQL", icon: "/icons/mysql.svg", stars: 5 },
-    {
-      name: "PostgreSQL",
-      icon: <Database className="text-blue-400" size={40} />,
-      stars: 4
-    },
+    { name: "GitHub", icon: "/icons/github.png", stars: 5 },
     { name: "Python", icon: "/icons/Python.svg", stars: 4 },
     { name: "Golang", icon: "/icons/golang.svg", stars: 4 },
     { name: "Solidity", icon: "/icons/Solidity.svg", stars: 4 },
@@ -145,7 +141,7 @@ export default function Home() {
       icon: <Zap className="text-emerald-500" size={40} />,
       stars: 4
     },
-    { name: "Node.js", icon: "/icons/Node.js.svg", stars: 4 },
+    { name: "Vite", icon: "/icons/vite.svg", stars: 4 },
   ];
 
   return (
