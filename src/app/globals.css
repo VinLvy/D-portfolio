@@ -1,30 +1,199 @@
 @import "tailwindcss";
 
+/* ─────────────────────────────────────────────────────────────────
+   DESIGN TOKENS
+   ───────────────────────────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Background */
+  --bg:            #07090f;
+  --surface:       #0c1018;
+  --surface-2:     #141a24;
+  --surface-hover: #1a2232;
+
+  /* Borders */
+  --border:        rgba(255, 255, 255, 0.07);
+  --border-soft:   rgba(255, 255, 255, 0.04);
+  --border-hover:  rgba(255, 255, 255, 0.14);
+
+  /* Text */
+  --text:          #e6edf3;
+  --text-muted:    #7d8a99;
+  --text-subtle:   #3e4a5c;
+
+  /* Accent */
+  --blue:          #3b82f6;
+  --blue-dim:      rgba(59, 130, 246, 0.15);
+  --indigo:        #6366f1;
+  --indigo-dim:    rgba(99, 102, 241, 0.12);
+  --cyan:          #22d3ee;
+  --cyan-dim:      rgba(34, 211, 238, 0.08);
+
+  /* Glow */
+  --glow-blue:     rgba(59, 130, 246, 0.22);
+  --glow-indigo:   rgba(99, 102, 241, 0.18);
+
+  /* Radius */
+  --r-sm:  8px;
+  --r-md:  12px;
+  --r-lg:  16px;
+  --r-xl:  24px;
+  --r-2xl: 32px;
 }
 
-:root {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ─────────────────────────────────────────────────────────────────
+   BASE RESET
+   ───────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
 
 html {
   scroll-behavior: smooth;
+  background: var(--bg);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background:    var(--bg);
+  color:         var(--text);
+  font-family:   var(--font-inter, 'Inter', system-ui, -apple-system, sans-serif);
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  min-height: 100dvh;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   SCROLLBAR
+   ───────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar               { width: 5px; }
+::-webkit-scrollbar-track         { background: transparent; }
+::-webkit-scrollbar-thumb         { background: rgba(255,255,255,0.08); border-radius: 100px; }
+::-webkit-scrollbar-thumb:hover   { background: rgba(255,255,255,0.16); }
+
+/* ─────────────────────────────────────────────────────────────────
+   SELECTION
+   ───────────────────────────────────────────────────────────────── */
+::selection { background: rgba(59,130,246,0.28); color: #fff; }
+
+/* ─────────────────────────────────────────────────────────────────
+   BACKGROUND ORB KEYFRAMES
+   ───────────────────────────────────────────────────────────────── */
+@keyframes orbFloat1 {
+  0%,100% { transform: translate(0px,  0px)  scale(1);    }
+  33%     { transform: translate(-28px, 38px) scale(1.04); }
+  66%     { transform: translate(20px, -20px) scale(0.96); }
+}
+@keyframes orbFloat2 {
+  0%,100% { transform: translate(0px,  0px)  scale(1);    }
+  33%     { transform: translate(38px, -28px) scale(1.03); }
+  66%     { transform: translate(-20px, 30px) scale(0.97); }
+}
+@keyframes orbFloat3 {
+  0%,100% { transform: translate(0px,  0px) scale(1);    }
+  50%     { transform: translate(-40px, 40px) scale(1.06); }
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   MARQUEE
+   ───────────────────────────────────────────────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 36s linear infinite; }
+.marquee-track:hover .animate-marquee { animation-play-state: paused; }
+
+/* ─────────────────────────────────────────────────────────────────
+   GRADIENT TEXT UTILITIES
+   ───────────────────────────────────────────────────────────────── */
+.text-gradient-white {
+  background: linear-gradient(160deg, #ffffff 30%, #8094b0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-gradient-blue {
+  background: linear-gradient(135deg, #60a5fa 0%, #818cf8 55%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   GLASS CARD
+   ───────────────────────────────────────────────────────────────── */
+.glass {
+  background:          rgba(12, 16, 24, 0.65);
+  backdrop-filter:     blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border:              1px solid var(--border);
+}
+.glass-hover:hover {
+  background:  rgba(20, 26, 36, 0.75);
+  border-color: var(--border-hover);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   DOT GRID
+   ───────────────────────────────────────────────────────────────── */
+.dot-grid {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(255,255,255,0.045) 1px,
+    transparent 0
+  );
+  background-size: 48px 48px;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   SHIMMER LINE (top of cards on hover)
+   ───────────────────────────────────────────────────────────────── */
+.shimmer-top {
+  position: relative;
+}
+.shimmer-top::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  top: -1px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99,102,241,0.6), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: inherit;
+}
+.shimmer-top:hover::before { opacity: 1; }
+
+/* ─────────────────────────────────────────────────────────────────
+   TIMELINE CONNECTOR
+   ───────────────────────────────────────────────────────────────── */
+.timeline-line {
+  position: absolute;
+  left: 19px;
+  top: 40px;
+  bottom: -24px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--border-hover), transparent);
+  transform-origin: top;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   FOCUS STATES
+   ───────────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   REDUCE MOTION
+   ───────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration:        0.01ms !important;
+    animation-iteration-count: 1      !important;
+    transition-duration:       0.01ms !important;
+    scroll-behavior:           auto   !important;
+  }
+  .animate-marquee { animation: none; }
 }

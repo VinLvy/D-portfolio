@@ -1,34 +1,47 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from " @@/components/navbar";
-import CursorBlur from "../components/CursorBlur";
+import Navbar from "@/components/navbar";
+import CursorBlur from "@/components/CursorBlur";
+import BackgroundCanvas from "@/components/BackgroundCanvas";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+  weight: ["400", "500"],
 });
 
 export const metadata = {
-  title: "Davin P F - Portfolio",
-  description: "Personal portfolio of Davin built with Next.js",
+  title: "Davin Putra Fibrian — Full-Stack Developer",
+  description:
+    "Full-Stack Developer crafting high-impact applications with PHP, JavaScript, and modern Web3 stacks. Building polished UIs, pragmatic APIs, and immersive digital experiences.",
+  openGraph: {
+    title: "Davin Putra Fibrian — Full-Stack Developer",
+    description:
+      "Full-Stack Developer crafting high-impact applications at the intersection of performance, design, and Web3.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}>
+        <BackgroundCanvas />
         <CursorBlur />
         <Navbar />
-        <main className="w-full">{children}</main>
+        <main className="relative w-full" style={{ zIndex: 10 }}>
+          {children}
+        </main>
         <SpeedInsights />
         <Analytics />
       </body>
