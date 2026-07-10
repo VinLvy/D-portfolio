@@ -2,84 +2,140 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, User, Briefcase } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
-import React from 'react';
+import { Home, User, Briefcase, Download } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
-const navItemsConfig = [
-  { href: "/", label: "Home", icon: <Home size={20} /> },
-  { href: "/about", label: "About", icon: <User size={20} /> },
-  { href: "/projects", label: "Projects", icon: <Briefcase size={20} /> },
+const NAV_ITEMS = [
+  { href: "/",        label: "Home",     icon: Home     },
+  { href: "/about",   label: "About",    icon: User     },
+  { href: "/projects",label: "Projects", icon: Briefcase},
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [activeItemIndex, setActiveItemIndex] = useState(0);
-  const navItemRefs = useRef([]);
-
-  const [indicatorStyle, setIndicatorStyle] = useState({});
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const currentIndex = navItemsConfig.findIndex(item => item.href === pathname);
-    if (currentIndex !== -1) {
-      setActiveItemIndex(currentIndex);
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-      const activeItemElement = navItemRefs.current[currentIndex];
-      if (activeItemElement) {
-        const parentDiv = activeItemElement.parentElement;
-        if (parentDiv) {
-          const parentRect = parentDiv.getBoundingClientRect();
-          const itemRect = activeItemElement.getBoundingClientRect();
-
-          const indicatorWidth = itemRect.width;
-          const indicatorLeft = itemRect.left - parentRect.left;
-
-          setIndicatorStyle({
-            width: `${indicatorWidth}px`,
-            left: `${indicatorLeft}px`,
-            height: `calc(100% - 10px)`,
-            top: `5px`,
-          });
-        }
-      }
-    }
-  }, [pathname]);
+  // Hide navbar during maintenance mode
+  const maintenanceActive = process.env.NEXT_PUBLIC_MAINTENANCE_MODE === "true";
+  if (maintenanceActive || pathname === "/maintenance") {
+    return null;
+  }
 
   return (
-    <nav className="fixed bottom-0 sm:top-0 sm:bottom-auto w-full z-50 flex items-center justify-between sm:px-6 sm:py-3 px-4 py-2">
-      <div className="relative mt-2 bg-gray-900/50 backdrop-blur-lg shadow-md rounded-full flex px-2 py-1 sm:px-3 sm:py-2 space-x-2 sm:space-x-4 max-w-full mx-auto mb-5">
-        <div
-          className="absolute bg-gray-500/50 rounded-full transition-all duration-300 ease-in-out"
-          style={indicatorStyle}
-        ></div>
+    <motion.header
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0,   opacity: 1 }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+      className="fixed top-0 left-0 right-0 z-50 flex items-start justify-center pt-5 px-4"
+      aria-label="Primary navigation"
+    >
+      <nav
+        className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 rounded-full"
+        style={{
+          background:   scrolled ? "rgba(7,9,15,0.88)" : "rgba(12,16,24,0.55)",
+          backdropFilter:       "blur(20px) saturate(1.4)",
+          WebkitBackdropFilter: "blur(20px) saturate(1.4)",
+          border:       scrolled
+            ? "1px solid rgba(255,255,255,0.10)"
+            : "1px solid rgba(255,255,255,0.06)",
+          boxShadow: scrolled
+            ? "0 4px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.04)"
+            : "none",
+          transition: "background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease",
+        }}
+      >
+        {/* ── Brand ─────────────────────────────────────────── */}
+        <Link
+          href="/"
+          aria-label="Home"
+          className="flex items-center gap-2 px-2 py-1.5 rounded-full mr-1 sm:mr-2
+                     transition-opacity duration-200 hover:opacity-80"
+        >
+          <span
+            className="flex items-center justify-center w-7 h-7 rounded-lg shrink-0
+                       text-[10px] font-bold tracking-wider text-white select-none"
+            style={{ background: "linear-gradient(135deg, #3b82f6 0%, #6366f1 100%)" }}
+            aria-hidden="true"
+          >
+            DPF
+          </span>
+          <span
+            className="hidden sm:block text-[13px] font-semibold"
+            style={{ color: "rgba(255,255,255,0.75)" }}
+          >
+            Davin
+          </span>
+        </Link>
 
-        {navItemsConfig.map((item, index) => (
-          <ForwardedNavItem
-            key={item.href}
-            href={item.href}
-            icon={item.icon}
-            label={item.label}
-            active={pathname === item.href}
-            ref={el => (navItemRefs.current[index] = el)}
-          />
-        ))}
-      </div>
-    </nav>
+        {/* ── Divider ───────────────────────────────────────── */}
+        <div
+          className="hidden sm:block w-px h-4 shrink-0"
+          style={{ background: "rgba(255,255,255,0.10)" }}
+          aria-hidden="true"
+        />
+
+        {/* ── Nav links ─────────────────────────────────────── */}
+        {NAV_ITEMS.map(({ href, label, icon: Icon }) => {
+          const active = pathname === href;
+          return (
+            <Link
+              key={href}
+              href={href}
+              className="relative flex items-center gap-1.5 px-3 py-1.5 rounded-full
+                         text-sm font-medium transition-colors duration-200"
+              style={{ color: active ? "#ffffff" : "rgba(255,255,255,0.45)" }}
+              aria-current={active ? "page" : undefined}
+            >
+              {/* Shared layout animated background indicator */}
+              {active && (
+                <motion.span
+                  layoutId="nav-pill"
+                  className="absolute inset-0 rounded-full"
+                  style={{
+                    background: "rgba(59,130,246,0.13)",
+                    boxShadow:  "inset 0 0 0 1px rgba(59,130,246,0.25)",
+                  }}
+                  transition={{ type: "spring", stiffness: 400, damping: 34 }}
+                  aria-hidden="true"
+                />
+              )}
+              <Icon size={14} className="shrink-0 relative z-10" aria-hidden="true" />
+              <span className="hidden sm:inline relative z-10">{label}</span>
+            </Link>
+          );
+        })}
+
+        {/* ── Divider ───────────────────────────────────────── */}
+        <div
+          className="hidden sm:block w-px h-4 shrink-0 ml-1"
+          style={{ background: "rgba(255,255,255,0.10)" }}
+          aria-hidden="true"
+        />
+
+        {/* ── Resume CTA ────────────────────────────────────── */}
+        <Link
+          href="/DavinPutraFibrian-Resume.pdf"
+          download
+          className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full
+                     text-xs font-semibold ml-1 transition-all duration-200
+                     hover:scale-[1.03] hover:brightness-110"
+          style={{
+            background:   "linear-gradient(135deg, rgba(59,130,246,0.18), rgba(99,102,241,0.13))",
+            border:       "1px solid rgba(99,102,241,0.28)",
+            color:        "#93c5fd",
+          }}
+        >
+          <Download size={11} aria-hidden="true" />
+          Resume
+        </Link>
+      </nav>
+    </motion.header>
   );
 }
-
-const NavItem = ({ href, icon, label, active }, ref) => {
-  return (
-    <Link
-      ref={ref}
-      href={href}
-      className={`relative z-10 flex items-center sm:space-x-2 px-3 py-2 sm:px-4 text-sm sm:text-base font-medium rounded-full transition ${active ? "text-white" : "text-white hover:bg-gray-700/50 hover:shadow"
-        }`}
-    >
-      {icon}
-      <span className="hidden sm:inline">{label}</span>
-    </Link>
-  );
-};
-
-const ForwardedNavItem = React.forwardRef(NavItem);

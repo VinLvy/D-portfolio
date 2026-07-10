@@ -1,85 +1,44 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
+/**
+ * CursorBlur — a soft radial glow that trails the cursor using
+ * spring physics for a premium, weighted feel.
+ */
 export default function CursorBlur() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const cursorX = useMotionValue(-600);
+  const cursorY = useMotionValue(-600);
+
+  const springX = useSpring(cursorX, { stiffness: 70, damping: 22, restDelta: 0.001 });
+  const springY = useSpring(cursorY, { stiffness: 70, damping: 22, restDelta: 0.001 });
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+    const move = (e) => {
+      cursorX.set(e.clientX);
+      cursorY.set(e.clientY);
     };
-
-    window.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
+    window.addEventListener("mousemove", move, { passive: true });
+    return () => window.removeEventListener("mousemove", move);
+  }, [cursorX, cursorY]);
 
   return (
-    <div
-      className="fixed top-0 left-0 w-full h-full pointer-events-none"
-      style={{ zIndex: -1 }}
-    >
-      <div
-        className="absolute w-100 h-100 bg-blue-500/50 blur-3xl rounded-full transition-transform duration-10"
-        style={{
-          transform: `translate(${position.x - 200}px, ${position.y - 200}px)`,
-        }}
-      />
-    </div>
+    <motion.div
+      aria-hidden="true"
+      className="fixed rounded-full pointer-events-none"
+      style={{
+        zIndex: 1,
+        width:  460,
+        height: 460,
+        x: springX,
+        y: springY,
+        translateX: "-50%",
+        translateY: "-50%",
+        background:
+          "radial-gradient(circle, rgba(99,102,241,0.10) 0%, rgba(59,130,246,0.06) 40%, transparent 70%)",
+        filter: "blur(30px)",
+      }}
+    />
   );
 }
-
-// INVISIBLE CURSOR BLUR
-
-// "use client";
-
-// import { useEffect, useState, useRef } from "react";
-
-// export default function CursorBlur() {
-//   const [position, setPosition] = useState({ x: 0, y: 0 });
-//   const [isVisible, setIsVisible] = useState(false);
-//   const timeoutRef = useRef(null); // Gunakan useRef untuk menyimpan timeout ID
-
-//   useEffect(() => {
-//     const handleMouseMove = (e) => {
-//       setPosition({ x: e.clientX, y: e.clientY });
-//       setIsVisible(true);
-
-//       // Bersihkan timeout sebelumnya
-//       if (timeoutRef.current) clearTimeout(timeoutRef.current);
-
-//       // Set timeout baru untuk menyembunyikan efek blur setelah 1.5 detik
-//       timeoutRef.current = setTimeout(() => setIsVisible(false), 1500);
-//     };
-
-//     const handleMouseLeave = () => setIsVisible(false);
-
-//     window.addEventListener("mousemove", handleMouseMove);
-//     window.addEventListener("mouseleave", handleMouseLeave);
-
-//     return () => {
-//       window.removeEventListener("mousemove", handleMouseMove);
-//       window.removeEventListener("mouseleave", handleMouseLeave);
-//       if (timeoutRef.current) clearTimeout(timeoutRef.current);
-//     };
-//   }, []);
-
-//   return (
-//     <div
-//       className="fixed top-0 left-0 w-full h-full pointer-events-none"
-//       style={{ zIndex: -1 }}
-//     >
-//       <div
-//         className={`absolute w-100 h-100 bg-blue-500/30 blur-3xl rounded-full transition-opacity duration-300 ${
-//           isVisible ? "opacity-100" : "opacity-0"
-//         }`}
-//         style={{
-//           transform: `translate(${position.x - 200}px, ${position.y - 200}px)`,
-//         }}
-//       />
-//     </div>
-//   );
-// }
