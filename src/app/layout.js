@@ -21,11 +21,11 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "Davin Putra Fibrian — Full-Stack Developer",
+  title: "Davin P F — Full-Stack Developer",
   description:
     "Full-Stack Developer crafting high-impact applications with PHP, JavaScript, and modern Web3 stacks. Building polished UIs, pragmatic APIs, and immersive digital experiences.",
   openGraph: {
-    title: "Davin Putra Fibrian — Full-Stack Developer",
+    title: "Davin P F — Full-Stack Developer",
     description:
       "Full-Stack Developer crafting high-impact applications at the intersection of performance, design, and Web3.",
     type: "website",

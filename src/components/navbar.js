@@ -15,11 +15,19 @@ const NAV_ITEMS = [
 export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   // Hide navbar during maintenance mode
@@ -30,14 +38,15 @@ export default function Navbar() {
 
   return (
     <motion.header
-      initial={{ y: -80, opacity: 0 }}
+      layoutRoot
+      initial={{ y: isMobile ? 80 : -80, opacity: 0 }}
       animate={{ y: 0,   opacity: 1 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-      className="fixed top-0 left-0 right-0 z-50 flex items-start justify-center pt-5 px-4"
+      className="fixed bottom-0 sm:bottom-auto sm:top-0 left-0 right-0 z-50 flex items-end sm:items-start justify-center pb-8 sm:pb-0 sm:pt-5 px-4"
       aria-label="Primary navigation"
     >
       <nav
-        className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 rounded-full"
+        className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-2 rounded-full"
         style={{
           background:   scrolled ? "rgba(10, 15, 30, 0.45)" : "rgba(10, 15, 30, 0.25)",
           backdropFilter:       "blur(24px) saturate(1.6)",
@@ -56,7 +65,7 @@ export default function Navbar() {
             <Link
               key={href}
               href={href}
-              className="relative flex items-center gap-1.5 px-3 py-1.5 rounded-full
+              className="relative flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full
                          text-sm font-medium transition-colors duration-200"
               style={{ color: active ? "#ffffff" : "rgba(255,255,255,0.45)" }}
               aria-current={active ? "page" : undefined}
@@ -64,17 +73,18 @@ export default function Navbar() {
               {/* Shared layout animated background indicator */}
               {active && (
                 <motion.span
-                  layoutId="nav-pill"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
                   className="absolute inset-0 rounded-full"
                   style={{
                     background: "rgba(59,130,246,0.13)",
                     boxShadow:  "inset 0 0 0 1px rgba(59,130,246,0.25)",
                   }}
-                  transition={{ type: "spring", stiffness: 400, damping: 34 }}
                   aria-hidden="true"
                 />
               )}
-              <Icon size={14} className="shrink-0 relative z-10" aria-hidden="true" />
+              <Icon size={16} className="shrink-0 relative z-10" aria-hidden="true" />
               <span className="hidden sm:inline relative z-10">{label}</span>
             </Link>
           );
