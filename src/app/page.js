@@ -215,6 +215,15 @@ export default function Home() {
 
             {/* Headline */}
             <motion.div variants={fadeUp} className="mt-7">
+              <p
+                className="text-xl sm:text-2xl font-bold tracking-tight mb-3"
+                style={{ color: "rgba(255, 255, 255, 0.95)" }}
+              >
+                Hi, I'm{" "}
+                <span className="text-gradient-blue font-extrabold">
+                  Davin Putra Fibrian
+                </span>
+              </p>
               <h1
                 className="font-black leading-[0.92] tracking-tight text-gradient-white"
                 style={{ fontSize: "clamp(3.2rem, 7.5vw, 6.4rem)" }}

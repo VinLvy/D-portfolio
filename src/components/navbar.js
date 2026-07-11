@@ -39,15 +39,13 @@ export default function Navbar() {
       <nav
         className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1.5 rounded-full"
         style={{
-          background:   scrolled ? "rgba(7,9,15,0.88)" : "rgba(12,16,24,0.55)",
-          backdropFilter:       "blur(20px) saturate(1.4)",
-          WebkitBackdropFilter: "blur(20px) saturate(1.4)",
-          border:       scrolled
-            ? "1px solid rgba(255,255,255,0.10)"
-            : "1px solid rgba(255,255,255,0.06)",
+          background:   scrolled ? "rgba(10, 15, 30, 0.45)" : "rgba(10, 15, 30, 0.25)",
+          backdropFilter:       "blur(24px) saturate(1.6)",
+          WebkitBackdropFilter: "blur(24px) saturate(1.6)",
+          border:               "1px solid rgba(255, 255, 255, 0.08)",
           boxShadow: scrolled
-            ? "0 4px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.04)"
-            : "none",
+            ? "0 10px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.15)"
+            : "0 4px 20px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.08)",
           transition: "background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease",
         }}
       >
@@ -55,7 +53,7 @@ export default function Navbar() {
         <Link
           href="/"
           aria-label="Home"
-          className="flex items-center gap-2 px-2 py-1.5 rounded-full mr-1 sm:mr-2
+          className="flex items-center gap-2 px-2 py-1.5 rounded-full mr-1 sm:mr-1.5
                      transition-opacity duration-200 hover:opacity-80"
         >
           <span
@@ -65,12 +63,6 @@ export default function Navbar() {
             aria-hidden="true"
           >
             DPF
-          </span>
-          <span
-            className="hidden sm:block text-[13px] font-semibold"
-            style={{ color: "rgba(255,255,255,0.75)" }}
-          >
-            Davin
           </span>
         </Link>
 
