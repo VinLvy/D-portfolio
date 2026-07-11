@@ -49,30 +49,6 @@ export default function Navbar() {
           transition: "background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease",
         }}
       >
-        {/* ── Brand ─────────────────────────────────────────── */}
-        <Link
-          href="/"
-          aria-label="Home"
-          className="flex items-center gap-2 px-2 py-1.5 rounded-full mr-1 sm:mr-1.5
-                     transition-opacity duration-200 hover:opacity-80"
-        >
-          <span
-            className="flex items-center justify-center w-7 h-7 rounded-lg shrink-0
-                       text-[10px] font-bold tracking-wider text-white select-none"
-            style={{ background: "linear-gradient(135deg, #3b82f6 0%, #6366f1 100%)" }}
-            aria-hidden="true"
-          >
-            DPF
-          </span>
-        </Link>
-
-        {/* ── Divider ───────────────────────────────────────── */}
-        <div
-          className="hidden sm:block w-px h-4 shrink-0"
-          style={{ background: "rgba(255,255,255,0.10)" }}
-          aria-hidden="true"
-        />
-
         {/* ── Nav links ─────────────────────────────────────── */}
         {NAV_ITEMS.map(({ href, label, icon: Icon }) => {
           const active = pathname === href;
@@ -103,30 +79,6 @@ export default function Navbar() {
             </Link>
           );
         })}
-
-        {/* ── Divider ───────────────────────────────────────── */}
-        <div
-          className="hidden sm:block w-px h-4 shrink-0 ml-1"
-          style={{ background: "rgba(255,255,255,0.10)" }}
-          aria-hidden="true"
-        />
-
-        {/* ── Resume CTA ────────────────────────────────────── */}
-        <Link
-          href="/DavinPutraFibrian-Resume.pdf"
-          download
-          className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full
-                     text-xs font-semibold ml-1 transition-all duration-200
-                     hover:scale-[1.03] hover:brightness-110"
-          style={{
-            background:   "linear-gradient(135deg, rgba(59,130,246,0.18), rgba(99,102,241,0.13))",
-            border:       "1px solid rgba(99,102,241,0.28)",
-            color:        "#93c5fd",
-          }}
-        >
-          <Download size={11} aria-hidden="true" />
-          Resume
-        </Link>
       </nav>
     </motion.header>
   );
