@@ -183,14 +183,81 @@ export default function Home() {
           }}
         />
 
-        <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-start gap-16 lg:flex-row lg:items-center lg:gap-12">
+        <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center text-center gap-10">
 
-          {/* ── Left: Copy ───────────────────────────────────── */}
+          {/* ── Profile image + orbiting icons ─────────── */}
           <motion.div
-            variants={staggerContainer(0.2)}
+            initial={{ opacity: 0, scale: 0.92 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.9, ease, delay: 0.2 }}
+            className="relative flex shrink-0 justify-center mb-6"
+            aria-hidden="true"
+          >
+            {/* Glow behind the image */}
+            <div
+              className="absolute rounded-full"
+              style={{
+                inset:      "-20px",
+                background: "radial-gradient(circle, rgba(99,102,241,0.18) 0%, transparent 70%)",
+                filter:     "blur(24px)",
+              }}
+            />
+
+            <Link href="/about" className="relative block" tabIndex={-1} aria-hidden="true">
+              {/* Image frame */}
+              <div
+                className="relative overflow-hidden"
+                style={{
+                  width:        "220px",
+                  height:       "220px",
+                  borderRadius: "50%",
+                  background:   "linear-gradient(145deg, rgba(99,102,241,0.2), rgba(7,9,15,0.5))",
+                  padding:      "3px",
+                  boxShadow:    "0 0 60px rgba(99,102,241,0.12), 0 40px 80px rgba(0,0,0,0.5)",
+                }}
+              >
+                <div
+                  className="relative h-full w-full overflow-hidden"
+                  style={{ borderRadius: "50%", background: "var(--surface)" }}
+                >
+                  <Image
+                    src="/profile.png"
+                    alt="Davin Putra Fibrian"
+                    fill
+                    sizes="220px"
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              </div>
+            </Link>
+
+            {/* Orbiting tech icons */}
+            <OrbitingIcon radius={140} angle={-25}><Code2 size={18} /></OrbitingIcon>
+            <OrbitingIcon radius={165} angle={55}><Rocket size={18} /></OrbitingIcon>
+            <OrbitingIcon radius={110} angle={245}><Sparkles size={18} /></OrbitingIcon>
+
+            {/* Status floating card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.1, duration: 0.6, ease }}
+              className="glass absolute -bottom-8 left-1/2 -translate-x-1/2 rounded-2xl px-4 py-3 text-xs"
+              style={{ minWidth: "220px", boxShadow: "0 20px 48px rgba(0,0,0,0.4)" }}
+            >
+              <p className="font-semibold text-white">Currently iterating:</p>
+              <p className="mt-0.5 text-[10px]" style={{ color: "var(--text-muted)" }}>
+                Web3 analytics dashboard with realtime data.
+              </p>
+            </motion.div>
+          </motion.div>
+
+          {/* ── Copy ───────────────────────────────────── */}
+          <motion.div
+            variants={staggerContainer(0.4)}
             initial="hidden"
             animate="visible"
-            className="flex-1 min-w-0"
+            className="flex-grow w-full flex flex-col items-center"
           >
             {/* Availability badge */}
             <motion.div variants={fadeUp}>
@@ -214,7 +281,7 @@ export default function Home() {
             </motion.div>
 
             {/* Headline */}
-            <motion.div variants={fadeUp} className="mt-7">
+            <motion.div variants={fadeUp} className="mt-7 flex flex-col items-center">
               <p
                 className="text-xl sm:text-2xl font-bold tracking-tight mb-3"
                 style={{ color: "rgba(255, 255, 255, 0.95)" }}
@@ -225,19 +292,17 @@ export default function Home() {
                 </span>
               </p>
               <h1
-                className="font-black leading-[0.92] tracking-tight text-gradient-white"
-                style={{ fontSize: "clamp(3.2rem, 7.5vw, 6.4rem)" }}
+                className="font-black leading-[1.05] tracking-tight text-gradient-white text-center"
+                style={{ fontSize: "clamp(2.8rem, 6.5vw, 4.8rem)" }}
               >
-                Crafting<br />
-                <span className="text-gradient-blue">Digital</span><br />
-                Excellence.
+                Crafting <span className="text-gradient-blue">Digital</span> Excellence.
               </h1>
             </motion.div>
 
             {/* Subtitle */}
             <motion.p
               variants={fadeUp}
-              className="mt-7 max-w-lg text-base leading-relaxed sm:text-lg"
+              className="mt-7 max-w-xl text-base leading-relaxed sm:text-lg text-center"
               style={{ color: "var(--text-muted)", lineHeight: "1.8" }}
             >
               <span style={{ color: "#93c5fd", fontWeight: 600 }}>Full-Stack Developer</span>{" "}
@@ -246,7 +311,7 @@ export default function Home() {
             </motion.p>
 
             {/* CTAs */}
-            <motion.div variants={fadeUp} className="mt-9 flex flex-wrap gap-3">
+            <motion.div variants={fadeUp} className="mt-9 flex flex-wrap justify-center gap-3 w-full">
               <Link
                 href="/DavinPutraFibrian-Resume.pdf"
                 download
@@ -279,7 +344,7 @@ export default function Home() {
             {/* Stats */}
             <motion.div
               variants={fadeUp}
-              className="mt-12 flex flex-wrap items-center gap-0"
+              className="mt-12 flex flex-wrap items-center justify-center gap-0 w-full"
               role="list"
               aria-label="Key stats"
             >
@@ -292,7 +357,7 @@ export default function Home() {
                       aria-hidden="true"
                     />
                   )}
-                  <div>
+                  <div className="text-center">
                     <p
                       className="text-3xl font-black leading-none text-white"
                       style={{ fontVariantNumeric: "tabular-nums" }}
@@ -308,73 +373,6 @@ export default function Home() {
                   </div>
                 </div>
               ))}
-            </motion.div>
-          </motion.div>
-
-          {/* ── Right: Profile image + orbiting icons ─────────── */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9, ease, delay: 0.5 }}
-            className="relative flex shrink-0 justify-center lg:justify-end"
-            aria-hidden="true"
-          >
-            {/* Glow behind the image */}
-            <div
-              className="absolute rounded-full"
-              style={{
-                inset:      "-20px",
-                background: "radial-gradient(circle, rgba(99,102,241,0.18) 0%, transparent 70%)",
-                filter:     "blur(24px)",
-              }}
-            />
-
-            <Link href="/about" className="relative block" tabIndex={-1} aria-hidden="true">
-              {/* Image frame */}
-              <div
-                className="relative overflow-hidden"
-                style={{
-                  width:        "280px",
-                  height:       "280px",
-                  borderRadius: "32px",
-                  background:   "linear-gradient(145deg, rgba(99,102,241,0.2), rgba(7,9,15,0.5))",
-                  padding:      "3px",
-                  boxShadow:    "0 0 60px rgba(99,102,241,0.12), 0 40px 80px rgba(0,0,0,0.5)",
-                }}
-              >
-                <div
-                  className="relative h-full w-full overflow-hidden"
-                  style={{ borderRadius: "30px", background: "var(--surface)" }}
-                >
-                  <Image
-                    src="/profile.png"
-                    alt="Davin Putra Fibrian"
-                    fill
-                    sizes="(max-width: 768px) 240px, 280px"
-                    className="object-cover"
-                    priority
-                  />
-                </div>
-              </div>
-            </Link>
-
-            {/* Orbiting tech icons */}
-            <OrbitingIcon radius={140} angle={-25}><Code2 size={18} /></OrbitingIcon>
-            <OrbitingIcon radius={165} angle={55}><Rocket size={18} /></OrbitingIcon>
-            <OrbitingIcon radius={110} angle={245}><Sparkles size={18} /></OrbitingIcon>
-
-            {/* Status floating card */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.1, duration: 0.6, ease }}
-              className="glass absolute -bottom-8 left-1/2 -translate-x-1/2 rounded-2xl px-4 py-3 text-sm"
-              style={{ minWidth: "220px", boxShadow: "0 20px 48px rgba(0,0,0,0.4)" }}
-            >
-              <p className="font-semibold text-white">Currently iterating:</p>
-              <p className="mt-0.5 text-xs" style={{ color: "var(--text-muted)" }}>
-                Web3 analytics dashboard with realtime data.
-              </p>
             </motion.div>
           </motion.div>
         </div>
