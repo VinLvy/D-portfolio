@@ -187,6 +187,7 @@ export default function About() {
       if (section) {
         const offset = 96;
         window.scrollTo({ top: section.offsetTop - offset, behavior: "smooth" });
+        setActiveSection(id);
       }
     };
     document.addEventListener("click", handleClick);
@@ -200,7 +201,7 @@ export default function About() {
           if (entry.isIntersecting) setActiveSection(entry.target.id);
         });
       },
-      { threshold: 0.3, rootMargin: "-80px 0px -40% 0px" }
+      { threshold: 0, rootMargin: "-120px 0px -60% 0px" }
     );
     TOC_ITEMS.forEach(({ href }) => {
       const el = document.getElementById(href.slice(1));
@@ -469,50 +470,40 @@ export default function About() {
 
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                     {category.skills.map((skill) => (
-                      <GlareHover
+                      <div
                         key={skill.name}
-                        glareColor={category.color}
-                        glareOpacity={0.18}
-                        glareAngle={-30}
-                        glareSize={280}
-                        transitionDuration={700}
-                        playOnce={false}
-                        style={{ width: "100%", height: "100%" }}
+                        className="flex flex-col items-center glass rounded-2xl p-5 h-full"
+                        style={{ minHeight: "140px" }}
                       >
                         <div
-                          className="flex flex-col items-center glass rounded-2xl p-5 h-full transition-all duration-300 hover:-translate-y-1 hover:border-white/[0.12]"
-                          style={{ minHeight: "140px" }}
+                          className="flex h-14 w-14 items-center justify-center rounded-xl mb-3"
+                          style={{ background: "rgba(255,255,255,0.04)" }}
                         >
-                          <div
-                            className="flex h-14 w-14 items-center justify-center rounded-xl mb-3"
-                            style={{ background: "rgba(255,255,255,0.04)" }}
-                          >
-                            <SkillIcon icon={skill.icon} name={skill.name} />
-                          </div>
-                          <p className="text-sm font-semibold text-center text-white leading-tight">
-                            {skill.name}
-                          </p>
-                          {/* Proficiency bar */}
-                          <div
-                            className="mt-3 h-0.5 w-10 overflow-hidden rounded-full"
-                            style={{ background: "rgba(255,255,255,0.08)" }}
-                            role="meter"
-                            aria-valuenow={STAR_TO_PCT[skill.stars]}
-                            aria-valuemin={0}
-                            aria-valuemax={100}
-                            aria-label={`${skill.name} proficiency`}
-                          >
-                            <motion.div
-                              initial={{ width: 0 }}
-                              whileInView={{ width: `${STAR_TO_PCT[skill.stars]}%` }}
-                              viewport={{ once: true }}
-                              transition={{ duration: 0.7, ease }}
-                              className="h-full rounded-full"
-                              style={{ background: `linear-gradient(90deg, ${category.color}, ${category.color}88)` }}
-                            />
-                          </div>
+                          <SkillIcon icon={skill.icon} name={skill.name} />
                         </div>
-                      </GlareHover>
+                        <p className="text-sm font-semibold text-center text-white leading-tight">
+                          {skill.name}
+                        </p>
+                        {/* Proficiency bar */}
+                        <div
+                          className="mt-3 h-0.5 w-10 overflow-hidden rounded-full"
+                          style={{ background: "rgba(255,255,255,0.08)" }}
+                          role="meter"
+                          aria-valuenow={STAR_TO_PCT[skill.stars]}
+                          aria-valuemin={0}
+                          aria-valuemax={100}
+                          aria-label={`${skill.name} proficiency`}
+                        >
+                          <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{ width: `${STAR_TO_PCT[skill.stars]}%` }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.7, ease }}
+                            className="h-full rounded-full"
+                            style={{ background: `linear-gradient(90deg, ${category.color}, ${category.color}88)` }}
+                          />
+                        </div>
+                      </div>
                     ))}
                   </div>
                 </motion.div>
