@@ -132,28 +132,14 @@ const techStack = [
     stars: 5,
   },
   { name: "React",         icon: "/icons/react.png",       stars: 5 },
-  {
-    name: "TypeScript",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="36" height="36">
-        <rect width="128" height="128" fill="#3178C6" rx="12" />
-        <text x="64" y="92" fill="white" fontFamily="Arial,sans-serif" fontSize="64" fontWeight="bold" textAnchor="middle">TS</text>
-      </svg>
-    ),
-    stars: 5,
-  },
   { name: "JavaScript",   icon: "/icons/javascript.png",  stars: 5 },
-  { name: "Tailwind CSS", icon: "/icons/tailwind.svg",    stars: 5 },
   { name: "PHP",          icon: "/icons/php.svg",         stars: 5 },
   { name: "Laravel",      icon: "/icons/laravel.svg",     stars: 5 },
-  { name: "CodeIgniter",  icon: "/icons/codeigniter.svg", stars: 5 },
   { name: "MySQL",        icon: "/icons/mysql.svg",       stars: 5 },
-  { name: "GitHub",       icon: "/icons/github.png",      stars: 5 },
   { name: "Python",       icon: "/icons/Python.svg",      stars: 4 },
   { name: "Golang",       icon: "/icons/golang.svg",      stars: 4 },
   { name: "Solidity",     icon: "/icons/Solidity.svg",    stars: 4 },
   { name: "Supabase",     icon: <Zap className="text-emerald-400" size={32} />, stars: 4 },
-  { name: "Vite",         icon: "/icons/vite.svg",        stars: 4 },
 ];
 
 /* Proficiency mapping: 5 stars → 100%, 4 → 80%, 3 → 60% */
@@ -349,7 +335,7 @@ export default function Home() {
               aria-label="Key stats"
             >
               {heroStats.map((stat, i) => (
-                <div key={stat.label} className="flex items-center" role="listitem">
+                <div key={stat.label} className="flex items-center mb-4" role="listitem">
                   {i > 0 && (
                     <div
                       className="mx-6 h-8 w-px shrink-0"
@@ -531,6 +517,29 @@ export default function Home() {
               </motion.div>
             ))}
           </motion.div>
+
+          {/* ── View More Button ───────────────────────────────── */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-12 flex justify-center"
+          >
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-2 rounded-full px-6 py-2.5 text-xs font-semibold transition-all duration-200 hover:scale-[1.03]"
+              style={{
+                background: "rgba(255, 255, 255, 0.03)",
+                border: "1px solid rgba(255, 255, 255, 0.08)",
+                color: "rgba(255, 255, 255, 0.8)",
+                boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+              }}
+            >
+              <span>View More Skills</span>
+              <span className="text-[10px] opacity-60">→</span>
+            </Link>
+          </motion.div>
         </div>
       </section>
 
@@ -577,91 +586,106 @@ export default function Home() {
           </motion.div>
 
           {/* Timeline */}
-          <div className="mt-14 max-w-2xl space-y-0">
-            {experienceTimeline.map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, x: -24 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 0.7, ease, delay: index * 0.12 }}
-                className="relative flex gap-6 pb-12 last:pb-0"
-              >
-                {/* Vertical connector */}
-                {index < experienceTimeline.length - 1 && (
-                  <div
-                    className="timeline-line"
-                    aria-hidden="true"
-                  />
-                )}
+          <div className="relative mt-20 mx-auto max-w-5xl">
+            {/* The Central Line (Desktop) */}
+            <div
+              className="absolute left-4 md:left-1/2 top-2 bottom-2 w-px -translate-x-1/2 bg-gradient-to-b from-[var(--border-hover)] via-[var(--border-hover)] to-transparent hidden md:block"
+              aria-hidden="true"
+            />
+            {/* Line (Mobile) */}
+            <div
+              className="absolute left-4 top-2 bottom-2 w-px bg-gradient-to-b from-[var(--border-hover)] via-[var(--border-hover)] to-transparent md:hidden"
+              aria-hidden="true"
+            />
 
-                {/* Circle marker */}
-                <div
-                  className="relative mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full"
-                  style={{
-                    background:  "var(--surface)",
-                    border:      "1px solid var(--border-hover)",
-                    boxShadow:   "0 0 0 4px rgba(99,102,241,0.08)",
-                  }}
-                  aria-hidden="true"
-                >
-                  <div
-                    className="h-2 w-2 rounded-full"
-                    style={{ background: "linear-gradient(135deg, #3b82f6, #6366f1)" }}
-                  />
-                </div>
-
-                {/* Card */}
-                <div
-                  className="glass shimmer-top flex-1 rounded-2xl p-6 transition-all duration-300 hover:border-white/[0.12]"
-                >
-                  {/* Period pill */}
-                  <span
-                    className="inline-block rounded-full px-2.5 py-0.5 text-[11px] font-medium mb-3"
-                    style={{
-                      background: "rgba(59,130,246,0.10)",
-                      border:     "1px solid rgba(59,130,246,0.2)",
-                      color:      "#93c5fd",
-                      fontFamily: "var(--font-mono, monospace)",
-                    }}
+            <div className="space-y-12 md:space-y-8">
+              {experienceTimeline.map((item, index) => {
+                const isEven = index % 2 === 0;
+                return (
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.8, ease, delay: index * 0.1 }}
+                    className={`relative flex flex-col md:flex-row items-stretch w-full ${
+                      isEven ? "md:flex-row-reverse" : ""
+                    }`}
                   >
-                    {item.period}
-                  </span>
-
-                  <h3 className="text-base font-semibold text-white">
-                    {item.title}
-                  </h3>
-                  <p
-                    className="text-sm mt-0.5"
-                    style={{ color: "#818cf8" }}
-                  >
-                    {item.company}
-                  </p>
-                  <p
-                    className="mt-3 text-sm leading-relaxed"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    {item.summary}
-                  </p>
-                  <ul className="mt-4 space-y-2">
-                    {item.highlights.map((point) => (
-                      <li
-                        key={point}
-                        className="flex items-start gap-2.5 text-sm"
-                        style={{ color: "var(--text-muted)" }}
+                    {/* Left/Right Column: Card Container */}
+                    <div className={`w-full md:w-1/2 flex pl-12 md:pl-0 ${isEven ? "md:pl-12" : "md:pr-12"}`}>
+                      <div
+                        className="glass shimmer-top w-full rounded-2xl p-6 transition-all duration-300 hover:border-white/[0.12]"
                       >
+                        {/* Period pill */}
                         <span
-                          className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full"
-                          style={{ background: "#6366f1" }}
-                          aria-hidden="true"
-                        />
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            ))}
+                          className="inline-block rounded-full px-2.5 py-0.5 text-[11px] font-medium mb-3"
+                          style={{
+                            background: "rgba(59,130,246,0.10)",
+                            border:     "1px solid rgba(59,130,246,0.2)",
+                            color:      "#93c5fd",
+                            fontFamily: "var(--font-mono, monospace)",
+                          }}
+                        >
+                          {item.period}
+                        </span>
+
+                        <h3 className="text-base font-semibold text-white">
+                          {item.title}
+                        </h3>
+                        <p
+                          className="text-sm mt-0.5"
+                          style={{ color: "#818cf8" }}
+                        >
+                          {item.company}
+                        </p>
+                        <p
+                          className="mt-3 text-sm leading-relaxed"
+                          style={{ color: "var(--text-muted)" }}
+                        >
+                          {item.summary}
+                        </p>
+                        <ul className="mt-4 space-y-2">
+                          {item.highlights.map((point) => (
+                            <li
+                              key={point}
+                              className="flex items-start gap-2.5 text-sm"
+                              style={{ color: "var(--text-muted)" }}
+                            >
+                              <span
+                                className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full"
+                                style={{ background: "#6366f1" }}
+                                aria-hidden="true"
+                              />
+                              {point}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* Central Circle Marker */}
+                    <div
+                      className="absolute left-4 md:left-1/2 top-6 md:top-8 -translate-x-1/2 flex h-8 w-8 items-center justify-center rounded-full z-10"
+                      style={{
+                        background:  "var(--surface)",
+                        border:      "1px solid var(--border-hover)",
+                        boxShadow:   "0 0 0 4px rgba(99,102,241,0.08)",
+                      }}
+                      aria-hidden="true"
+                    >
+                      <div
+                        className="h-2 w-2 rounded-full"
+                        style={{ background: "linear-gradient(135deg, #3b82f6, #6366f1)" }}
+                      />
+                    </div>
+
+                    {/* Empty Column for spacing on desktop */}
+                    <div className="hidden md:block w-1/2" />
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
@@ -711,7 +735,7 @@ export default function Home() {
             </motion.p>
 
             {/* Email prominent */}
-            <motion.div variants={fadeUp} className="mt-6 flex justify-center">
+            {/* <motion.div variants={fadeUp} className="mt-6 flex justify-center">
               <a
                 href="mailto:davinfibrian@gmail.com"
                 className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-200 hover:scale-[1.04]"
@@ -724,7 +748,7 @@ export default function Home() {
                 <Mail size={14} aria-hidden="true" />
                 davinfibrian@gmail.com
               </a>
-            </motion.div>
+            </motion.div> */}
 
             {/* Contact cards */}
             <motion.div
@@ -779,15 +803,8 @@ export default function Home() {
       >
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 sm:flex-row">
           <div className="flex items-center gap-3">
-            <span
-              className="flex items-center justify-center w-7 h-7 rounded-lg text-[10px] font-bold tracking-wider text-white"
-              style={{ background: "linear-gradient(135deg, #3b82f6, #6366f1)", fontSize: "10px" }}
-              aria-hidden="true"
-            >
-              DPF
-            </span>
             <p className="text-sm" style={{ color: "var(--text-muted)" }}>
-              © {new Date().getFullYear()} Davin Putra Fibrian. All rights reserved.
+              © {new Date().getFullYear()} Davin P F. All rights reserved.
             </p>
           </div>
           <p
