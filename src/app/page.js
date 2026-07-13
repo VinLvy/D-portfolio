@@ -233,7 +233,7 @@ export default function Home() {
             >
               <p className="font-semibold text-white">Currently iterating:</p>
               <p className="mt-0.5 text-[10px]" style={{ color: "var(--text-muted)" }}>
-                Web3 analytics dashboard with realtime data.
+                Building security tooling for threat detection and real-time incident response.
               </p>
             </motion.div>
           </motion.div>
