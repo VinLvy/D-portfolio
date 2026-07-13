@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Database, Server, Zap, Bot, MapPin, Calendar, Activity, Download, ExternalLink } from "lucide-react";
 import GlareHover from "../../components/GlareHover";
@@ -175,6 +175,8 @@ function SkillIcon({ icon, name }) {
    ───────────────────────────────────────────────────────────────── */
 export default function About() {
   const [activeSection, setActiveSection] = useState("about");
+  const isProgrammaticScroll = useRef(false);
+  const timeoutId = useRef(null);
 
   /* Smooth scroll + active TOC tracking */
   useEffect(() => {
@@ -186,17 +188,40 @@ export default function About() {
       const section = document.getElementById(id);
       if (section) {
         const offset = 96;
-        window.scrollTo({ top: section.offsetTop - offset, behavior: "smooth" });
+        
+        isProgrammaticScroll.current = true;
+        if (timeoutId.current) clearTimeout(timeoutId.current);
+        
         setActiveSection(id);
+        window.scrollTo({ top: section.offsetTop - offset, behavior: "smooth" });
+        
+        // Disable the programmatic scroll lock after scroll animation completes (approx 800ms)
+        timeoutId.current = setTimeout(() => {
+          isProgrammaticScroll.current = false;
+        }, 800);
       }
     };
+
+    const handleUserScroll = () => {
+      isProgrammaticScroll.current = false;
+    };
+
     document.addEventListener("click", handleClick);
-    return () => document.removeEventListener("click", handleClick);
+    window.addEventListener("wheel", handleUserScroll, { passive: true });
+    window.addEventListener("touchmove", handleUserScroll, { passive: true });
+
+    return () => {
+      document.removeEventListener("click", handleClick);
+      window.removeEventListener("wheel", handleUserScroll);
+      window.removeEventListener("touchmove", handleUserScroll);
+      if (timeoutId.current) clearTimeout(timeoutId.current);
+    };
   }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
+        if (isProgrammaticScroll.current) return;
         entries.forEach((entry) => {
           if (entry.isIntersecting) setActiveSection(entry.target.id);
         });
@@ -208,6 +233,19 @@ export default function About() {
       if (el) observer.observe(el);
     });
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isProgrammaticScroll.current) return;
+      // If we are at the bottom of the page, force active section to be the last one
+      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50;
+      if (isAtBottom) {
+        setActiveSection(TOC_ITEMS[TOC_ITEMS.length - 1].href.slice(1));
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -354,29 +392,25 @@ export default function About() {
                 key={href}
                 href={href}
                 data-scroll
-                className="group relative flex items-center gap-2 py-2 pr-6 text-sm transition-all duration-200"
+                className="group relative flex items-center gap-2 py-2 pr-6 text-sm"
                 style={{ color: active ? "#fff" : "var(--text-muted)" }}
                 aria-current={active ? "location" : undefined}
               >
                 {/* Active indicator line */}
-                <span
-                  className="absolute right-0 top-1/2 -translate-y-1/2 block h-5 w-0.5 rounded-full transition-all duration-300"
-                  style={{
-                    background: active ? "#6366f1" : "transparent",
-                    transform:  active ? "translateY(-50%) scaleY(1)" : "translateY(-50%) scaleY(0)",
-                  }}
-                  aria-hidden="true"
-                />
+                {active && (
+                  <span
+                    className="absolute right-0 top-1/2 -translate-y-1/2 block h-5 w-0.5 rounded-full"
+                    style={{ background: "#6366f1" }}
+                    aria-hidden="true"
+                  />
+                )}
                 {/* Hover dot */}
                 <span
-                  className="block h-1.5 w-1.5 rounded-full transition-all duration-200 shrink-0"
+                  className="block h-1.5 w-1.5 rounded-full shrink-0"
                   style={{ background: active ? "#6366f1" : "rgba(255,255,255,0.15)" }}
                   aria-hidden="true"
                 />
-                <span
-                  className="transition-transform duration-200"
-                  style={{ transform: active ? "translateX(2px)" : "none" }}
-                >
+                <span>
                   {label}
                 </span>
               </a>
