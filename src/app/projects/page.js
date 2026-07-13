@@ -82,7 +82,7 @@ const projects = [
     subtitle:    "AI Content Automation Engine",
     period:      "Jul 2025 – Sep 2025",
     description:
-      "A zero-cost AI content automation engine that produces complete YouTube video asset kits — scripts, visual prompts, and voiceovers — from a single topic input, using a decoupled Next.js + FastAPI architecture for independent pipeline scaling.",
+      "A zero-cost AI content automation engine that produces complete YouTube video asset kits scripts, visual prompts, and voiceovers from a single topic input, using a decoupled Next.js + FastAPI architecture for independent pipeline scaling.",
     impact: [
       { icon: Zap,        label: "Infrastructure Cost",  value: "$0 / month",        color: "#34d399" },
       { icon: TrendingUp, label: "Assets per Topic",     value: "Scripts + Voiceover",color: "#22d3ee" },
