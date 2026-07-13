@@ -150,7 +150,7 @@ const STAR_TO_PCT = { 5: 100, 4: 80, 3: 60 };
    ───────────────────────────────────────────────────────────────── */
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen mt-4">
 
       {/* ══════════════════════════════════════════════════════════
           HERO
