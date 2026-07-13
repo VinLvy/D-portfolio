@@ -226,7 +226,7 @@ export default function Projects() {
               className="mx-auto mt-6 max-w-2xl text-base"
               style={{ color: "var(--text-muted)", lineHeight: "1.8" }}
             >
-              Production-grade projects spanning blockchain, AI automation, and full-stack web apps —
+              Production-grade projects spanning blockchain, AI automation, and full-stack web apps
               each built to solve real problems and measured by real impact.
             </motion.p>
           </motion.div>
@@ -468,7 +468,7 @@ export default function Projects() {
               style={{ color: "var(--text-muted)", lineHeight: "1.8" }}
             >
               I&apos;m constantly learning, building, and exploring new technologies.
-              Stay tuned for exciting projects pushing the boundaries of modern web development — and beyond.
+              Stay tuned for exciting projects pushing the boundaries of modern web development and beyond.
             </motion.p>
 
             <motion.div variants={fadeUp} className="mt-8 flex justify-center gap-4">
