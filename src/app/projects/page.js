@@ -500,7 +500,7 @@ export default function Projects() {
       >
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-sm" style={{ color: "var(--text-muted)" }}>
-            © {new Date().getFullYear()} Davin Putra Fibrian. All rights reserved.
+            © {new Date().getFullYear()} Davin P F. All rights reserved.
           </p>
           <p
             className="text-xs"
