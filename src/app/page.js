@@ -274,7 +274,7 @@ export default function Home() {
               >
                 Hi, I'm{" "}
                 <span className="text-gradient-blue font-extrabold">
-                  Davin Putra Fibrian
+                  Davin P F
                 </span>
               </p>
               <h1
