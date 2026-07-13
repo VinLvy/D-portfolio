@@ -111,13 +111,13 @@ const education = [
 ];
 
 const interests = [
-  { label: "UI/UX Design",       icon: "🎨" },
-  { label: "Open Source",         icon: "🔧" },
-  { label: "Blockchain & Web3",  icon: "⛓️" },
-  { label: "AI Applications",    icon: "🤖" },
-  { label: "Cryptocurrency",     icon: "₿"  },
-  { label: "Game Design",        icon: "🎮" },
-  { label: "Travel & Culture",   icon: "✈️" },
+  { label: "UI/UX Design"},
+  { label: "Open Source"},
+  { label: "Blockchain & Web3"},
+  { label: "AI Applications"},
+  { label: "Cryptocurrency"},
+  { label: "Game Design"},
+  { label: "Travel & Culture"},
 ];
 
 const TOC_ITEMS = [
