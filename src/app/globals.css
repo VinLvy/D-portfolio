@@ -1,199 +1,215 @@
 @import "tailwindcss";
 
 /* ─────────────────────────────────────────────────────────────────
-   DESIGN TOKENS
+   OBSIDIAN TERMINAL EDITORIAL DESIGN TOKENS (Technical Brutalism)
    ───────────────────────────────────────────────────────────────── */
 :root {
-  /* Background */
-  --bg:            #07090f;
-  --surface:       #0c1018;
-  --surface-2:     #141a24;
-  --surface-hover: #1a2232;
+  /* Obsidian Base Palette */
+  --bg:                     #131313;
+  --bg-deep:                #0e0e0e;
+  --surface:                #1c1b1b;
+  --surface-container-low:  #181818;
+  --surface-container:      #201f1f;
+  --surface-container-high: #2a2a2a;
+  --surface-container-highest: #353534;
+  --surface-bright:         #3a3939;
 
-  /* Borders */
-  --border:        rgba(255, 255, 255, 0.07);
-  --border-soft:   rgba(255, 255, 255, 0.04);
-  --border-hover:  rgba(255, 255, 255, 0.14);
+  /* Text Tones */
+  --text:                   #e5e2e1;
+  --text-muted:             #888888;
+  --text-variant:           #b9ccb2;
+  --text-dim:               #555555;
 
-  /* Text */
-  --text:          #e6edf3;
-  --text-muted:    #7d8a99;
-  --text-subtle:   #3e4a5c;
+  /* Terminal Green Accents (Reserved for Active, Focus, Success) */
+  --terminal-green:         #00FF41;
+  --terminal-green-dim:     rgba(0, 255, 65, 0.15);
+  --terminal-green-border:  rgba(0, 255, 65, 0.35);
+  --primary-tint:           #ebffe2;
 
-  /* Accent */
-  --blue:          #3b82f6;
-  --blue-dim:      rgba(59, 130, 246, 0.15);
-  --indigo:        #6366f1;
-  --indigo-dim:    rgba(99, 102, 241, 0.12);
-  --cyan:          #22d3ee;
-  --cyan-dim:      rgba(34, 211, 238, 0.08);
+  /* Structural Borders */
+  --border:                 #222222;
+  --border-strong:          #353534;
+  --outline:                #84967e;
+  --outline-variant:        #3b4b37;
 
-  /* Glow */
-  --glow-blue:     rgba(59, 130, 246, 0.22);
-  --glow-indigo:   rgba(99, 102, 241, 0.18);
-
-  /* Radius */
-  --r-sm:  8px;
-  --r-md:  12px;
-  --r-lg:  16px;
-  --r-xl:  24px;
-  --r-2xl: 32px;
+  /* Spacing Scale */
+  --unit:                   4px;
+  --gutter:                 24px;
 }
 
 /* ─────────────────────────────────────────────────────────────────
-   BASE RESET
+   BASE RESET & SHARP GEOMETRY
    ───────────────────────────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; }
+*, *::before, *::after {
+  box-sizing: border-box;
+  border-radius: 0 !important; /* Enforce strict Technical Brutalism 0px sharp geometry */
+}
 
 html {
   scroll-behavior: smooth;
-  background: var(--bg);
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 body {
-  background:    var(--bg);
-  color:         var(--text);
-  font-family:   var(--font-inter, 'Inter', system-ui, -apple-system, sans-serif);
-  font-feature-settings: "cv11", "ss01";
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans, 'Geist Sans', 'Inter', system-ui, sans-serif);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   min-height: 100dvh;
 }
 
-/* ─────────────────────────────────────────────────────────────────
-   SCROLLBAR
-   ───────────────────────────────────────────────────────────────── */
-::-webkit-scrollbar               { width: 5px; }
-::-webkit-scrollbar-track         { background: transparent; }
-::-webkit-scrollbar-thumb         { background: rgba(255,255,255,0.08); border-radius: 100px; }
-::-webkit-scrollbar-thumb:hover   { background: rgba(255,255,255,0.16); }
-
-/* ─────────────────────────────────────────────────────────────────
-   SELECTION
-   ───────────────────────────────────────────────────────────────── */
-::selection { background: rgba(59,130,246,0.28); color: #fff; }
-
-/* ─────────────────────────────────────────────────────────────────
-   BACKGROUND ORB KEYFRAMES
-   ───────────────────────────────────────────────────────────────── */
-@keyframes orbFloat1 {
-  0%,100% { transform: translate(0px,  0px)  scale(1);    }
-  33%     { transform: translate(-28px, 38px) scale(1.04); }
-  66%     { transform: translate(20px, -20px) scale(0.96); }
-}
-@keyframes orbFloat2 {
-  0%,100% { transform: translate(0px,  0px)  scale(1);    }
-  33%     { transform: translate(38px, -28px) scale(1.03); }
-  66%     { transform: translate(-20px, 30px) scale(0.97); }
-}
-@keyframes orbFloat3 {
-  0%,100% { transform: translate(0px,  0px) scale(1);    }
-  50%     { transform: translate(-40px, 40px) scale(1.06); }
+/* Monospace font utility */
+.font-mono, [data-font="mono"] {
+  font-family: var(--font-mono, 'Geist Mono', 'JetBrains Mono', monospace);
 }
 
 /* ─────────────────────────────────────────────────────────────────
-   MARQUEE
+   SELECTION & SCROLLBAR (High Contrast Terminal Style)
    ───────────────────────────────────────────────────────────────── */
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+::selection {
+  background-color: var(--terminal-green);
+  color: #000000;
 }
-.animate-marquee { animation: marquee 36s linear infinite; }
-.marquee-track:hover .animate-marquee { animation-play-state: paused; }
 
-/* ─────────────────────────────────────────────────────────────────
-   GRADIENT TEXT UTILITIES
-   ───────────────────────────────────────────────────────────────── */
-.text-gradient-white {
-  background: linear-gradient(160deg, #ffffff 30%, #8094b0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
 }
-.text-gradient-blue {
-  background: linear-gradient(135deg, #60a5fa 0%, #818cf8 55%, #a78bfa 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+::-webkit-scrollbar-track {
+  background: var(--bg-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--terminal-green);
 }
 
 /* ─────────────────────────────────────────────────────────────────
-   GLASS CARD
+   BRUTALIST BUTTONS & INTERACTION
    ───────────────────────────────────────────────────────────────── */
-.glass {
-  background:          rgba(12, 16, 24, 0.65);
-  backdrop-filter:     blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border:              1px solid var(--border);
+.btn-terminal {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #000000;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  font-family: var(--font-mono, monospace);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  cursor: pointer;
+  user-select: none;
 }
-.glass-hover:hover {
-  background:  rgba(20, 26, 36, 0.75);
-  border-color: var(--border-hover);
+
+.btn-terminal:hover {
+  background: var(--terminal-green);
+  color: #000000;
+  border-color: var(--terminal-green);
+}
+
+.btn-ghost-terminal {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  font-family: var(--font-mono, monospace);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.btn-ghost-terminal:hover {
+  color: var(--terminal-green);
+  border-color: var(--terminal-green);
+  background: var(--surface-container-low);
 }
 
 /* ─────────────────────────────────────────────────────────────────
-   DOT GRID
+   SURFACES & CONTAINERS (Strictly Flat, Tonal Shifts)
    ───────────────────────────────────────────────────────────────── */
-.dot-grid {
-  background-image: radial-gradient(
-    circle at 1px 1px,
-    rgba(255,255,255,0.045) 1px,
-    transparent 0
-  );
-  background-size: 48px 48px;
+.surface-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.surface-card:hover {
+  border-color: var(--border-strong);
+  background-color: var(--surface-container);
+}
+
+.terminal-box {
+  background-color: var(--bg-deep);
+  border: 1px solid var(--border);
+  font-family: var(--font-mono, monospace);
+}
+
+.terminal-box-active {
+  border-color: var(--terminal-green);
 }
 
 /* ─────────────────────────────────────────────────────────────────
-   SHIMMER LINE (top of cards on hover)
+   DATA GRID & EDITORIAL TYPOGRAPHY
    ───────────────────────────────────────────────────────────────── */
-.shimmer-top {
-  position: relative;
-}
-.shimmer-top::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  top: -1px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(99,102,241,0.6), transparent);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  border-radius: inherit;
-}
-.shimmer-top:hover::before { opacity: 1; }
-
-/* ─────────────────────────────────────────────────────────────────
-   TIMELINE CONNECTOR
-   ───────────────────────────────────────────────────────────────── */
-.timeline-line {
-  position: absolute;
-  left: 19px;
-  top: 40px;
-  bottom: -24px;
-  width: 1px;
-  background: linear-gradient(to bottom, var(--border-hover), transparent);
-  transform-origin: top;
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
 }
 
+.meta-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.meta-tag-green {
+  color: var(--terminal-green);
+}
+
+/* Flashing Terminal Cursor */
+@keyframes blinkCursor {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.cursor-blink {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background-color: var(--terminal-green);
+  vertical-align: middle;
+  margin-left: 4px;
+  animation: blinkCursor 1s infinite;
+}
+
 /* ─────────────────────────────────────────────────────────────────
-   FOCUS STATES
+   FOCUS & ACCESSIBILITY
    ───────────────────────────────────────────────────────────────── */
 :focus-visible {
-  outline: 2px solid var(--blue);
-  outline-offset: 3px;
-  border-radius: 4px;
+  outline: 2px solid var(--terminal-green);
+  outline-offset: 2px;
 }
 
-/* ─────────────────────────────────────────────────────────────────
-   REDUCE MOTION
-   ───────────────────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
-    animation-duration:        0.01ms !important;
-    animation-iteration-count: 1      !important;
-    transition-duration:       0.01ms !important;
-    scroll-behavior:           auto   !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
-  .animate-marquee { animation: none; }
 }

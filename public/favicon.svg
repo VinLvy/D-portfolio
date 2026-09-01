@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Obsidian Base -->
+  <rect width="32" height="32" fill="#0e0e0e" />
+  
+  <!-- Technical Border -->
+  <rect x="0.5" y="0.5" width="31" height="31" fill="none" stroke="#222222" stroke-width="1" />
+  
+  <!-- Corner Accent Markers -->
+  <path d="M 2 5 L 2 2 L 5 2" stroke="#00FF41" stroke-width="1" fill="none" />
+  <path d="M 27 30 L 30 30 L 30 27" stroke="#00FF41" stroke-width="1" fill="none" />
+
+  <!-- Bold Geometric Letter 'D' in Terminal Green -->
+  <path d="M 9 7 L 18 7 C 22.5 7 25.5 10 25.5 16 C 25.5 22 22.5 25 18 25 L 9 25 Z M 13.5 11 L 13.5 21 L 17.5 21 C 20 21 21.5 19 21.5 16 C 21.5 13 20 11 17.5 11 Z" fill="#00FF41" />
+</svg>
