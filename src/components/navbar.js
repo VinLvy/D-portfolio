@@ -2,33 +2,19 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, User, Briefcase, Download } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const NAV_ITEMS = [
-  { href: "/",        label: "Home",     icon: Home     },
-  { href: "/about",   label: "About",    icon: User     },
-  { href: "/projects",label: "Projects", icon: Briefcase},
+  { href: "/",         index: "01", label: "HOME" },
+  { href: "/about",    index: "02", label: "ABOUT" },
+  { href: "/projects", index: "03", label: "PROJECTS" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [scrolled, setScrolled] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 640);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Hide navbar during maintenance mode
   const maintenanceActive = process.env.NEXT_PUBLIC_MAINTENANCE_MODE === "true";
@@ -37,59 +23,104 @@ export default function Navbar() {
   }
 
   return (
-    <motion.header
-      layoutRoot
-      initial={{ y: isMobile ? 80 : -80, opacity: 0 }}
-      animate={{ y: 0,   opacity: 1 }}
-      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-      className="fixed bottom-0 sm:bottom-auto sm:top-0 left-0 right-0 z-50 flex items-end sm:items-start justify-center pb-8 sm:pb-0 sm:pt-5 px-4"
-      aria-label="Primary navigation"
-    >
-      <nav
-        className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-2 rounded-full"
-        style={{
-          background:   scrolled ? "rgba(10, 15, 30, 0.45)" : "rgba(10, 15, 30, 0.25)",
-          backdropFilter:       "blur(24px) saturate(1.6)",
-          WebkitBackdropFilter: "blur(24px) saturate(1.6)",
-          border:               "1px solid rgba(255, 255, 255, 0.08)",
-          boxShadow: scrolled
-            ? "0 10px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.15)"
-            : "0 4px 20px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.08)",
-          transition: "background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease",
-        }}
-      >
-        {/* ── Nav links ─────────────────────────────────────── */}
-        {NAV_ITEMS.map(({ href, label, icon: Icon }) => {
-          const active = pathname === href;
-          return (
-            <Link
-              key={href}
-              href={href}
-              className="relative flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full
-                         text-sm font-medium transition-colors duration-200"
-              style={{ color: active ? "#ffffff" : "rgba(255,255,255,0.45)" }}
-              aria-current={active ? "page" : undefined}
-            >
-              {/* Shared layout animated background indicator */}
-              {active && (
-                <motion.span
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="absolute inset-0 rounded-full"
-                  style={{
-                    background: "rgba(59,130,246,0.13)",
-                    boxShadow:  "inset 0 0 0 1px rgba(59,130,246,0.25)",
-                  }}
-                  aria-hidden="true"
-                />
-              )}
-              <Icon size={16} className="shrink-0 relative z-10" aria-hidden="true" />
-              <span className="hidden sm:inline relative z-10">{label}</span>
-            </Link>
-          );
-        })}
-      </nav>
-    </motion.header>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#131313]/95 border-b border-[#222222] backdrop-blur-md">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between">
+        
+        {/* ── Brand / Terminal Header ──────────────────────── */}
+        <Link 
+          href="/"
+          className="flex items-center gap-2 font-mono text-xs sm:text-sm font-bold tracking-wider text-[#e5e2e1] hover:text-[#00FF41] transition-colors"
+        >
+          <span className="text-[#00FF41]">&gt;</span>
+          <span>DAVIN_PF</span>
+          <span className="text-[#555555]">{"//"}</span>
+          <span className="text-[#888888] hidden sm:inline">SYS_v2.6</span>
+        </Link>
+
+        {/* ── Desktop Navigation ───────────────────────────── */}
+        <nav className="hidden md:flex items-center gap-1 font-mono text-xs">
+          {NAV_ITEMS.map((item) => {
+            const active = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`px-3.5 py-1.5 transition-all flex items-center gap-1.5 ${
+                  active
+                    ? "bg-[#1c1b1b] text-[#00FF41] border border-[#00FF41]/40 font-semibold"
+                    : "text-[#888888] hover:text-[#e5e2e1] hover:bg-[#1c1b1b]/50 border border-transparent"
+                }`}
+                aria-current={active ? "page" : undefined}
+              >
+                <span className={active ? "text-[#00FF41]" : "text-[#555555]"}>{item.index}</span>
+                <span className="text-[#555555]">{"//"}</span>
+                <span>{item.label}</span>
+              </Link>
+            );
+          })}
+
+          <Link
+            href="/DavinPutraFibrian-Resume.pdf"
+            download
+            className="ml-2 px-3 py-1.5 bg-[#000000] text-[#e5e2e1] hover:bg-[#00FF41] hover:text-[#000000] border border-[#ffffff]/20 hover:border-[#00FF41] transition-all flex items-center gap-1 font-semibold"
+          >
+            <span>RESUME</span>
+            <ArrowUpRight size={13} />
+          </Link>
+        </nav>
+
+        {/* ── Status Indicator (Desktop) ───────────────────── */}
+        <div className="hidden lg:flex items-center gap-2 font-mono text-[11px] text-[#888888] bg-[#0e0e0e] px-3 py-1 border border-[#222222]">
+          <span className="w-2 h-2 bg-[#00FF41] animate-pulse" />
+          <span>STATUS:</span>
+          <span className="text-[#00FF41]">OPEN_TO_WORK</span>
+        </div>
+
+        {/* ── Mobile Menu Trigger ─────────────────────────── */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden p-2 text-[#888888] hover:text-[#e5e2e1] border border-[#222222] bg-[#1c1b1b]"
+          aria-label="Toggle menu"
+        >
+          {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
+        </button>
+      </div>
+
+      {/* ── Mobile Dropdown ─────────────────────────────────── */}
+      {mobileMenuOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="md:hidden border-t border-[#222222] bg-[#0e0e0e] px-4 py-4 space-y-2 font-mono text-xs"
+        >
+          {NAV_ITEMS.map((item) => {
+            const active = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block px-4 py-2.5 border ${
+                  active
+                    ? "bg-[#1c1b1b] text-[#00FF41] border-[#00FF41]/50 font-semibold"
+                    : "text-[#888888] border-[#222222] hover:bg-[#1c1b1b]"
+                }`}
+              >
+                <span className="text-[#555555] mr-2">{item.index} {"//"}</span>
+                {item.label}
+              </Link>
+            );
+          })}
+          <Link
+            href="/DavinPutraFibrian-Resume.pdf"
+            download
+            onClick={() => setMobileMenuOpen(false)}
+            className="block px-4 py-2.5 text-center bg-[#00FF41] text-[#000000] font-bold mt-3 uppercase tracking-wider"
+          >
+            &gt; DOWNLOAD_RESUME
+          </Link>
+        </motion.div>
+      )}
+    </header>
   );
 }
