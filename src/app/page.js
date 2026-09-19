@@ -147,7 +147,7 @@ export default function Home() {
               <SectionLabel index={1} label="SYSTEM_IDENTITY" />
 
               <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-[#e5e2e1] leading-[1.05] uppercase">
-                Crafting <span className="text-[#00FF41]">Digital</span> Excellence.
+                Engineering <span className="text-[#00FF41]">Scalable</span> Systems.
               </h1>
 
               <div className="space-y-4 max-w-2xl text-base sm:text-lg text-[#888888] leading-relaxed">
