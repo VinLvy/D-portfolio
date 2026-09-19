@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { 
   Download, 
   ExternalLink,
@@ -96,7 +96,7 @@ const CERTIFICATION_RECORDS = [
     issuer: "HackerRank",
     issued: "Feb 2026",
     credentialId: "acf040f00005",
-    url: "https://www.hackerrank.com/certificates/acf040f00005",
+    url: "https://www.hackerrank.com/certificates/iframe/acf040f00005",
     skills: ["Software Infrastructure", "Problem Solving", "Core Algorithms"],
   },
   {
@@ -184,49 +184,79 @@ const FOCUS_INTERESTS = [
 
 export default function About() {
   const [activeSection, setActiveSection] = useState("about");
-  const isProgrammaticScroll = useRef(false);
-  const timeoutId = useRef(null);
+
+  const scrollToSection = (e, href) => {
+    e.preventDefault();
+    const id = href.slice(1);
+    const element = document.getElementById(id);
+    if (element) {
+      const navOffset = 90;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementPosition - navOffset,
+        behavior: "smooth",
+      });
+      setActiveSection(id);
+    }
+  };
 
   useEffect(() => {
-    const handleClick = (e) => {
-      const target = e.target.closest("[data-scroll]");
-      if (!target) return;
-      e.preventDefault();
-      const id = target.getAttribute("href").slice(1);
-      const section = document.getElementById(id);
-      if (section) {
-        isProgrammaticScroll.current = true;
-        if (timeoutId.current) clearTimeout(timeoutId.current);
-        setActiveSection(id);
-        window.scrollTo({ top: section.offsetTop - 80, behavior: "smooth" });
-        timeoutId.current = setTimeout(() => {
-          isProgrammaticScroll.current = false;
-        }, 800);
+    const sectionIds = TOC_ITEMS.map((item) => item.href.slice(1));
+
+    const handleScroll = () => {
+      // 1. Check if user reached bottom of page -> activate last item
+      const isAtBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 80;
+
+      if (isAtBottom) {
+        setActiveSection(sectionIds[sectionIds.length - 1]);
+        return;
+      }
+
+      // 2. If at the top of page -> activate first item
+      if (window.scrollY < 200) {
+        setActiveSection(sectionIds[0]);
+        return;
+      }
+
+      // 3. Find active section based on scroll offset
+      const triggerOffset = 150;
+      const currentPos = window.scrollY + triggerOffset;
+
+      let currentActive = sectionIds[0];
+
+      for (let i = 0; i < sectionIds.length; i++) {
+        const el = document.getElementById(sectionIds[i]);
+        if (el) {
+          const top = el.offsetTop;
+          if (currentPos >= top) {
+            currentActive = sectionIds[i];
+          }
+        }
+      }
+
+      setActiveSection(currentActive);
+    };
+
+    let animationFrameId = null;
+    const onScroll = () => {
+      if (animationFrameId) return;
+      animationFrameId = window.requestAnimationFrame(() => {
+        handleScroll();
+        animationFrameId = null;
+      });
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (animationFrameId) {
+        window.cancelAnimationFrame(animationFrameId);
       }
     };
-
-    document.addEventListener("click", handleClick);
-    return () => {
-      document.removeEventListener("click", handleClick);
-      if (timeoutId.current) clearTimeout(timeoutId.current);
-    };
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (isProgrammaticScroll.current) return;
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActiveSection(entry.target.id);
-        });
-      },
-      { threshold: 0.1, rootMargin: "-80px 0px -50% 0px" }
-    );
-    TOC_ITEMS.forEach(({ href }) => {
-      const el = document.getElementById(href.slice(1));
-      if (el) observer.observe(el);
-    });
-    return () => observer.disconnect();
   }, []);
 
   return (
@@ -316,7 +346,7 @@ export default function About() {
                 <a
                   key={item.href}
                   href={item.href}
-                  data-scroll
+                  onClick={(e) => scrollToSection(e, item.href)}
                   className={`block px-3 py-2 border transition-all ${
                     active
                       ? "bg-[#0e0e0e] text-[#00FF41] border-[#00FF41]/50 font-bold"
