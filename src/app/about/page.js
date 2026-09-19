@@ -200,8 +200,8 @@ export default function About() {
                 </p>
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-xs text-[#888888] pt-1">
                   <span>LOC: <strong className="text-[#e5e2e1]">East Java, Indonesia</strong></span>
-                  <span>|</span>
-                  <span>BORN: <strong className="text-[#e5e2e1]">31 May 2006</strong></span>
+                  {/* <span>|</span>
+                  <span>BORN: <strong className="text-[#e5e2e1]">31 May 2006</strong></span> */}
                 </div>
               </div>
             </div>
