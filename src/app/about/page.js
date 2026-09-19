@@ -5,7 +5,8 @@ import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 import { 
   Download, 
-  ExternalLink
+  ExternalLink,
+  ShieldCheck
 } from "lucide-react";
 import SectionLabel from "@/components/SectionLabel";
 
@@ -13,11 +14,12 @@ import SectionLabel from "@/components/SectionLabel";
    DATA SPECIFICATIONS
    ───────────────────────────────────────────────────────────────── */
 const TOC_ITEMS = [
-  { href: "#about",      index: "01", label: "DOSSIER"      },
-  { href: "#skills",     index: "02", label: "SKILL_MATRIX" },
-  { href: "#experience", index: "03", label: "CAREER_LOGS"  },
-  { href: "#education",  index: "04", label: "ACADEMICS"    },
-  { href: "#interests",  index: "05", label: "FOCUS_AREAS"  },
+  { href: "#about",          index: "01", label: "DOSSIER"      },
+  { href: "#skills",         index: "02", label: "SKILL_MATRIX" },
+  { href: "#experience",     index: "03", label: "CAREER_LOGS"  },
+  { href: "#certifications", index: "04", label: "CREDENTIALS"  },
+  { href: "#education",      index: "05", label: "ACADEMICS"    },
+  { href: "#interests",      index: "06", label: "FOCUS_AREAS"  },
 ];
 
 const SKILL_CATEGORIES = [
@@ -85,6 +87,73 @@ const EXPERIENCE_RECORDS = [
     type: "COMMERCIAL ENGAGEMENT",
     desc: "Developed and maintained full-stack web applications using modern development practices. Specialized in building responsive company profile websites utilizing CodeIgniter 4 with a focus on intuitive user interfaces, fast server-side execution, and Schema.org SEO compliance.",
     metrics: ["8+ Client Sites Deployed", "Lighthouse 90+ Score Across All Sites", "+25% Organic Search Visibility"],
+  },
+];
+
+const CERTIFICATION_RECORDS = [
+  {
+    title: "Software Engineer",
+    issuer: "HackerRank",
+    issued: "Feb 2026",
+    credentialId: "acf040f00005",
+    url: "https://www.hackerrank.com/certificates/acf040f00005",
+    skills: ["Software Infrastructure", "Problem Solving", "Core Algorithms"],
+  },
+  {
+    title: "SQL (Intermediate)",
+    issuer: "HackerRank",
+    issued: "Feb 2026",
+    credentialId: "2ae4646f08cb",
+    url: "https://www.hackerrank.com/certificates/iframe/2ae4646f08cb",
+    skills: ["SQL", "MySQL", "Query Optimization"],
+  },
+  {
+    title: "Architecting on AWS",
+    issuer: "Dicoding Indonesia // AWS",
+    issued: "Jul 2026 – Jul 2029",
+    credentialId: "GRX5W5Q7YZ0M",
+    url: "https://www.dicoding.com/certificates/GRX5W5Q7YZ0M",
+    skills: ["Amazon Web Services (AWS)", "Cloud Architecture", "High Availability"],
+  },
+  {
+    title: "Build Infrastructure with Terraform on Google Cloud",
+    issuer: "Google Cloud",
+    issued: "Jul 2026",
+    credentialId: "25635936",
+    url: "https://www.skills.google/public_profiles/cd5e642c-a588-40f4-a4b7-3adb46df7e1a/badges/25635936",
+    skills: ["Terraform", "Google Cloud (GCP)", "IaC Automation"],
+  },
+  {
+    title: "Manage Kubernetes in Google Cloud",
+    issuer: "Google Cloud",
+    issued: "Aug 2026",
+    credentialId: "26389216",
+    url: "https://www.skills.google/public_profiles/cd5e642c-a588-40f4-a4b7-3adb46df7e1a/badges/26389216",
+    skills: ["Docker", "Google Kubernetes Engine (GKE)", "DevOps"],
+  },
+  {
+    title: "Implement CI/CD Pipelines on Google Cloud",
+    issuer: "Google Cloud",
+    issued: "Aug 2026",
+    credentialId: "27019561",
+    url: "https://www.skills.google/public_profiles/cd5e642c-a588-40f4-a4b7-3adb46df7e1a/badges/27019561",
+    skills: ["CI/CD", "Automated Pipelines", "DevOps"],
+  },
+  {
+    title: "Deploy and Secure Serverless APIs with API Gateway",
+    issuer: "Google Cloud",
+    issued: "Aug 2026",
+    credentialId: "27255590",
+    url: "https://www.skills.google/public_profiles/cd5e642c-a588-40f4-a4b7-3adb46df7e1a/badges/27255590",
+    skills: ["API Gateway", "Cloud Security", "Serverless"],
+  },
+  {
+    title: "AWS AI Academy 2026 - Intermediate Level",
+    issuer: "Dicoding Indonesia // AWS",
+    issued: "Sep 2026",
+    credentialId: "AWS2026/L2-AI-0048",
+    url: "https://www.linkedin.com/in/davinpfbrn/details/certifications/",
+    skills: ["Machine Learning", "AI Workflows", "Cloud AI"],
   },
 ];
 
@@ -382,10 +451,68 @@ export default function About() {
             </div>
           </section>
 
-          {/* ── 04. ACADEMICS ────────────────────────────────── */}
+          {/* ── 04. CREDENTIALS // CERTIFICATIONS ────────────── */}
+          <section id="certifications" className="space-y-6">
+            <div className="pb-4 border-b border-[#222222]">
+              <SectionLabel index={4} label="VERIFIED_CREDENTIALS" className="mb-2" />
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#e5e2e1] uppercase">
+                Accreditations &amp; Certifications.
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {CERTIFICATION_RECORDS.map((cert) => (
+                <div
+                  key={cert.credentialId || cert.title}
+                  className="p-5 bg-[#1c1b1b] border border-[#222222] hover:border-[#00FF41]/60 transition-all flex flex-col justify-between space-y-4 group"
+                >
+                  <div className="space-y-2.5">
+                    <div className="flex items-center justify-between font-mono text-[11px] text-[#888888] border-b border-[#222222] pb-2">
+                      <span className="text-[#00FF41] flex items-center gap-1.5 font-mono">
+                        <ShieldCheck size={13} />
+                        <span>ID: {cert.credentialId}</span>
+                      </span>
+                      <span>{cert.issued}</span>
+                    </div>
+                    <h3 className="text-base font-bold text-[#e5e2e1] group-hover:text-[#00FF41] transition-colors leading-snug">
+                      {cert.title}
+                    </h3>
+                    <p className="font-mono text-xs text-[#888888]">
+                      ISSUER: <span className="text-[#e5e2e1]">{cert.issuer}</span>
+                    </p>
+                  </div>
+
+                  <div className="space-y-3 pt-2">
+                    <div className="flex flex-wrap gap-1.5 font-mono text-[10px]">
+                      {cert.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="px-2 py-0.5 bg-[#0e0e0e] border border-[#222222] text-[#b9ccb2]"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+
+                    <Link
+                      href={cert.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 font-mono text-xs text-[#00FF41] hover:text-[#e5e2e1] transition-colors pt-1"
+                    >
+                      <span>&gt; VERIFY_CREDENTIAL</span>
+                      <ExternalLink size={12} />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* ── 05. ACADEMICS ────────────────────────────────── */}
           <section id="education" className="space-y-6">
             <div className="pb-4 border-b border-[#222222]">
-              <SectionLabel index={4} label="ACADEMIC_FOUNDATION" className="mb-2" />
+              <SectionLabel index={5} label="ACADEMIC_FOUNDATION" className="mb-2" />
               <h2 className="text-2xl sm:text-3xl font-bold text-[#e5e2e1] uppercase">
                 Formal Education.
               </h2>
@@ -419,10 +546,10 @@ export default function About() {
             </div>
           </section>
 
-          {/* ── 05. FOCUS AREAS & INTERESTS ──────────────────── */}
+          {/* ── 06. FOCUS AREAS & INTERESTS ──────────────────── */}
           <section id="interests" className="space-y-6">
             <div className="pb-4 border-b border-[#222222]">
-              <SectionLabel index={5} label="FOCUS_DOMAINS" className="mb-2" />
+              <SectionLabel index={6} label="FOCUS_DOMAINS" className="mb-2" />
               <h2 className="text-2xl sm:text-3xl font-bold text-[#e5e2e1] uppercase">
                 Technical Focus &amp; Interests.
               </h2>
