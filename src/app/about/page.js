@@ -90,6 +90,12 @@ const EXPERIENCE_RECORDS = [
 
 const EDUCATION_RECORDS = [
   {
+    school: "Universitas Bhinneka PGRI",
+    major: "Informatics Engineering",
+    period: "2025 – Present",
+    desc: "Pursuing a Bachelor's degree in Informatics Engineering, focusing on advanced software development, algorithm optimization, and systems architecture.",
+  },
+  {
     school: "SMKN 1 Boyolangu",
     major: "Software Engineering (Rekayasa Perangkat Lunak)",
     period: "2022 – 2025",
