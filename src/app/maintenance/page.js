@@ -1,96 +1,132 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Terminal, Github, Mail, ArrowUpRight } from "lucide-react";
-
-const CONTACT_LINKS = [
-  {
-    name: "GITHUB",
-    handle: "VinLvy",
-    link: "https://github.com/VinLvy",
-    icon: Github,
-  },
-  {
-    name: "DIRECT_EMAIL",
-    handle: "davinfibrian@gmail.com",
-    link: "mailto:davinfibrian@gmail.com",
-    icon: Mail,
-  },
-];
+import Link from "next/link";
+import { 
+  Server, 
+  Github, 
+  Mail, 
+  ArrowUpRight, 
+  RotateCw, 
+  ShieldCheck, 
+  Activity, 
+  Terminal,
+  Cpu,
+  Clock
+} from "lucide-react";
+import { useState } from "react";
 
 export default function Maintenance() {
+  const [isRefreshing, setIsRefreshing] = useState(false);
+
+  const handleRefresh = () => {
+    setIsRefreshing(true);
+    setTimeout(() => {
+      window.location.reload();
+    }, 600);
+  };
+
   return (
-    <div className="min-h-[85vh] flex flex-col items-center justify-center px-4 sm:px-8 py-20 text-center font-mono">
-      <div className="max-w-lg w-full bg-[#1c1b1b] border border-[#222222] p-8 space-y-6 text-left">
-        
-        {/* Terminal Header */}
-        <div className="flex items-center justify-between pb-3 border-b border-[#222222] text-xs text-[#888888]">
-          <div className="flex items-center gap-1.5 text-[#00FF41]">
-            <Terminal size={14} />
-            <span>SYSTEM_UPGRADE // IN_PROGRESS</span>
+    <div className="min-h-[85vh] flex flex-col items-center justify-center px-4 sm:px-6 py-16">
+      <motion.div 
+        initial={{ opacity: 0, y: 16, scale: 0.98 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+        className="max-w-xl w-full precision-card p-6 sm:p-8 space-y-6"
+      >
+        {/* Telemetry Header */}
+        <div className="flex items-center justify-between pb-4 border-b border-[var(--border-subtle)] text-xs font-mono">
+          <div className="flex items-center gap-2 text-[var(--accent-primary)]">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--accent-primary)] opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--accent-primary)]" />
+            </span>
+            <span className="font-medium">Scheduled Platform Maintenance</span>
           </div>
-          <span>MAINT_MODE</span>
+          <span className="text-[var(--text-muted)] text-[11px] bg-[var(--bg-canvas)] px-2 py-0.5 rounded border border-[var(--border-subtle)]">
+            Node: ID-APSE1
+          </span>
         </div>
 
-        {/* Heading */}
-        <div className="space-y-1">
-          <div className="text-3xl sm:text-4xl font-extrabold text-[#e5e2e1]">
-            UNDER MAINTENANCE.
-          </div>
-          <div className="text-xs text-[#00FF41]">
-            [ SCHEDULED SYSTEM KERNEL &amp; PIPELINE UPGRADE ]
-          </div>
-        </div>
-
-        {/* Progress Display */}
+        {/* Headline & Value Proposition */}
         <div className="space-y-2">
-          <div className="flex justify-between text-xs text-[#888888]">
-            <span>SYSTEM_MIGRATION</span>
-            <span className="text-[#00FF41]">95% COMPLETE</span>
+          <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight text-[var(--text-primary)]">
+            System Upgrades in Progress
+          </h1>
+          <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
+            The infrastructure is currently receiving scheduled container updates and site reliability 
+            enhancements. Live services, microservices, and verification portals will resume momentarily.
+          </p>
+        </div>
+
+        {/* Live Telemetry Data Box */}
+        <div className="p-4 rounded-lg bg-[var(--bg-canvas)] border border-[var(--border-subtle)] space-y-3 font-mono text-xs">
+          <div className="flex items-center justify-between text-[var(--text-muted)] border-b border-[var(--border-subtle)] pb-2 text-[11px]">
+            <span className="flex items-center gap-1.5 text-[var(--text-primary)]">
+              <Activity size={12} className="text-[var(--accent-primary)]" />
+              <span>Deployment Pipeline Status</span>
+            </span>
+            <span className="text-[var(--accent-primary)] font-semibold">94% Synthesized</span>
           </div>
-          <div className="w-full bg-[#0e0e0e] border border-[#222222] h-2 relative overflow-hidden">
+
+          {/* Animated Progress Bar */}
+          <div className="w-full bg-[var(--bg-surface-2)] h-1.5 rounded-full overflow-hidden">
             <motion.div
               initial={{ width: "0%" }}
-              animate={{ width: "95%" }}
-              transition={{ duration: 1.2, ease: "easeOut" }}
-              className="h-full bg-[#00FF41]"
+              animate={{ width: "94%" }}
+              transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
+              className="h-full bg-[var(--accent-primary)]"
             />
           </div>
-        </div>
 
-        <p className="text-xs text-[#888888] leading-relaxed">
-          The node is currently undergoing scheduled infrastructure updates to optimize response times 
-          and verification pipelines. Systems will resume normal operation shortly.
-        </p>
-
-        {/* Contact Links */}
-        <div className="pt-4 border-t border-[#222222] space-y-3">
-          <div className="text-[10px] text-[#555555] uppercase tracking-wider">
-            [ EMERGENCY_TRANSMISSION_CHANNELS ]
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            {CONTACT_LINKS.map((link) => {
-              const Icon = link.icon;
-              return (
-                <a
-                  key={link.name}
-                  href={link.link}
-                  target={link.name !== "DIRECT_EMAIL" ? "_blank" : undefined}
-                  rel={link.name !== "DIRECT_EMAIL" ? "noopener noreferrer" : undefined}
-                  className="p-3 bg-[#0e0e0e] border border-[#222222] hover:border-[#00FF41] hover:text-[#00FF41] transition-all flex items-center justify-between text-xs text-[#888888]"
-                >
-                  <div className="flex items-center gap-2">
-                    <Icon size={14} className="text-[#00FF41]" />
-                    <span>{link.name}</span>
-                  </div>
-                  <ArrowUpRight size={13} />
-                </a>
-              );
-            })}
+          <div className="grid grid-cols-2 gap-2 pt-1 text-[11px] text-[var(--text-muted)]">
+            <div>
+              Traffic Drain: <span className="text-[var(--text-primary)]">Graceful (0 Drop)</span>
+            </div>
+            <div>
+              Target Engine: <span className="text-[var(--signal-arch)]">Next.js 15 + FastAPI</span>
+            </div>
           </div>
         </div>
 
-      </div>
+        {/* Contact & Status Actions */}
+        <div className="pt-2 border-t border-[var(--border-subtle)] space-y-3">
+          <div className="text-[11px] font-mono text-[var(--text-muted)]">
+            Direct channels while maintenance is active:
+          </div>
+
+          <div className="flex flex-wrap gap-2.5">
+            <Link
+              href="mailto:davinfibrian@gmail.com"
+              className="btn-secondary text-xs"
+            >
+              <Mail size={13} className="text-[var(--accent-primary)]" />
+              <span>davinfibrian@gmail.com</span>
+            </Link>
+
+            <Link
+              href="https://github.com/VinLvy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary text-xs"
+            >
+              <Github size={13} />
+              <span>GitHub</span>
+              <ArrowUpRight size={12} className="text-[var(--text-muted)]" />
+            </Link>
+
+            <button
+              onClick={handleRefresh}
+              disabled={isRefreshing}
+              className="btn-primary text-xs ml-auto"
+            >
+              <RotateCw size={12} className={isRefreshing ? "animate-spin" : ""} />
+              <span>{isRefreshing ? "Checking..." : "Check Status"}</span>
+            </button>
+          </div>
+        </div>
+
+      </motion.div>
     </div>
   );
 }
