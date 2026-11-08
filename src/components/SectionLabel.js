@@ -1,30 +1,27 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 /**
- * SectionLabel — Technical Brutalist section header.
- * Formats as: [ 01 // SECTION_TITLE ]
+ * SectionLabel — High-Craft Industrial Blueprint section header.
+ * Formats as: [ 01 / Section Title ] without underscores.
  */
 export default function SectionLabel({ index, label, className = "" }) {
+  // Replace any underscores with spaces automatically just in case
+  const cleanLabel = String(label).replace(/_/g, " ");
+
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -12 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, amount: 0.8 }}
-      transition={{ duration: 0.4 }}
-      className={`inline-flex items-center gap-2 font-mono text-xs font-semibold tracking-wider ${className}`}
-      aria-label={`Section: ${label}`}
+    <div
+      className={`section-label ${className}`}
+      aria-label={`Section: ${cleanLabel}`}
     >
-      <span className="text-[#888888]">[</span>
-      <span className="text-[#00FF41]">
+      <span className="text-[var(--text-muted)]">[</span>
+      <span className="text-[var(--text-primary)] font-medium">
         {String(index).padStart(2, "0")}
       </span>
-      <span className="text-[#555555]">{"//"}</span>
-      <span className="text-[#e5e2e1] uppercase">
-        {label}
+      <span className="text-[var(--text-muted)]">/</span>
+      <span className="text-[var(--text-secondary)]">
+        {cleanLabel}
       </span>
-      <span className="text-[#888888]">]</span>
-    </motion.div>
+      <span className="text-[var(--text-muted)]">]</span>
+    </div>
   );
 }

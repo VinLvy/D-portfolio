@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const NAV_ITEMS = [
-  { href: "/",         index: "01", label: "HOME" },
-  { href: "/about",    index: "02", label: "ABOUT" },
-  { href: "/projects", index: "03", label: "PROJECTS" },
+  { href: "/",            label: "Overview" },
+  { href: "/projects",    label: "Systems" },
+  { href: "/credentials", label: "Credentials" },
 ];
 
 export default function Navbar() {
@@ -23,75 +23,72 @@ export default function Navbar() {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#131313]/95 border-b border-[#222222] backdrop-blur-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[var(--bg-glass)] border-b border-[var(--border-subtle)] backdrop-blur-md">
+      <div className="max-w-[1080px] mx-auto px-6 h-14 flex items-center justify-between">
         
-        {/* ── Brand / Terminal Header ──────────────────────── */}
+        {/* ── Brand Monogram & Name ───────────────────────── */}
         <Link 
           href="/"
-          className="flex items-center gap-2 font-mono text-xs sm:text-sm font-bold tracking-wider text-[#e5e2e1] hover:text-[#00FF41] transition-colors"
+          className="flex items-center gap-2.5 text-sm font-medium text-[var(--text-primary)] hover:text-white transition-colors"
         >
-          <span className="text-[#00FF41]">&gt;</span>
-          <span>DAVIN_PF</span>
-          <span className="text-[#555555]">{"//"}</span>
-          <span className="text-[#888888] hidden sm:inline">SYS_v2.6</span>
+          <span className="w-6 h-6 rounded bg-[var(--bg-surface-2)] border border-[var(--border-subtle)] font-mono text-[11px] font-semibold flex items-center justify-center text-[var(--text-primary)]">
+            DPF
+          </span>
+          <span className="tracking-tight">Davin Putra Fibrian</span>
         </Link>
 
         {/* ── Desktop Navigation ───────────────────────────── */}
-        <nav className="hidden md:flex items-center gap-1 font-mono text-xs">
+        <nav className="hidden md:flex items-center gap-6 text-[13px]">
           {NAV_ITEMS.map((item) => {
             const active = pathname === item.href;
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`px-3.5 py-1.5 transition-all flex items-center gap-1.5 ${
+                className={`relative py-1 transition-colors ${
                   active
-                    ? "bg-[#1c1b1b] text-[#00FF41] border border-[#00FF41]/40 font-semibold"
-                    : "text-[#888888] hover:text-[#e5e2e1] hover:bg-[#1c1b1b]/50 border border-transparent"
+                    ? "text-[var(--text-primary)] font-medium"
+                    : "text-[var(--text-muted)] hover:text-[var(--text-secondary)]"
                 }`}
                 aria-current={active ? "page" : undefined}
               >
-                <span className={active ? "text-[#00FF41]" : "text-[#555555]"}>{item.index}</span>
-                <span className="text-[#555555]">{"//"}</span>
                 <span>{item.label}</span>
+                {active && (
+                  <span className="absolute bottom-[-17px] left-0 right-0 h-[1px] bg-[var(--text-primary)]" />
+                )}
               </Link>
             );
           })}
-
-          <Link
-            href="/DavinPutraFibrian-Resume.pdf"
-            download
-            className="ml-2 px-3 py-1.5 bg-[#000000] text-[#e5e2e1] hover:bg-[#00FF41] hover:text-[#000000] border border-[#ffffff]/20 hover:border-[#00FF41] transition-all flex items-center gap-1 font-semibold"
-          >
-            <span>RESUME</span>
-            <ArrowUpRight size={13} />
-          </Link>
         </nav>
 
-        {/* ── Status Indicator (Desktop) ───────────────────── */}
-        <div className="hidden lg:flex items-center gap-2 font-mono text-[11px] text-[#888888] bg-[#0e0e0e] px-3 py-1 border border-[#222222]">
-          <span className="w-2 h-2 bg-[#00FF41] animate-pulse" />
-          <span>STATUS:</span>
-          <span className="text-[#00FF41]">OPEN_TO_WORK</span>
+        {/* ── Actions: Download CV ─────────────────────────── */}
+        <div className="hidden sm:flex items-center gap-3">
+          <Link
+            href="/DavinPutraFibrian_CV.pdf"
+            download="DavinPutraFibrian_CV.pdf"
+            className="btn-primary text-xs"
+          >
+            <span>CV / Resume</span>
+            <ArrowUpRight size={13} />
+          </Link>
         </div>
 
         {/* ── Mobile Menu Trigger ─────────────────────────── */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 text-[#888888] hover:text-[#e5e2e1] border border-[#222222] bg-[#1c1b1b]"
+          className="md:hidden p-2 text-[var(--text-muted)] hover:text-[var(--text-primary)] rounded border border-[var(--border-subtle)] bg-[var(--bg-surface-1)]"
           aria-label="Toggle menu"
         >
-          {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
+          {mobileMenuOpen ? <X size={16} /> : <Menu size={16} />}
         </button>
       </div>
 
       {/* ── Mobile Dropdown ─────────────────────────────────── */}
       {mobileMenuOpen && (
         <motion.div
-          initial={{ opacity: 0, y: -8 }}
+          initial={{ opacity: 0, y: -6 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden border-t border-[#222222] bg-[#0e0e0e] px-4 py-4 space-y-2 font-mono text-xs"
+          className="md:hidden border-t border-[var(--border-subtle)] bg-[var(--bg-surface-1)] px-6 py-4 space-y-3 text-sm"
         >
           {NAV_ITEMS.map((item) => {
             const active = pathname === item.href;
@@ -100,25 +97,27 @@ export default function Navbar() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block px-4 py-2.5 border ${
+                className={`block py-2 ${
                   active
-                    ? "bg-[#1c1b1b] text-[#00FF41] border-[#00FF41]/50 font-semibold"
-                    : "text-[#888888] border-[#222222] hover:bg-[#1c1b1b]"
+                    ? "text-[var(--text-primary)] font-semibold"
+                    : "text-[var(--text-muted)]"
                 }`}
               >
-                <span className="text-[#555555] mr-2">{item.index} {"//"}</span>
                 {item.label}
               </Link>
             );
           })}
-          <Link
-            href="/DavinPutraFibrian-Resume.pdf"
-            download
-            onClick={() => setMobileMenuOpen(false)}
-            className="block px-4 py-2.5 text-center bg-[#00FF41] text-[#000000] font-bold mt-3 uppercase tracking-wider"
-          >
-            &gt; DOWNLOAD_RESUME
-          </Link>
+          
+          <div className="pt-2 border-t border-[var(--border-subtle)] flex flex-col gap-2">
+            <Link
+              href="/DavinPutraFibrian_CV.pdf"
+              download="DavinPutraFibrian_CV.pdf"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full btn-primary text-xs justify-center py-2"
+            >
+              Download CV (PDF)
+            </Link>
+          </div>
         </motion.div>
       )}
     </header>
