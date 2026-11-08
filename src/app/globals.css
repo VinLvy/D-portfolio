@@ -1,207 +1,243 @@
 @import "tailwindcss";
 
 /* ─────────────────────────────────────────────────────────────────
-   OBSIDIAN TERMINAL EDITORIAL DESIGN TOKENS (Technical Brutalism)
+   HIGH-CRAFT INDUSTRIAL PRECISION DESIGN TOKENS (DESIGN.MD SPEC)
    ───────────────────────────────────────────────────────────────── */
 :root {
-  /* Obsidian Base Palette */
-  --bg:                     #131313;
-  --bg-deep:                #0e0e0e;
-  --surface:                #1c1b1b;
-  --surface-container-low:  #181818;
-  --surface-container:      #201f1f;
-  --surface-container-high: #2a2a2a;
-  --surface-container-highest: #353534;
-  --surface-bright:         #3a3939;
+  /* Canvas & Surface Layers */
+  --bg-canvas:          #09090b;
+  --bg-surface-1:       #121214;
+  --bg-surface-2:       #18181b;
+  --bg-glass:           rgba(18, 18, 20, 0.85);
 
-  /* Text Tones */
-  --text:                   #e5e2e1;
-  --text-muted:             #888888;
-  --text-variant:           #b9ccb2;
-  --text-dim:               #555555;
+  /* Structural Hairline Borders */
+  --border-subtle:      #27272a;
+  --border-focus:       #3f3f46;
+  --border-specular:    rgba(255, 255, 255, 0.07);
 
-  /* Terminal Green Accents (Reserved for Active, Focus, Success) */
-  --terminal-green:         #00FF41;
-  --terminal-green-dim:     rgba(0, 255, 65, 0.15);
-  --terminal-green-border:  rgba(0, 255, 65, 0.35);
-  --primary-tint:           #ebffe2;
+  /* Typography Contrast Hierarchy */
+  --text-primary:       #f4f4f5;
+  --text-secondary:     #a1a1aa;
+  --text-muted:         #71717a;
 
-  /* Structural Borders */
-  --border:                 #222222;
-  --border-strong:          #353534;
-  --outline:                #84967e;
-  --outline-variant:        #3b4b37;
+  /* Purposeful Semantic Accents */
+  --accent-primary:     #10b981; /* Precision Emerald */
+  --accent-primary-dim: rgba(16, 185, 129, 0.12);
+  --signal-award:       #f59e0b; /* Signal Amber for National Honors */
+  --signal-award-dim:   rgba(245, 158, 11, 0.12);
+  --signal-arch:        #3b82f6; /* Architecture Callouts */
+  --signal-arch-dim:    rgba(59, 130, 246, 0.12);
 
-  /* Spacing Scale */
-  --unit:                   4px;
-  --gutter:                 24px;
+  /* Timing & Curves */
+  --ease-snappy:        cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ─────────────────────────────────────────────────────────────────
-   BASE RESET & SHARP GEOMETRY
+   BASE RESET & REFINED GEOMETRY
    ───────────────────────────────────────────────────────────────── */
 *, *::before, *::after {
   box-sizing: border-box;
-  border-radius: 0 !important; /* Enforce strict Technical Brutalism 0px sharp geometry */
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--bg);
-  color: var(--text);
+  background-color: var(--bg-canvas);
+  color: var(--text-secondary);
 }
 
 body {
-  background-color: var(--bg);
-  color: var(--text);
-  font-family: var(--font-sans, 'Geist Sans', 'Inter', system-ui, sans-serif);
+  background-color: var(--bg-canvas);
+  color: var(--text-secondary);
+  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: 0.9375rem;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   min-height: 100dvh;
 }
 
-/* Monospace font utility */
-.font-mono, [data-font="mono"] {
-  font-family: var(--font-mono, 'Geist Mono', 'JetBrains Mono', monospace);
-}
-
-/* ─────────────────────────────────────────────────────────────────
-   SELECTION & SCROLLBAR (High Contrast Terminal Style)
-   ───────────────────────────────────────────────────────────────── */
 ::selection {
-  background-color: var(--terminal-green);
-  color: #000000;
+  background-color: var(--accent-primary-dim);
+  color: var(--accent-primary);
 }
 
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-deep);
+  background: var(--bg-canvas);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border-strong);
+  background: var(--border-subtle);
+  border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--terminal-green);
+  background: var(--border-focus);
 }
 
 /* ─────────────────────────────────────────────────────────────────
-   BRUTALIST BUTTONS & INTERACTION
+   STRUCTURAL SHELL & HAIRLINE BLUEPRINT
    ───────────────────────────────────────────────────────────────── */
-.btn-terminal {
+.structural-shell {
+  max-width: 1080px;
+  margin: 0 auto;
+  border-left: 1px solid var(--border-subtle);
+  border-right: 1px solid var(--border-subtle);
+  min-height: 100vh;
+  position: relative;
+}
+
+.section-block {
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 48px 32px;
+}
+
+@media (max-width: 768px) {
+  .section-block {
+    padding: 36px 20px;
+  }
+}
+
+.section-label {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   PRECISION CARDS & COMPONENTS
+   ───────────────────────────────────────────────────────────────── */
+.precision-card {
+  position: relative;
+  background-color: var(--bg-surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: inset 0 1px 0 0 var(--border-specular);
+  transition: 
+    border-color 150ms ease-out,
+    background-color 150ms ease-out,
+    transform 150ms var(--ease-snappy);
+}
+
+.precision-card:hover {
+  border-color: var(--border-focus);
+  background-color: var(--bg-surface-2);
+}
+
+.precision-card:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* Badges & Telemetry Pills */
+.badge-mono {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background-color: var(--bg-surface-2);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.badge-status-live {
+  background-color: var(--accent-primary-dim);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: var(--accent-primary);
+}
+
+.badge-award {
+  background-color: var(--signal-award-dim);
+  border-color: rgba(245, 158, 11, 0.3);
+  color: var(--signal-award);
+}
+
+.dot-matrix-bg {
+  background-image: radial-gradient(var(--border-subtle) 1px, transparent 1px);
+  background-size: 14px 14px;
+}
+
+/* Buttons */
+.btn-primary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 20px;
-  background: #000000;
-  color: #ffffff;
-  border: 1px solid #ffffff;
-  font-family: var(--font-mono, monospace);
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-  cursor: pointer;
+  padding: 8px 14px;
+  background: var(--text-primary);
+  color: #09090b;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: background-color 150ms ease-out, transform 100ms ease;
   user-select: none;
 }
-
-.btn-terminal:hover {
-  background: var(--terminal-green);
-  color: #000000;
-  border-color: var(--terminal-green);
+.btn-primary:hover {
+  background: #e4e4e7;
+}
+.btn-primary:active {
+  transform: translateY(1px);
 }
 
-.btn-ghost-terminal {
+.btn-secondary {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 10px 16px;
-  background: transparent;
-  color: var(--text-muted);
-  border: 1px solid var(--border);
-  font-family: var(--font-mono, monospace);
-  font-size: 13px;
+  padding: 8px 12px;
+  background: var(--bg-surface-1);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  font-size: 0.8125rem;
   font-weight: 500;
-  transition: all 0.15s ease;
+  border-radius: 6px;
+  transition: all 150ms ease-out;
+  user-select: none;
+}
+.btn-secondary:hover {
+  border-color: var(--border-focus);
+  background: var(--bg-surface-2);
+}
+.btn-secondary:active {
+  transform: translateY(1px);
 }
 
-.btn-ghost-terminal:hover {
-  color: var(--terminal-green);
-  border-color: var(--terminal-green);
-  background: var(--surface-container-low);
+/* Infinite Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
 }
 
-/* ─────────────────────────────────────────────────────────────────
-   SURFACES & CONTAINERS (Strictly Flat, Tonal Shifts)
-   ───────────────────────────────────────────────────────────────── */
-.surface-card {
-  background-color: var(--surface);
-  border: 1px solid var(--border);
-  transition: border-color 0.2s ease, background-color 0.2s ease;
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
 }
 
-.surface-card:hover {
-  border-color: var(--border-strong);
-  background-color: var(--surface-container);
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
 
-.terminal-box {
-  background-color: var(--bg-deep);
-  border: 1px solid var(--border);
-  font-family: var(--font-mono, monospace);
+.mask-marquee {
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 
-.terminal-box-active {
-  border-color: var(--terminal-green);
-}
-
-/* ─────────────────────────────────────────────────────────────────
-   DATA GRID & EDITORIAL TYPOGRAPHY
-   ───────────────────────────────────────────────────────────────── */
-.editorial-grid {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 24px;
-}
-
-.meta-tag {
-  font-family: var(--font-mono, monospace);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
-.meta-tag-green {
-  color: var(--terminal-green);
-}
-
-/* Flashing Terminal Cursor */
-@keyframes blinkCursor {
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0; }
-}
-
-.cursor-blink {
-  display: inline-block;
-  width: 8px;
-  height: 15px;
-  background-color: var(--terminal-green);
-  vertical-align: middle;
-  margin-left: 4px;
-  animation: blinkCursor 1s infinite;
-}
-
-/* ─────────────────────────────────────────────────────────────────
-   FOCUS & ACCESSIBILITY
-   ───────────────────────────────────────────────────────────────── */
+/* Accessibility */
 :focus-visible {
-  outline: 2px solid var(--terminal-green);
+  outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
 }
 

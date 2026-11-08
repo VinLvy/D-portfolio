@@ -17,18 +17,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Davin P F — Full-Stack Developer & Systems Builder",
+  title: "Davin Putra Fibrian — Full-Stack & Site Reliability Engineer",
   description:
-    "Full-Stack Developer crafting high-impact applications with PHP, JavaScript, and modern Web3 stacks. Authority in clean code architecture, pragmatic APIs, and Technical Brutalism.",
+    "Full-Stack & Site Reliability Engineer building fault-tolerant microservices, cloud automation, and practical AI integrations with FastAPI, Laravel 11, and Google Cloud / AWS.",
   icons: {
     icon: "/icon.svg",
     shortcut: "/icon.svg",
     apple: "/icon.svg",
   },
   openGraph: {
-    title: "Davin P F — Full-Stack Developer",
+    title: "Davin Putra Fibrian — Full-Stack & Site Reliability Engineer",
     description:
-      "Full-Stack Developer crafting high-impact applications at the intersection of performance, design, and Web3.",
+      "Full-Stack & Site Reliability Engineer building fault-tolerant microservices, cloud automation, and practical AI integrations.",
     type: "website",
   },
 };
@@ -36,10 +36,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#131313] text-[#e5e2e1]`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[var(--bg-canvas)] text-[var(--text-secondary)]`}>
         <Navbar />
-        <main className="relative w-full pt-16 min-h-screen">
-          {children}
+        <main className="relative w-full pt-14 min-h-screen">
+          <div className="structural-shell">
+            {children}
+          </div>
         </main>
         <SpeedInsights />
         <Analytics />
